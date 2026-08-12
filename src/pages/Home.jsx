@@ -98,6 +98,28 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      <section className="container section-gap" id="contact">
+        <div className="panel">
+          <h2>Contact us</h2>
+          <p style={{ color: 'var(--text-muted)', maxWidth: '55ch' }}>
+            Questions about your path, or want to work with us? Get in touch — we read everything.
+          </p>
+
+          <div className="contact-details">
+            <div>
+              <p className="contact-label">Email</p>
+              <a href="mailto:Bassant.ashraf987@gmail.com" style={{ fontWeight: 600 }}>
+                Bassant.ashraf987@gmail.com
+              </a>
+            </div>
+            <div>
+              <p className="contact-label">Address</p>
+              <p style={{ margin: 0, fontWeight: 600 }}>Cairo, Egypt</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

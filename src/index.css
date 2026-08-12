@@ -498,6 +498,28 @@ a.card:hover {
   margin-top: 2.5rem;
 }
 
+/* Contact */
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 3rem;
+  margin-top: 0.5rem;
+}
+
+.contact-label {
+  margin: 0 0 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Long email addresses must not push the panel wider than the screen. */
+.contact-details a {
+  overflow-wrap: anywhere;
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid var(--border);
@@ -505,4 +527,21 @@ a.card:hover {
   color: var(--text-muted);
   font-size: 0.88rem;
   text-align: center;
+}
+
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem 1.25rem;
+  margin: 0 0 0.9rem;
+}
+
+.footer-contact strong {
+  color: var(--text);
+}
+
+.footer-contact a {
+  overflow-wrap: anywhere;
 }
