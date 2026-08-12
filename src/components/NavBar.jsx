@@ -12,11 +12,12 @@ export default function NavBar() {
     <nav className="nav">
       <div className="container nav-inner">
         <Link to="/" className="nav-brand" aria-label="Elevate — home">
-          {/* The wordmark is violet on light and cream on dark, so the two
-              variants are swapped by media query rather than recoloured. */}
+          {/* The gradient wordmark starts in a dark blue that drops to 2.34:1
+              on the dark background, so dark mode gets a brightened variant
+              rather than the same file. */}
           <picture>
-            <source srcSet="/elevate-logo-reverse.svg" media="(prefers-color-scheme: dark)" />
-            <img src="/elevate-logo.svg" alt="Elevate" className="nav-logo" />
+            <source srcSet="/elevate-logo-reverse.png" media="(prefers-color-scheme: dark)" />
+            <img src="/elevate-logo.png" alt="Elevate" className="nav-logo" />
           </picture>
         </Link>
         <div className="nav-links">

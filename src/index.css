@@ -1,58 +1,57 @@
-/* Elevate brand identity.
-   Four source colours, taken from the visual identity PDF:
-     violet     #5620D6   primary
-     coral      #FF7F50   accent
-     periwinkle #C0B8FF   secondary
-     cream      #F5E9E5   background
-   Coral is only 2.1:1 on cream, so it never carries text — it is used for
-   fills, rules, arrows and large display type. Violet carries text at
-   6.87:1, and body copy uses a darker violet ink for long reading. */
+/* Elevate brand identity, taken from the script wordmark artwork:
+     lilac  #F9DBFF   background
+     blue   #1B4FA9   gradient start — the readable end
+     orchid #C66FDC   gradient end — decorative only
+   The wordmark is a blue-to-orchid gradient. Orchid is just 2.48:1 on lilac,
+   so like any pale brand colour it never carries text — it is used for fills,
+   rules, and the logo itself. Blue carries text at 6.06:1 on lilac, and body
+   copy uses a deeper indigo ink for long reading. */
 :root {
-  --brand-violet: #5620d6;
-  --brand-coral: #ff7f50;
-  --brand-periwinkle: #c0b8ff;
-  --brand-cream: #f5e9e5;
+  --brand-lilac: #f9dbff;
+  --brand-blue: #1b4fa9;
+  --brand-orchid: #c66fdc;
+  --brand-gradient: linear-gradient(100deg, #1b4fa9 0%, #6c5cbd 50%, #c66fdc 100%);
 
-  --bg: var(--brand-cream);
+  --bg: var(--brand-lilac);
   --surface: #ffffff;
-  --surface-alt: #efe3de;
-  --border: #ded5f2;
-  --text: #2e1178;
-  --text-muted: #5b4a9e;
-  --accent: var(--brand-violet);
-  --accent-soft: #e6e2ff;
-  --accent-strong: #4318b0;
-  /* second tag colour: coral tint behind dark coral ink, since coral itself
-     is unreadable as text on a light surface */
-  --success: #8f3a12;
-  --success-soft: #ffe4d8;
+  --surface-alt: #f2cdfa;
+  --border: #e9c6f3;
+  --text: #1e2258;
+  --text-muted: #524c8f;
+  --accent: var(--brand-blue);
+  --accent-soft: #ebe0ff;
+  --accent-strong: #123a80;
+  /* second tag colour: orchid tint behind deep orchid ink, since orchid
+     itself is unreadable as text on a light surface */
+  --success: #7a2e96;
+  --success-soft: #f7ddfc;
 
   --radius: 12px;
   --shadow: 0 1px 2px rgb(46 17 120 / 6%), 0 6px 20px rgb(46 17 120 / 8%);
   --max-width: 1080px;
 
-  --font-display: "Anton", "Fira Sans Condensed", system-ui, sans-serif;
-  --font-body: "Fira Sans Condensed", system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Nunito", system-ui, -apple-system, sans-serif;
 
   color-scheme: light dark;
 }
 
-/* Dark theme, derived strictly from the brand hues — violet becomes the
-   surface family, periwinkle carries interface text, coral stays the accent.
-   No colours outside the identity were invented. */
+/* Dark theme, derived from the same two hues — the blue end becomes the
+   surface family, lilac carries text, orchid becomes the accent because the
+   brand blue drops to 2.34:1 on a dark ground and would disappear. */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #150a38;
-    --surface: #1e0f4a;
-    --surface-alt: #2a1566;
-    --border: #3a2280;
-    --text: var(--brand-cream);
-    --text-muted: var(--brand-periwinkle);
-    --accent: var(--brand-periwinkle);
-    --accent-soft: #2a1566;
-    --accent-strong: #d9d4ff;
-    --success: #ffb499;
-    --success-soft: #4a2113;
+    --bg: #17103a;
+    --surface: #221750;
+    --surface-alt: #2e1f66;
+    --border: #3b2a7a;
+    --text: var(--brand-lilac);
+    --text-muted: #c9b6e8;
+    --accent: var(--brand-orchid);
+    --accent-soft: #2e1f66;
+    --accent-strong: #dda5ec;
+    --success: #f0bffa;
+    --success-soft: #43206b;
     --shadow: 0 1px 2px rgb(0 0 0 / 35%), 0 6px 20px rgb(0 0 0 / 35%);
   }
 }
@@ -80,13 +79,13 @@ h3 {
   letter-spacing: -0.02em;
 }
 
-/* Anton is a heavy display face with a single weight — it carries the two
-   largest levels only. h3 stays in the body face so card titles don't shout. */
+/* Playfair carries the two largest levels; h3 stays in the body face so card
+   titles stay quiet and legible at small sizes. */
 h1,
 h2 {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 h1 {

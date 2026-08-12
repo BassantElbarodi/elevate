@@ -76,33 +76,40 @@ rather than crashing the page, so check the spelling first if an expected link i
 
 ### Brand
 
-The site follows the Elevate visual identity. Four source colours, defined as
-`--brand-*` custom properties at the top of `src/index.css`:
+The site follows the Elevate script-wordmark identity. The palette is sampled from the
+artwork itself and defined as `--brand-*` custom properties at the top of `src/index.css`:
 
 | Colour | Hex | Role |
 | ------ | --- | ---- |
-| Violet | `#5620D6` | Primary — logo, links, buttons |
-| Coral | `#FF7F50` | Accent — arrow, highlights, tag tints |
-| Periwinkle | `#C0B8FF` | Secondary — borders, chips, dark-mode text |
-| Cream | `#F5E9E5` | Page background |
+| Lilac | `#F9DBFF` | Page background |
+| Blue | `#1B4FA9` | Gradient start — links, buttons, the readable end |
+| Orchid | `#C66FDC` | Gradient end — decorative, and the dark-mode accent |
 
-**Coral is never used for text.** It only reaches 2.1:1 against cream, well below the 4.5:1
-minimum for body copy, so it's reserved for fills, rules, and the logo arrow. Where a coral-family
-label is needed, the tag uses a pale coral tint behind darkened coral ink (6.2:1). Violet carries
-text at 6.87:1 on cream, and body copy uses a deeper violet ink for long reading.
+The wordmark is a blue-to-orchid gradient. **Orchid is never used for text on a light
+background** — it measures 2.48:1 on lilac, well under the 4.5:1 minimum — so it is limited to
+fills, rules and the logo. Blue carries text at 6.06:1 on lilac, and body copy uses a deeper
+indigo ink. The second tag style pairs an orchid tint with deep orchid ink (6.28:1).
 
-Typography is Anton for the two largest headings and Fira Sans Condensed for everything else, both
-loaded from Google Fonts in `index.html`. The identity also lists Hobo, which is a licensed Adobe
-font with no free web equivalent, so Anton covers display type instead.
+Dark mode inverts which end of the gradient works: brand blue drops to 2.34:1 on the dark ground,
+so orchid becomes the accent and the blue end is only used in the brightened logo variant.
+
+Typography is Playfair Display for the two largest headings, echoing the serif tagline in the logo
+artwork, with Nunito for body and UI. Both load from Google Fonts in `index.html`.
 
 Logo files live in `public/`:
 
-- `elevate-logo.svg` — violet wordmark, for light backgrounds
-- `elevate-logo-reverse.svg` — cream wordmark, for dark backgrounds
-- `favicon.svg` — the coral arrow-E mark on a violet tile
+- `elevate-logo.png` — the script wordmark, for light backgrounds
+- `elevate-logo-reverse.png` — brightened variant, because the gradient's blue end disappears on dark
+- `favicon.png` — the script capital E on a lilac tile
 
-All three are real vector, extracted from the identity PDF rather than traced or retyped. The nav
-swaps between the two wordmarks with a `<picture>` media query.
+These are raster, cut from the supplied artwork with the background removed to transparency. That
+is a downgrade from the previous vector logo: they cannot be recoloured or scaled past their source
+resolution (431x172), which is ample for the 28px nav but not for print or a large hero. If a
+vector version of the wordmark exists, swapping it in would be a straight improvement.
+
+Note the supplied artwork also carries a **"Nourished Path"** mark in the corner. That is a
+different brand name and is deliberately excluded from the logo — two brand names in one mark reads
+as confusing. If it needs crediting, the footer is the place.
 
 ### Styling
 
