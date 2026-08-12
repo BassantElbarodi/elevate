@@ -33,6 +33,36 @@ export const resources = [
     tags: ['Broad', 'Certificates'],
   },
   {
+    id: 'harvard-online',
+    title: 'Harvard Online — free courses',
+    type: 'Course',
+    cost: 'Free to audit',
+    description:
+      'Harvard publishes around 127 courses free to take, spanning computer science, data science, health, humanities and business — CS50 among them. The course itself costs nothing; only the optional certificate is paid. Registration is required, and some have enrolment deadlines.',
+    url: 'https://pll.harvard.edu/catalog/free',
+    tags: ['University level', 'Broad', 'Self-study'],
+  },
+  {
+    id: 'ibm-skillsbuild',
+    title: 'IBM SkillsBuild',
+    type: 'Course',
+    cost: 'Free',
+    description:
+      'Over 1,000 free courses in AI, cybersecurity, data analytics, cloud, and project management, aimed squarely at students. Unusually, the digital credentials are free too — you finish a guided learning path and get a badge you can put on LinkedIn without paying for it.',
+    url: 'https://skillsbuild.org/',
+    tags: ['Tech skills', 'Free credentials', 'AI'],
+  },
+  {
+    id: 'udemy',
+    title: 'Udemy',
+    type: 'Course',
+    cost: 'Paid — but rarely at list price',
+    description:
+      'A huge catalogue of practical, skills-focused courses. Two things worth knowing: Egypt is one of Udemy’s cheaper pricing regions, and sales run almost constantly — if a course shows full price, wait, because it will drop. Quality varies enormously by instructor, so check recent reviews and the last-updated date rather than the total rating.',
+    url: 'https://udemy.com/',
+    tags: ['Practical skills', 'Paid', 'Self-study'],
+  },
+  {
     id: 'tansik-portal',
     title: 'Tansik — the official admission portal',
     type: 'Reference',

@@ -37,7 +37,7 @@ src/
     majors.js         The 41 majors (Egyptian faculties)
     careers.js        The 57 career paths (Egyptian routes and pay)
     activities.js     The 29 Egyptian activities and volunteering options
-    resources.js      The 15 study resources
+    resources.js      The 18 study resources
   components/
     NavBar.jsx        Top navigation
     Footer.jsx        Site footer
