@@ -50,7 +50,39 @@ create policy "Users can update their own profile"
 -- policy. Add one only if you decide profiles should be public, and think
 -- carefully first: these are students, some of them minors.
 
--- 4. Keep updated_at honest.
+-- 4. Create the profile row automatically when an account is created.
+--
+--    The sign-up form collects name, age and academic year alongside the
+--    email and password, and passes them as user metadata. This trigger
+--    copies them into profiles the moment the account exists.
+--
+--    SECURITY DEFINER is required: the trigger runs before the new user has a
+--    session, so it has no auth.uid() to satisfy the RLS insert policy.
+create or replace function public.handle_new_user()
+returns trigger
+language plpgsql
+security definer
+set search_path = ''
+as $$
+begin
+  insert into public.profiles (id, full_name, age, academic_year)
+  values (
+    new.id,
+    coalesce(nullif(new.raw_user_meta_data ->> 'full_name', ''), 'New student'),
+    nullif(new.raw_user_meta_data ->> 'age', '')::integer,
+    nullif(new.raw_user_meta_data ->> 'academic_year', '')
+  )
+  on conflict (id) do nothing;
+  return new;
+end;
+$$;
+
+drop trigger if exists on_auth_user_created on auth.users;
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute function public.handle_new_user();
+
+-- 5. Keep updated_at honest.
 create or replace function public.touch_updated_at()
 returns trigger
 language plpgsql

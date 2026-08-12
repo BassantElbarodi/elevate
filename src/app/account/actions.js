@@ -10,7 +10,11 @@ import { createClient } from '@/lib/supabase/server'
 export async function signUp(prevState, formData) {
   const email = String(formData.get('email') || '').trim()
   const password = String(formData.get('password') || '')
+  const fullName = String(formData.get('full_name') || '').trim()
+  const academicYear = String(formData.get('academic_year') || '').trim()
+  const ageRaw = String(formData.get('age') || '').trim()
 
+  if (!fullName) return { error: 'Please enter your name.' }
   if (!email || !password) {
     return { error: 'Email and password are both required.' }
   }
@@ -18,8 +22,29 @@ export async function signUp(prevState, formData) {
     return { error: 'Use at least 8 characters for your password.' }
   }
 
+  let age = null
+  if (ageRaw !== '') {
+    age = Number(ageRaw)
+    if (!Number.isInteger(age) || age < 10 || age > 100) {
+      return { error: 'Age should be a whole number between 10 and 100.' }
+    }
+  }
+
   const supabase = await createClient()
-  const { data, error } = await supabase.auth.signUp({ email, password })
+  // The profile details ride along as user metadata. A database trigger reads
+  // them and creates the profiles row, which works whether or not email
+  // confirmation is on — at sign-up there may be no session yet to write with.
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        full_name: fullName,
+        age: age === null ? '' : String(age),
+        academic_year: academicYear,
+      },
+    },
+  })
 
   if (error) return { error: error.message }
 
