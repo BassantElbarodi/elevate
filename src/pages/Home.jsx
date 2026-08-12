@@ -24,7 +24,7 @@ const features = [
     title: 'Get involved',
     text: 'Volunteering, clubs, and competitions that test a career before you commit years to it.',
     to: '/activities',
-    cta: 'Find activities',
+    cta: 'See student activities',
   },
   {
     icon: '🛠️',
@@ -75,7 +75,8 @@ export default function Home() {
           <p style={{ margin: 0, color: 'var(--text-muted)' }}>
             Currently covering <strong style={{ color: 'var(--text)' }}>{majors.length} majors</strong>,{' '}
             <strong style={{ color: 'var(--text)' }}>{careers.length} career paths</strong>,{' '}
-            <strong style={{ color: 'var(--text)' }}>{activities.length} activities</strong>, and{' '}
+            <strong style={{ color: 'var(--text)' }}>{activities.length} student activities</strong>,{' '}
+            and{' '}
             <strong style={{ color: 'var(--text)' }}>{resources.length} study resources</strong>.
           </p>
         </div>

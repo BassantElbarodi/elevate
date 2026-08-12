@@ -22,7 +22,7 @@ export default function Activities() {
   return (
     <div className="page container">
       <header className="page-header">
-        <h1>Activities & volunteering</h1>
+        <h1>Student activities & volunteering</h1>
         <p>
           What you do outside class shapes your path as much as your grades — it is how you test a
           career before committing to it, and how you build the things a transcript can’t show.

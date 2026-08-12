@@ -170,6 +170,20 @@ a:hover {
   color: var(--accent-strong);
 }
 
+/* The nav is sticky, so every extra wrapped row costs permanent screen space
+   on a phone. Tightening the links keeps all four on a single row below the
+   brand instead of spilling onto a third. */
+@media (max-width: 520px) {
+  .nav-links {
+    gap: 0.1rem;
+  }
+
+  .nav-link {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
 /* Hero */
 .hero {
   padding-block: 4rem 3rem;
