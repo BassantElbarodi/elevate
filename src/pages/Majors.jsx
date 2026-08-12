@@ -24,10 +24,19 @@ export default function Majors() {
       <header className="page-header">
         <h1>Explore majors</h1>
         <p>
-          What each subject actually covers, what you should have under your belt before starting,
-          and where it can lead.
+          What each subject actually covers, which Thanaweya Amma branch it needs, and where it can
+          lead. Durations and faculty names follow the Egyptian public-university system.
         </p>
       </header>
+
+      <p className="note">
+        Tansik minimums shown on some majors are from the 2024/25 round and move every year. Check
+        the current figures on the{' '}
+        <a href="https://tansik.digital.gov.eg/" target="_blank" rel="noreferrer">
+          official Tansik portal
+        </a>{' '}
+        before making decisions.
+      </p>
 
       <div className="filters">
         <input

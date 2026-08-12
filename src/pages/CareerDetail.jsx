@@ -85,7 +85,7 @@ export default function CareerDetail() {
                 <dd>{career.education}</dd>
               </div>
               <div className="stat-row">
-                <dt>Pay band</dt>
+                <dt>Starting pay</dt>
                 <dd>{career.salaryRange}</dd>
               </div>
               <div className="stat-row">
@@ -94,7 +94,8 @@ export default function CareerDetail() {
               </div>
             </dl>
             <p style={{ margin: '0.75rem 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-              Placeholder figures — replace with cited data.
+              Approximate monthly gross for a fresh graduate in Egypt, 2026. Bands vary widely by
+              employer and date quickly against inflation.
             </p>
           </section>
 

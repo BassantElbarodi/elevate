@@ -30,11 +30,14 @@ export default function Careers() {
       </header>
 
       <p className="note">
-        Pay and outlook shown here are placeholder values for this project. Check the{' '}
-        <a href="https://www.bls.gov/ooh/" target="_blank" rel="noreferrer">
-          Occupational Outlook Handbook
+        Pay shown is an approximate <strong>starting monthly gross in EGP</strong> for a fresh
+        graduate in Egypt’s formal private sector, compiled in 2026. Egypt has no per-occupation pay
+        series, so treat these as bands rather than quotes — they vary widely by employer and date
+        quickly against inflation. Public-sector pay is usually lower; multinationals higher. See{' '}
+        <a href="https://www.capmas.gov.eg/" target="_blank" rel="noreferrer">
+          CAPMAS
         </a>{' '}
-        or your country’s labour statistics agency for real figures.
+        for official employment and wage statistics.
       </p>
 
       <div className="filters">

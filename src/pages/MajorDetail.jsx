@@ -99,7 +99,19 @@ export default function MajorDetail() {
                 <dt>Maths intensity</dt>
                 <dd>{major.mathIntensity}</dd>
               </div>
+              {major.tansik && (
+                <div className="stat-row">
+                  <dt>Tansik minimum</dt>
+                  <dd>{major.tansik}</dd>
+                </div>
+              )}
             </dl>
+            {major.tansik && (
+              <p style={{ margin: '0.75rem 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                Public-university cut-off from the 2024/25 round. It moves every year — check the
+                current figure on Tansik before counting on it.
+              </p>
+            )}
           </section>
 
           <section className="panel">

@@ -33,14 +33,34 @@ export const resources = [
     tags: ['Broad', 'Certificates'],
   },
   {
-    id: 'bls-ooh',
-    title: 'Occupational Outlook Handbook (US BLS)',
+    id: 'tansik-portal',
+    title: 'Tansik — the official admission portal',
     type: 'Reference',
     cost: 'Free',
     description:
-      'Government data on pay, growth, and entry requirements for hundreds of occupations. This is the source to cite when you replace the placeholder career figures in this project.',
-    url: 'https://www.bls.gov/ooh/',
+      'The government system that places Thanaweya Amma students into faculties. It publishes each year’s minimum scores per faculty, which is the number that actually decides where you can go. Check it directly rather than relying on last year’s figures.',
+    url: 'https://tansik.digital.gov.eg/',
+    tags: ['Admissions', 'Official', 'Egypt'],
+  },
+  {
+    id: 'capmas',
+    title: 'CAPMAS — Egypt’s statistics agency',
+    type: 'Reference',
+    cost: 'Free',
+    description:
+      'Official Egyptian data on employment, wages, and unemployment. Wages are published by economic activity rather than by job title, so it gives you sector direction rather than a figure for one specific role.',
+    url: 'https://www.capmas.gov.eg/',
     tags: ['Careers', 'Data', 'Citations'],
+  },
+  {
+    id: 'ekb',
+    title: 'Egyptian Knowledge Bank (EKB)',
+    type: 'Reference',
+    cost: 'Free',
+    description:
+      'A national digital library giving every Egyptian free access to journals, databases, and study material using your National ID. It is one of the most underused resources available to Egyptian students.',
+    url: 'https://www.ekb.eg/',
+    tags: ['Research', 'Egypt', 'Library'],
   },
   {
     id: 'pomodoro',
@@ -83,14 +103,24 @@ export const resources = [
     tags: ['Note-taking', 'Lectures'],
   },
   {
-    id: 'fafsa',
-    title: 'FAFSA — US federal student aid',
+    id: 'nti-dey',
+    title: 'NTI — Digital Egypt Youth scholarships',
     type: 'Funding',
     cost: 'Free',
     description:
-      'The application that determines eligibility for US federal grants and loans. Deadlines are strict and some aid is first-come, so apply as early as the window opens.',
-    url: 'https://studentaid.gov/h/apply-for-aid/fafsa',
-    tags: ['Funding', 'Scholarships', 'US'],
+      'The National Telecommunication Institute runs fully funded training tracks in cybersecurity, networks, and cloud, plus free summer training for undergraduates. Competitive, but genuinely free and recognised by employers.',
+    url: 'https://www.nti.sci.eg/',
+    tags: ['Funding', 'Tech skills', 'Egypt'],
+  },
+  {
+    id: 'itida-training',
+    title: 'ITIDA free tech scholarships',
+    type: 'Funding',
+    cost: 'Free',
+    description:
+      'Egypt’s IT Industry Development Agency funds large-scale online scholarships in web development, data analytics, and digital marketing. Worth watching if you want tech skills without paying for a bootcamp.',
+    url: 'https://itida.gov.eg/',
+    tags: ['Funding', 'Tech skills', 'Egypt'],
   },
   {
     id: 'scholarship-search',
@@ -98,8 +128,8 @@ export const resources = [
     type: 'Funding',
     cost: 'Free',
     description:
-      'Start with your own school and local community foundations before national databases — smaller pools mean far better odds per application.',
-    url: 'https://bigfuture.collegeboard.org/pay-for-college/scholarship-search',
+      'Start with your own faculty’s student affairs office and local foundations before national or international databases — smaller pools mean far better odds per application.',
+    url: 'https://www.scholarshiptab.com/scholarships-for/egypt',
     tags: ['Funding', 'Scholarships'],
   },
   {

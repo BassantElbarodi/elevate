@@ -34,10 +34,10 @@ src/
   App.jsx             Layout shell and all route definitions
   index.css           Design tokens and every style in the app
   data/
-    majors.js         The 36 majors
-    careers.js        The 57 career paths
+    majors.js         The 41 majors (Egyptian faculties)
+    careers.js        The 57 career paths (Egyptian routes and pay)
     activities.js     The 24 activities and volunteering options
-    resources.js      The 12 study resources
+    resources.js      The 15 study resources
   components/
     NavBar.jsx        Top navigation
     Footer.jsx        Site footer
@@ -115,19 +115,49 @@ One gotcha: `.page`, `.hero`, and `.nav-inner` are used together with `.containe
 `padding-block` rather than the `padding` shorthand. Using the shorthand there would reset the
 container's horizontal padding and push content flush against the screen edge.
 
-## Before you submit this
+## Data: Egypt
 
-The dataset is sample content written to demonstrate the site, not researched fact. In particular
-**the pay bands and job outlooks in `src/data/careers.js` are placeholders** — the file says so in a
-comment, and the careers page shows a note to that effect.
+The dataset targets the **Egyptian** system, compiled August 2026.
 
-Replace them with real, cited figures before presenting this as an information source:
+Majors use Egyptian public-university faculties, their real durations (4 years for most, 5 for
+engineering, pharmacy, dentistry and veterinary medicine, 5–6 plus an internship year for medicine),
+and the Thanaweya Amma branch each one requires — Science (علمي علوم), Maths (علمي رياضة), or
+Literature (أدبي). Medicine, Dentistry, Pharmacy, Physical Therapy and Veterinary Medicine are
+listed as majors because in Egypt they are entered **directly** from Thanaweya Amma, not after a
+science degree.
 
-- US — [Occupational Outlook Handbook](https://www.bls.gov/ooh/) (Bureau of Labor Statistics)
-- elsewhere — your own country's labour statistics agency
+Careers use Egyptian entry routes, including the professional syndicates that actually gate
+practice — Engineers, Medical, Pharmacists, Veterinary, and the Bar Association.
 
-The same goes for course lists and prerequisites: check them against a real course catalogue for
-whichever institution you're writing about.
+### What the numbers mean, and what they don't
+
+`tansik` is the public-university minimum from the **2024/25** round. It moves every year; the
+current figures are on the [official Tansik portal](https://tansik.digital.gov.eg/).
+
+`salaryRange` is an **approximate starting monthly gross in EGP** for a fresh graduate in the formal
+private sector. Read it as a band, not a quote.
+
+This is the weakest data in the project and it is worth being honest about why. **Egypt has no
+per-occupation pay series equivalent to the US BLS handbook.** [CAPMAS](https://www.capmas.gov.eg/)
+publishes wages by economic activity rather than by job title, so no official source gives a figure
+for "civil engineer" the way the BLS does. The bands here are therefore compiled from job-market
+aggregators and sector reporting, cross-checked against CAPMAS averages — they are directional, not
+authoritative. They also age fast against EGP inflation, and public-sector pay generally sits below
+them while multinationals and USD-paying employers sit above.
+
+If you need a defensible figure for a specific role, check current listings on Wuzzuf or Bayt and
+cite the date you looked.
+
+### Sources
+
+- [Tansik](https://tansik.digital.gov.eg/) — official admission portal and minimum scores
+- [CAPMAS](https://www.capmas.gov.eg/) — employment, wages, and unemployment statistics
+- [Ahram Online](https://english.ahram.org.eg/) — reporting on 2024/25 Tansik cut-offs
+- [ITIDA](https://itida.gov.eg/) and [NTI](https://www.nti.sci.eg/) — ICT sector growth, free training
+- [Egyptian Knowledge Bank](https://www.ekb.eg/) — national digital library
+
+Course lists remain generic to each subject — check them against the specific faculty's catalogue
+before presenting them as that faculty's curriculum.
 
 ## Deploying
 

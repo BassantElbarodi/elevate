@@ -1,7 +1,13 @@
-// Sample dataset — the salary and outlook fields are ILLUSTRATIVE placeholders,
-// not sourced figures. Before you publish or submit this, replace them with real
-// data and cite the source (e.g. the US Bureau of Labor Statistics Occupational
-// Outlook Handbook, or your own country's labour statistics agency).
+// Egypt-focused career data (compiled August 2026).
+//
+// `salaryRange` is an APPROXIMATE starting monthly gross in EGP for a fresh
+// graduate in the formal private sector. Treat it as a band, not a quote.
+// Egypt has no per-occupation pay series equivalent to the US BLS handbook —
+// CAPMAS publishes wages by economic activity, not by job title — so these
+// bands are compiled from job-market aggregators and sector reporting, and
+// they age quickly against EGP inflation. Public-sector and syndicate-scale
+// pay is generally lower; multinationals and USD-paying employers, higher.
+// Re-check before relying on any figure. Sources are listed in the README.
 //
 // `majorIds` is the single source of truth for how majors and careers connect.
 // Each id must match an entry in ./majors.js — major pages read this field to
@@ -16,9 +22,9 @@ const careerList = [
     blurb: 'Design, build, and maintain software systems.',
     description:
       'Software engineers write and maintain the code behind applications, services, and infrastructure. Day to day is less solo coding than most people expect — a lot of it is reading existing code, reviewing teammates’ work, and deciding what to build.',
-    education: "Bachelor's degree, or a strong self-taught portfolio",
-    salaryRange: '$$$',
-    outlook: 'Growing',
+    education: "Faculty of Computers & AI or Engineering — or a strong self-taught portfolio",
+    salaryRange: 'EGP 10–20k',
+    outlook: 'Growing fast',
     dayToDay: [
       'Writing and reviewing code',
       'Breaking features into smaller tasks',
@@ -36,8 +42,8 @@ const careerList = [
     blurb: 'Take models out of notebooks and into production systems.',
     description:
       'ML engineers sit between data science and software engineering: they train models, then handle the harder half of the job — serving them reliably, monitoring for drift, and retraining when performance decays.',
-    education: "Bachelor's minimum; Master's common",
-    salaryRange: '$$$$',
+    education: "Computers & AI or Engineering; postgraduate study common",
+    salaryRange: 'EGP 15–30k',
     outlook: 'Growing fast',
     dayToDay: [
       'Building training and evaluation pipelines',
@@ -56,8 +62,8 @@ const careerList = [
     blurb: 'Answer business or research questions using data and models.',
     description:
       'Data scientists clean and analyse data, build models, and translate results into recommendations. Most of the job is data preparation and framing the right question — modelling is a smaller slice than the job title suggests.',
-    education: "Bachelor's minimum; Master's common",
-    salaryRange: '$$$',
+    education: "Computers & AI, Science (Statistics), or Engineering",
+    salaryRange: 'EGP 12–25k',
     outlook: 'Growing fast',
     dayToDay: [
       'Cleaning and joining datasets',
@@ -76,8 +82,8 @@ const careerList = [
     blurb: 'Protect systems and data from attacks and misuse.',
     description:
       'Security analysts monitor systems for threats, investigate incidents, and harden infrastructure. The field values certifications and hands-on labs alongside a degree.',
-    education: "Bachelor's degree plus certifications (e.g. Security+)",
-    salaryRange: '$$$',
+    education: "Computers & AI or Engineering, plus certifications — NTI runs free tracks",
+    salaryRange: 'EGP 12–22k',
     outlook: 'Growing fast',
     dayToDay: [
       'Monitoring alerts and logs',
@@ -96,9 +102,9 @@ const careerList = [
     blurb: 'Build the infrastructure and pipelines other engineers ship on.',
     description:
       'DevOps engineers automate how software gets built, tested, and deployed, and keep the cloud infrastructure underneath it healthy. When it works, nobody notices — which is both the appeal and the frustration of the role.',
-    education: "Bachelor's degree or certifications plus experience",
-    salaryRange: '$$$',
-    outlook: 'Growing',
+    education: "Computers & AI or Engineering, plus cloud certifications",
+    salaryRange: 'EGP 15–30k',
+    outlook: 'Growing fast',
     dayToDay: [
       'Maintaining CI/CD pipelines',
       'Managing cloud infrastructure as code',
@@ -116,8 +122,8 @@ const careerList = [
     blurb: 'Build the code and systems behind video games.',
     description:
       'Game developers work on engines, gameplay systems, graphics, and tooling. The work is genuinely creative and famously competitive — expect long hours in some studios, and expect your portfolio of finished games to matter more than your transcript.',
-    education: "Bachelor's degree or a portfolio of shipped projects",
-    salaryRange: '$$',
+    education: "Computers & AI, or a portfolio of shipped projects",
+    salaryRange: 'EGP 8–16k',
     outlook: 'Competitive',
     dayToDay: [
       'Implementing gameplay mechanics',
@@ -136,9 +142,9 @@ const careerList = [
     blurb: 'Find the problems before users do.',
     description:
       'QA engineers design test strategies, automate regression suites, and probe software for the edge cases developers did not consider. It is a common and underrated entry point into software teams.',
-    education: "Bachelor's degree or equivalent experience",
-    salaryRange: '$$',
-    outlook: 'Stable',
+    education: "Computers & AI, or any technical degree",
+    salaryRange: 'EGP 8–15k',
+    outlook: 'Growing',
     dayToDay: [
       'Writing automated test suites',
       'Exploratory testing of new features',
@@ -156,8 +162,8 @@ const careerList = [
     blurb: 'Design and test physical products and mechanical systems.',
     description:
       'Mechanical engineers model, simulate, and test physical designs, then work with manufacturing to produce them. Roles span automotive, aerospace, energy, robotics, and medical devices.',
-    education: "Bachelor's degree; licensure (PE) for some roles",
-    salaryRange: '$$',
+    education: "Faculty of Engineering (5 yrs) + Engineers Syndicate registration",
+    salaryRange: 'EGP 7–13k',
     outlook: 'Stable',
     dayToDay: [
       'CAD modelling and revisions',
@@ -176,8 +182,8 @@ const careerList = [
     blurb: 'Combine mechanics, electronics, and code into machines that move.',
     description:
       'Robotics sits at the intersection of mechanical design, control theory, and software. Expect to work across all three rather than specialising early, and expect a lot of time debugging the gap between simulation and the real world.',
-    education: "Bachelor's degree; Master's common",
-    salaryRange: '$$$',
+    education: "Faculty of Engineering (5 yrs) + Engineers Syndicate",
+    salaryRange: 'EGP 9–16k',
     outlook: 'Growing',
     dayToDay: [
       'Designing mechanisms and actuators',
@@ -196,9 +202,9 @@ const careerList = [
     blurb: 'Design aircraft, spacecraft, and the systems that keep them flying.',
     description:
       'Aerospace engineers work on aerodynamics, propulsion, structures, and avionics. Safety margins and certification requirements shape everything, so the pace is deliberate and the documentation burden is heavy.',
-    education: "Bachelor's degree; security clearance for some roles",
-    salaryRange: '$$$',
-    outlook: 'Stable',
+    education: "Faculty of Engineering (5 yrs) + Engineers Syndicate; few employers locally",
+    salaryRange: 'EGP 8–15k',
+    outlook: 'Competitive',
     dayToDay: [
       'Aerodynamic and structural analysis',
       'Running simulations against design limits',
@@ -216,8 +222,8 @@ const careerList = [
     blurb: 'Apply engineering to medical devices and clinical problems.',
     description:
       'Biomedical engineers design prosthetics, imaging equipment, implants, and diagnostic devices. The work is heavily regulated — understanding the approval process matters as much as the engineering itself.',
-    education: "Bachelor's degree; Master's for many roles",
-    salaryRange: '$$$',
+    education: "Faculty of Engineering, biomedical branch (5 yrs) + Engineers Syndicate",
+    salaryRange: 'EGP 8–15k',
     outlook: 'Growing',
     dayToDay: [
       'Designing and prototyping devices',
@@ -236,8 +242,8 @@ const careerList = [
     blurb: 'Clinical roles spanning medicine, nursing, and allied health.',
     description:
       'A broad category covering physicians, nurses, therapists, and technicians. Paths differ sharply in length and cost — nursing can start in 2–4 years, while medicine takes a decade or more including residency.',
-    education: 'Varies widely: 2 years to 10+ years post-secondary',
-    salaryRange: '$$–$$$$',
+    education: "Faculty of Medicine (6 yrs + internship) or Nursing (4 yrs), then syndicate registration",
+    salaryRange: 'EGP 7–20k',
     outlook: 'Growing',
     dayToDay: [
       'Direct patient care',
@@ -246,7 +252,7 @@ const careerList = [
       'Continuing education and recertification',
     ],
     skills: ['Clinical knowledge', 'Communication', 'Composure under pressure', 'Ethics'],
-    majorIds: ['biology', 'psychology', 'nursing', 'public-health', 'nutrition-dietetics'],
+    majorIds: ['biology', 'psychology', 'nursing', 'public-health', 'nutrition-dietetics', 'medicine'],
   },
   {
     id: 'pharmacist',
@@ -255,9 +261,9 @@ const careerList = [
     field: 'Health',
     blurb: 'Dispense medication and advise on safe, effective drug use.',
     description:
-      'Pharmacists check prescriptions for interactions and dosing errors, counsel patients, and increasingly deliver vaccinations and screenings. It requires a doctoral degree (PharmD) and licensure in most countries.',
-    education: 'PharmD (typically 6–8 years total) plus licensure',
-    salaryRange: '$$$',
+      'Pharmacists check prescriptions for interactions and dosing errors and counsel patients. In Egypt the route is the five-year Faculty of Pharmacy plus Pharmacists Syndicate registration, and a large share of graduates go into pharmaceutical manufacturing rather than a pharmacy counter.',
+    education: "Faculty of Pharmacy (5 yrs) + Pharmacists Syndicate registration",
+    salaryRange: 'EGP 8–15k',
     outlook: 'Stable',
     dayToDay: [
       'Reviewing and dispensing prescriptions',
@@ -266,7 +272,7 @@ const careerList = [
       'Managing inventory and records',
     ],
     skills: ['Pharmacology', 'Precision', 'Patient communication', 'Ethics'],
-    majorIds: ['biology', 'chemistry'],
+    majorIds: ['biology', 'chemistry', 'pharmacy'],
   },
   {
     id: 'physical-therapist',
@@ -276,8 +282,8 @@ const careerList = [
     blurb: 'Help people recover movement and manage pain after injury or illness.',
     description:
       'Physical therapists assess movement, design rehabilitation programmes, and coach patients through recovery. It is hands-on, relationship-driven work, and requires a doctoral degree in many countries.',
-    education: 'DPT or equivalent, plus licensure',
-    salaryRange: '$$$',
+    education: "Faculty of Physical Therapy (5 yrs) + registration",
+    salaryRange: 'EGP 7–13k',
     outlook: 'Growing',
     dayToDay: [
       'Assessing patient mobility and pain',
@@ -286,7 +292,7 @@ const careerList = [
       'Documenting progress for insurers',
     ],
     skills: ['Anatomy', 'Motivational coaching', 'Manual technique', 'Patience'],
-    majorIds: ['biology', 'psychology', 'nursing'],
+    majorIds: ['biology', 'psychology', 'nursing', 'physical-therapy'],
   },
   {
     id: 'clinical-psychologist',
@@ -296,8 +302,8 @@ const careerList = [
     blurb: 'Assess and treat mental health conditions.',
     description:
       'Clinical psychologists diagnose and treat psychological disorders through assessment and therapy. This is the licensed clinical route — it requires doctoral study and supervised practice hours, so plan for a long runway.',
-    education: 'PhD or PsyD plus supervised hours and licensure',
-    salaryRange: '$$$',
+    education: "Psychology degree + postgraduate clinical diploma or MA",
+    salaryRange: 'EGP 7–14k',
     outlook: 'Growing',
     dayToDay: [
       'Running therapy sessions',
@@ -316,8 +322,8 @@ const careerList = [
     blurb: 'Track how disease spreads through populations, and why.',
     description:
       'Epidemiologists design population studies, analyse outbreak data, and advise public health policy. It combines biology with heavy statistics — the analysis skills transfer directly from a data background.',
-    education: "Master's (MPH) minimum; PhD for research leadership",
-    salaryRange: '$$$',
+    education: "Medicine or Science, then a public health postgraduate",
+    salaryRange: 'EGP 10–18k',
     outlook: 'Growing',
     dayToDay: [
       'Designing population studies',
@@ -326,7 +332,7 @@ const careerList = [
       'Briefing public health officials',
     ],
     skills: ['Biostatistics', 'Study design', 'Data analysis', 'Scientific writing'],
-    majorIds: ['biology', 'data-science', 'public-health', 'nursing', 'mathematics'],
+    majorIds: ['biology', 'data-science', 'public-health', 'nursing', 'mathematics', 'medicine'],
   },
   {
     id: 'research-scientist',
@@ -336,8 +342,8 @@ const careerList = [
     blurb: 'Run studies that produce new knowledge in academia or industry.',
     description:
       'Research scientists design experiments, analyse results, and publish findings. Academic tracks usually require a PhD; industry research labs sometimes hire at Master’s level.',
-    education: "Master's or PhD for most positions",
-    salaryRange: '$$–$$$',
+    education: "Faculty of Science + MSc/PhD; university or research-institute post",
+    salaryRange: 'EGP 7–14k',
     outlook: 'Stable',
     dayToDay: [
       'Designing and running experiments',
@@ -346,7 +352,7 @@ const careerList = [
       'Presenting at conferences',
     ],
     skills: ['Experimental design', 'Statistics', 'Technical writing', 'Persistence'],
-    majorIds: ['biology', 'data-science', 'psychology', 'environmental-science', 'mechanical-engineering', 'physics', 'chemistry', 'mathematics', 'economics', 'sociology', 'political-science', 'civil-engineering', 'electrical-engineering', 'chemical-engineering', 'anthropology', 'geology', 'philosophy'],
+    majorIds: ['biology', 'data-science', 'psychology', 'environmental-science', 'mechanical-engineering', 'physics', 'chemistry', 'mathematics', 'economics', 'sociology', 'political-science', 'civil-engineering', 'electrical-engineering', 'chemical-engineering', 'anthropology', 'geology', 'philosophy', 'medicine', 'pharmacy'],
   },
   {
     id: 'bioinformatics-scientist',
@@ -356,9 +362,9 @@ const careerList = [
     blurb: 'Analyse genetic and biological data at a scale no lab bench can handle.',
     description:
       'Bioinformaticians write code to process genomic and molecular datasets, searching for patterns that drive drug discovery and diagnostics. It is a genuine hybrid role — you need real biology and real programming.',
-    education: "Master's common; PhD for research roles",
-    salaryRange: '$$$',
-    outlook: 'Growing fast',
+    education: "Science or Computers & AI + postgraduate study",
+    salaryRange: 'EGP 10–20k',
+    outlook: 'Growing',
     dayToDay: [
       'Building genomic analysis pipelines',
       'Interpreting sequencing results',
@@ -366,7 +372,7 @@ const careerList = [
       'Maintaining reproducible workflows',
     ],
     skills: ['Python or R', 'Genomics', 'Statistics', 'Pipeline engineering'],
-    majorIds: ['biology', 'data-science', 'computer-science', 'mathematics'],
+    majorIds: ['biology', 'data-science', 'computer-science', 'mathematics', 'pharmacy'],
   },
   {
     id: 'conservation-scientist',
@@ -376,8 +382,8 @@ const careerList = [
     blurb: 'Manage and protect natural habitats, forests, and wildlife.',
     description:
       'Conservation scientists survey ecosystems, plan land management, and work with landowners and agencies on protection strategies. Expect a genuine mix of fieldwork and negotiation.',
-    education: "Bachelor's degree; Master's for senior roles",
-    salaryRange: '$$',
+    education: "Faculty of Science (ecology or environmental branch)",
+    salaryRange: 'EGP 6–11k',
     outlook: 'Stable',
     dayToDay: [
       'Surveying habitats and species populations',
@@ -396,8 +402,8 @@ const careerList = [
     blurb: 'Assess environmental impact and advise on remediation or policy.',
     description:
       'Environmental scientists collect field samples, analyse contamination and ecosystem data, and write assessments used by regulators and companies. Consulting is the largest employer.',
-    education: "Bachelor's degree; Master's for senior roles",
-    salaryRange: '$$',
+    education: "Faculty of Science (environmental) or Engineering",
+    salaryRange: 'EGP 7–13k',
     outlook: 'Growing',
     dayToDay: [
       'Field sampling and site visits',
@@ -416,8 +422,8 @@ const careerList = [
     blurb: 'Shape how cities grow — land use, transport, and housing.',
     description:
       'Urban planners evaluate development proposals, model land use, and balance competing demands from residents, developers, and government. Public meetings are a real and often difficult part of the job.',
-    education: "Bachelor's minimum; Master's (MUP) common",
-    salaryRange: '$$',
+    education: "Faculty of Regional & Urban Planning, or Engineering (architecture)",
+    salaryRange: 'EGP 7–13k',
     outlook: 'Growing',
     dayToDay: [
       'Reviewing development proposals',
@@ -436,8 +442,8 @@ const careerList = [
     blurb: 'Bridge business needs and technical or operational solutions.',
     description:
       'Business analysts gather requirements, map processes, and use data to recommend changes. It is a common entry point into both consulting and product roles.',
-    education: "Bachelor's degree",
-    salaryRange: '$$',
+    education: "Faculty of Commerce, Economics, or Business Information Systems",
+    salaryRange: 'EGP 9–17k',
     outlook: 'Growing',
     dayToDay: [
       'Interviewing stakeholders',
@@ -456,8 +462,8 @@ const careerList = [
     blurb: 'Decide what a product should do, and why, and in what order.',
     description:
       'Product managers set direction by weighing user needs, business goals, and engineering cost. They have responsibility without direct authority, so persuasion and clear reasoning matter more than any technical skill.',
-    education: "Bachelor's degree; usually entered after another role",
-    salaryRange: '$$$$',
+    education: "Any degree; usually entered after engineering, design, or analyst work",
+    salaryRange: 'EGP 18–35k',
     outlook: 'Growing',
     dayToDay: [
       'Talking to users about their problems',
@@ -475,9 +481,9 @@ const careerList = [
     field: 'Business',
     blurb: 'Prepare, audit, and interpret financial records.',
     description:
-      'Accountants handle financial reporting, tax, and audit. It is one of the most reliably employable business paths, and professional certification (CPA, ACCA, or local equivalent) drives most of the salary progression.',
-    education: "Bachelor's degree plus professional certification",
-    salaryRange: '$$',
+      'Accountants handle financial reporting, tax, and audit. It is one of the most reliably employable paths out of Faculty of Commerce, and professional certification — ESAA locally, or ACCA/CMA internationally — drives most of the salary progression.',
+    education: "Faculty of Commerce (accounting); ESAA, ACCA or CMA raises the ceiling",
+    salaryRange: 'EGP 7–14k',
     outlook: 'Stable',
     dayToDay: [
       'Preparing financial statements',
@@ -496,8 +502,8 @@ const careerList = [
     blurb: 'Evaluate investments, budgets, and company performance.',
     description:
       'Financial analysts build models, value companies or projects, and recommend where money should go. The hours in investment banking and private equity are notoriously long; corporate finance roles are far more moderate.',
-    education: "Bachelor's degree; CFA or MBA for advancement",
-    salaryRange: '$$$',
+    education: "Faculty of Commerce or Economics; CFA for advancement",
+    salaryRange: 'EGP 10–20k',
     outlook: 'Growing',
     dayToDay: [
       'Building and stress-testing financial models',
@@ -516,8 +522,8 @@ const careerList = [
     blurb: 'Price risk mathematically for insurance and pensions.',
     description:
       'Actuaries model the likelihood and cost of future events to set premiums and reserves. Entry is through a long series of professional exams taken while working — the exams, not the degree, gate progression.',
-    education: "Bachelor's degree plus professional exam series",
-    salaryRange: '$$$$',
+    education: "Commerce (insurance/actuarial) or Science (maths), plus professional exams",
+    salaryRange: 'EGP 12–25k',
     outlook: 'Growing',
     dayToDay: [
       'Building risk and pricing models',
@@ -536,8 +542,8 @@ const careerList = [
     blurb: 'Recruit, develop, and support the people inside an organisation.',
     description:
       'HR specialists handle hiring, onboarding, performance processes, and employee relations. A psychology background transfers well, since the work is fundamentally about behaviour, motivation, and fair process.',
-    education: "Bachelor's degree",
-    salaryRange: '$$',
+    education: "Faculty of Commerce, Arts, or Business Administration",
+    salaryRange: 'EGP 7–13k',
     outlook: 'Stable',
     dayToDay: [
       'Screening and interviewing candidates',
@@ -556,8 +562,8 @@ const careerList = [
     blurb: 'Keep goods moving from supplier to customer, on time and on budget.',
     description:
       'Supply chain managers plan procurement, inventory, and logistics. The role became far more visible after recent global disruptions, and it rewards people who like optimising systems under real-world constraints.',
-    education: "Bachelor's degree",
-    salaryRange: '$$$',
+    education: "Commerce or Engineering; Suez Canal logistics drives demand",
+    salaryRange: 'EGP 10–20k',
     outlook: 'Growing',
     dayToDay: [
       'Forecasting demand and inventory needs',
@@ -576,9 +582,9 @@ const careerList = [
     blurb: 'Plan and run campaigns that reach and convert an audience.',
     description:
       'Marketing managers set strategy, run campaigns, and measure results. The role has become far more data-driven — comfort with analytics is now close to mandatory.',
-    education: "Bachelor's degree",
-    salaryRange: '$$–$$$',
-    outlook: 'Stable',
+    education: "Commerce, Mass Communication, or Business Administration",
+    salaryRange: 'EGP 9–18k',
+    outlook: 'Growing',
     dayToDay: [
       'Planning campaigns and budgets',
       'Reviewing performance metrics',
@@ -596,7 +602,7 @@ const careerList = [
     blurb: 'Start and grow your own venture.',
     description:
       'Founders do whatever the business needs — sales, product, hiring, finance. There is no required credential, but the risk profile is very different from employment, and most ventures do not succeed.',
-    education: 'No formal requirement',
+    education: "No formal requirement",
     salaryRange: 'Highly variable',
     outlook: 'Variable',
     dayToDay: [
@@ -616,8 +622,8 @@ const careerList = [
     blurb: 'Design how products look, feel, and work for their users.',
     description:
       'Product designers move between research, wireframing, visual design, and testing. Hiring is portfolio-first: a few well-explained case studies matter more than credentials.',
-    education: "Bachelor's or portfolio-based entry",
-    salaryRange: '$$–$$$',
+    education: "Faculty of Applied Arts or Fine Arts, or portfolio-based entry",
+    salaryRange: 'EGP 9–18k',
     outlook: 'Growing',
     dayToDay: [
       'Sketching and prototyping flows',
@@ -636,8 +642,8 @@ const careerList = [
     blurb: 'Study how people actually use products, and feed that back to teams.',
     description:
       'UX researchers plan studies, interview users, and synthesise findings into recommendations. A psychology or social science background transfers directly, since the core skill is research methods.',
-    education: "Bachelor's; Master's common",
-    salaryRange: '$$–$$$',
+    education: "Psychology, Arts, or Applied Arts; postgraduate study helps",
+    salaryRange: 'EGP 9–17k',
     outlook: 'Growing',
     dayToDay: [
       'Recruiting and interviewing participants',
@@ -656,8 +662,8 @@ const careerList = [
     blurb: 'Bring visuals to life for film, games, and interfaces.',
     description:
       'Animators create movement — character animation, motion graphics, or interface transitions. Like most creative fields, work is won on showreel quality, and freelance or studio contract work is common.',
-    education: 'Portfolio and showreel; degree optional',
-    salaryRange: '$$',
+    education: "Applied or Fine Arts, or a strong showreel",
+    salaryRange: 'EGP 6–13k',
     outlook: 'Competitive',
     dayToDay: [
       'Storyboarding sequences',
@@ -676,9 +682,9 @@ const careerList = [
     blurb: 'Explain complex systems clearly to the people who have to use them.',
     description:
       'Technical writers produce documentation, API references, and guides. It suits people who are technical enough to understand a system and patient enough to explain it properly — a rarer combination than it sounds.',
-    education: "Bachelor's degree in any field, plus writing samples",
-    salaryRange: '$$',
-    outlook: 'Stable',
+    education: "Al-Alsun, Arts, or a technical degree, plus writing samples",
+    salaryRange: 'EGP 9–16k',
+    outlook: 'Growing',
     dayToDay: [
       'Interviewing engineers about features',
       'Writing and updating documentation',
@@ -696,8 +702,8 @@ const careerList = [
     blurb: 'Teach a subject you love to the next group of students.',
     description:
       'Teachers plan lessons, deliver them, assess learning, and manage a classroom. Subject knowledge is the easy part — the craft is in pacing, behaviour management, and noticing which student has quietly stopped following.',
-    education: "Bachelor's degree plus teaching qualification and licensure",
-    salaryRange: '$$',
+    education: "Faculty of Education (4 yrs), or a subject degree plus an educational diploma",
+    salaryRange: 'EGP 5–11k',
     outlook: 'Stable',
     dayToDay: [
       'Planning and delivering lessons',
@@ -716,8 +722,8 @@ const careerList = [
     blurb: 'Support vulnerable people and connect them to services.',
     description:
       'Social workers assess need, coordinate care, and advocate for clients across child protection, healthcare, and community settings. The work matters enormously and carries a real emotional load — supervision and boundaries are part of the job.',
-    education: "Bachelor's (BSW) or Master's (MSW) plus licensure",
-    salaryRange: '$$',
+    education: "Faculty of Social Work (4 yrs)",
+    salaryRange: 'EGP 5–9k',
     outlook: 'Growing',
     dayToDay: [
       'Assessing client needs and risk',
@@ -735,9 +741,9 @@ const careerList = [
     field: 'Law',
     blurb: 'Advise on, negotiate, and argue matters of law.',
     description:
-      'Lawyers research legal questions, draft documents, and represent clients. Far less of it happens in courtrooms than television suggests — most of the work is reading, writing, and negotiating.',
-    education: 'Law degree plus bar admission or equivalent',
-    salaryRange: '$$$–$$$$',
+      'Lawyers research legal questions, draft documents, and represent clients. Egyptian practice is gated by Bar Association registration, and the grade of court you may appear before rises with your years of registration. Far less of it happens in courtrooms than television suggests.',
+    education: "Faculty of Law (4 yrs) + Bar Association registration",
+    salaryRange: 'EGP 6–15k',
     outlook: 'Stable',
     dayToDay: [
       'Researching case law and precedent',
@@ -756,8 +762,8 @@ const careerList = [
     blurb: 'Design and maintain the networks everything else runs over.',
     description:
       'Network engineers plan, configure, and troubleshoot the routing, switching, and connectivity that organisations depend on. Vendor certifications carry real weight here — often more than the degree itself.',
-    education: "Bachelor's degree or certifications (CCNA and up)",
-    salaryRange: '$$$',
+    education: "Computers & AI or Engineering, or NTI networking tracks plus certifications",
+    salaryRange: 'EGP 10–20k',
     outlook: 'Stable',
     dayToDay: [
       'Configuring routers, switches, and firewalls',
@@ -776,8 +782,8 @@ const careerList = [
     blurb: 'Keep an organisation’s people and machines working.',
     description:
       'IT support diagnoses hardware, software, and account problems, and is one of the most accessible entry points into technology — many infrastructure and security careers start at a help desk.',
-    education: 'Certifications or associate degree; degree optional',
-    salaryRange: '$',
+    education: "Diploma or NTI training plus certifications; degree optional",
+    salaryRange: 'EGP 6–10k',
     outlook: 'Stable',
     dayToDay: [
       'Resolving support tickets',
@@ -795,9 +801,9 @@ const careerList = [
     field: 'Engineering',
     blurb: 'Design infrastructure that has to stand for decades and fail safely.',
     description:
-      'Civil engineers design bridges, buildings, roads, and water systems, then oversee their construction. Public safety duties are legally binding, so professional licensure genuinely gates the senior work.',
-    education: "Bachelor's degree; PE licensure for senior roles",
-    salaryRange: '$$$',
+      'Civil engineers design bridges, buildings, roads, and water systems, then oversee their construction. Egypt’s large infrastructure and new-city programmes keep demand steady, and Engineers Syndicate consultancy grades gate the senior design work.',
+    education: "Faculty of Engineering (5 yrs) + Engineers Syndicate; consultancy grades come later",
+    salaryRange: 'EGP 7–14k',
     outlook: 'Growing',
     dayToDay: [
       'Running structural calculations',
@@ -816,8 +822,8 @@ const careerList = [
     blurb: 'Turn reactions that work in a flask into industrial-scale processes.',
     description:
       'Chemical engineers design and optimise production processes across pharmaceuticals, energy, food, and materials. Safety analysis is a permanent part of the job, because the failure modes at industrial scale are severe.',
-    education: "Bachelor's degree; chartered status for senior roles",
-    salaryRange: '$$$',
+    education: "Faculty of Engineering (5 yrs) + Engineers Syndicate",
+    salaryRange: 'EGP 9–18k',
     outlook: 'Stable',
     dayToDay: [
       'Modelling and optimising process flows',
@@ -836,8 +842,8 @@ const careerList = [
     blurb: 'Design buildings that work as spaces, structures, and legal documents.',
     description:
       'Architects develop designs from brief to construction drawings, balancing client wishes against budget, code, and physics. Licensure takes years of logged practice after the degree, so treat the timeline realistically.',
-    education: 'Accredited degree, logged experience, and licensure exams',
-    salaryRange: '$$',
+    education: "Faculty of Engineering, architecture branch (5 yrs) + Engineers Syndicate",
+    salaryRange: 'EGP 7–14k',
     outlook: 'Stable',
     dayToDay: [
       'Developing designs and drawings',
@@ -856,9 +862,9 @@ const careerList = [
     blurb: 'Diagnose and treat animals, from pets to livestock.',
     description:
       'Veterinary medicine is as academically demanding as human medicine and admission is famously competitive. Practice spans companion animals, farm work, and public health, and the emotional side — including euthanasia — is a real part of the role.',
-    education: 'Veterinary degree (DVM/BVSc) plus licensure',
-    salaryRange: '$$$',
-    outlook: 'Growing',
+    education: "Faculty of Veterinary Medicine (5 yrs) + Veterinary Syndicate",
+    salaryRange: 'EGP 6–12k',
+    outlook: 'Stable',
     dayToDay: [
       'Examining and diagnosing animals',
       'Performing surgery and procedures',
@@ -866,7 +872,7 @@ const careerList = [
       'Handling emergencies on call',
     ],
     skills: ['Clinical diagnosis', 'Surgical technique', 'Animal handling', 'Emotional resilience'],
-    majorIds: ['biology'],
+    majorIds: ['biology', 'veterinary-medicine'],
   },
   {
     id: 'dentist',
@@ -876,8 +882,8 @@ const careerList = [
     blurb: 'Diagnose and treat oral health, with a strong practical craft element.',
     description:
       'Dentistry combines clinical diagnosis with fine manual work, and many dentists eventually run their own practice — which makes it a business as well as a clinical career. Entry is competitive and the training is long.',
-    education: 'Dental degree (DDS/DMD/BDS) plus licensure',
-    salaryRange: '$$$$',
+    education: "Faculty of Dentistry (5 yrs + internship) + syndicate registration",
+    salaryRange: 'EGP 8–18k',
     outlook: 'Growing',
     dayToDay: [
       'Examining patients and reading X-rays',
@@ -886,7 +892,7 @@ const careerList = [
       'Running or managing a practice',
     ],
     skills: ['Manual dexterity', 'Clinical diagnosis', 'Patient reassurance', 'Business sense'],
-    majorIds: ['biology', 'chemistry'],
+    majorIds: ['biology', 'chemistry', 'dentistry'],
   },
   {
     id: 'dietitian',
@@ -896,8 +902,8 @@ const careerList = [
     blurb: 'Use nutrition clinically to manage disease and improve health.',
     description:
       'Dietitians assess nutritional needs and design plans for patients with diabetes, kidney disease, allergies, and more. "Dietitian" is a protected title in many countries while "nutritionist" often is not — the accredited route matters.',
-    education: "Accredited Bachelor's plus supervised practice and registration",
-    salaryRange: '$$',
+    education: "Home Economics or Science (Nutrition), or a clinical nutrition diploma",
+    salaryRange: 'EGP 6–11k',
     outlook: 'Growing',
     dayToDay: [
       'Assessing patients’ nutritional status',
@@ -906,7 +912,7 @@ const careerList = [
       'Working with medical teams',
     ],
     skills: ['Nutritional assessment', 'Counselling', 'Evidence appraisal', 'Clear explanation'],
-    majorIds: ['nutrition-dietetics', 'biology'],
+    majorIds: ['nutrition-dietetics', 'biology', 'medicine'],
   },
   {
     id: 'counsellor',
@@ -916,9 +922,9 @@ const careerList = [
     blurb: 'Provide talking therapy — a shorter route than clinical psychology.',
     description:
       'Counsellors and psychotherapists help clients work through anxiety, grief, relationships, and addiction. It typically requires a Master’s plus supervised hours rather than a doctorate, making it a faster path into therapeutic work.',
-    education: "Master's plus supervised hours and licensure",
-    salaryRange: '$$',
-    outlook: 'Growing fast',
+    education: "Psychology degree + postgraduate diploma in counselling",
+    salaryRange: 'EGP 6–12k',
+    outlook: 'Growing',
     dayToDay: [
       'Running individual or group sessions',
       'Building treatment plans with clients',
@@ -926,7 +932,7 @@ const careerList = [
       'Attending own clinical supervision',
     ],
     skills: ['Active listening', 'Therapeutic technique', 'Boundary setting', 'Self-awareness'],
-    majorIds: ['psychology', 'social-work'],
+    majorIds: ['psychology', 'social-work', 'medicine'],
   },
   {
     id: 'forensic-scientist',
@@ -936,9 +942,9 @@ const careerList = [
     blurb: 'Analyse physical evidence to support criminal investigations.',
     description:
       'Forensic scientists process DNA, toxicology, and trace evidence in the lab, and may testify to their findings in court. The real work is slower and far more procedural than television suggests — chain of custody is everything.',
-    education: "Bachelor's in a natural science; forensic specialisation",
-    salaryRange: '$$',
-    outlook: 'Growing',
+    education: "Faculty of Science (chemistry or biology); most posts sit under the Forensic Medicine Authority",
+    salaryRange: 'EGP 7–13k',
+    outlook: 'Stable',
     dayToDay: [
       'Analysing samples in the lab',
       'Documenting chain of custody',
@@ -956,8 +962,8 @@ const careerList = [
     blurb: 'Investigate the ground — for resources, hazards, and construction.',
     description:
       'Geologists map subsurface conditions for energy, mining, groundwater, and construction projects, and assess hazards like landslides and earthquakes. Fieldwork is often remote and rotational.',
-    education: "Bachelor's degree; Master's for many roles",
-    salaryRange: '$$$',
+    education: "Faculty of Science (geology); oil, gas and mining pay the most",
+    salaryRange: 'EGP 10–22k',
     outlook: 'Stable',
     dayToDay: [
       'Field mapping and sample collection',
@@ -976,8 +982,8 @@ const careerList = [
     blurb: 'Research options and advise on what a government or body should do.',
     description:
       'Policy analysts evaluate evidence, model the impact of proposals, and write the briefs decision-makers actually read. Writing concisely under time pressure is the core skill — a good analyst can compress a month of research into two pages.',
-    education: "Bachelor's minimum; Master's common",
-    salaryRange: '$$',
+    education: "Economics & Political Science, or a public policy postgraduate",
+    salaryRange: 'EGP 9–17k',
     outlook: 'Stable',
     dayToDay: [
       'Reviewing evidence and existing policy',
@@ -996,8 +1002,8 @@ const careerList = [
     blurb: 'Do substantive legal work without the full qualification route.',
     description:
       'Paralegals research case law, draft documents, and manage case files under a lawyer’s supervision. It is a genuine legal career in its own right, and also a common way to test the field before committing to law school.',
-    education: 'Certificate or degree; requirements vary by jurisdiction',
-    salaryRange: '$$',
+    education: "Faculty of Law, or a legal studies diploma",
+    salaryRange: 'EGP 5–9k',
     outlook: 'Growing',
     dayToDay: [
       'Researching case law and precedent',
@@ -1016,8 +1022,8 @@ const careerList = [
     blurb: 'Find out what is happening and explain it to the public.',
     description:
       'Journalists research stories, interview sources, verify facts, and write to deadline. The industry has contracted and freelancing is common, so a body of published work matters more than any particular degree.',
-    education: "Bachelor's in any field, plus published clippings",
-    salaryRange: '$$',
+    education: "Faculty of Mass Communication + published work; Journalists Syndicate for staff posts",
+    salaryRange: 'EGP 6–12k',
     outlook: 'Competitive',
     dayToDay: [
       'Chasing leads and interviewing sources',
@@ -1036,8 +1042,8 @@ const careerList = [
     blurb: 'Shape other people’s writing, or produce the words a brand runs on.',
     description:
       'Editors structure and sharpen text for publication; copywriters produce it for marketing and product. Both live or die on judgement about audience — knowing what to cut is most of the craft.',
-    education: "Bachelor's in any field, plus a writing portfolio",
-    salaryRange: '$$',
+    education: "Al-Alsun, Arts, or Mass Communication, plus a portfolio",
+    salaryRange: 'EGP 6–12k',
     outlook: 'Stable',
     dayToDay: [
       'Editing drafts for structure and clarity',
@@ -1056,8 +1062,8 @@ const careerList = [
     blurb: 'Care for collections and build the exhibitions the public sees.',
     description:
       'Curators research and interpret collections, plan exhibitions, and oversee conservation; archivists catalogue and preserve records. Posts are scarce and competitive, and volunteering or internships are close to expected before hiring.',
-    education: "Bachelor's minimum; Master's usually expected",
-    salaryRange: '$$',
+    education: "Faculty of Archaeology or Arts (history), usually plus postgraduate study",
+    salaryRange: 'EGP 5–10k',
     outlook: 'Competitive',
     dayToDay: [
       'Researching and cataloguing objects',
@@ -1076,7 +1082,7 @@ const careerList = [
     blurb: 'Make productions actually happen — money, people, and schedule.',
     description:
       'Producers assemble funding, crew, and schedule, then keep a production on track. It is the least glamorous and most decisive role on a set, and the work is overwhelmingly project-based rather than salaried.',
-    education: 'Portfolio and production credits; degree optional',
+    education: "Higher Institute of Cinema or Mass Communication; credits matter most",
     salaryRange: 'Highly variable',
     outlook: 'Competitive',
     dayToDay: [
@@ -1096,8 +1102,8 @@ const careerList = [
     blurb: 'Assemble raw footage into something that holds attention.',
     description:
       'Editors choose takes, set pacing, and shape the story in post-production — arguably where a film is really written. Demand has expanded well beyond film into social, corporate, and online content.',
-    education: 'Showreel and software fluency; degree optional',
-    salaryRange: '$$',
+    education: "Mass Communication, Applied Arts, or a showreel",
+    salaryRange: 'EGP 6–12k',
     outlook: 'Growing',
     dayToDay: [
       'Reviewing and logging footage',
@@ -1116,8 +1122,8 @@ const careerList = [
     blurb: 'Advise organisations on strategy, operations, and change.',
     description:
       'Consultants diagnose business problems and recommend fixes across short client engagements. It offers unusually fast exposure to senior decision-making, at the cost of long hours and frequent travel.',
-    education: "Bachelor's degree; MBA for advancement",
-    salaryRange: '$$$$',
+    education: "Commerce, Economics, or Engineering; MBA for advancement",
+    salaryRange: 'EGP 15–30k',
     outlook: 'Growing',
     dayToDay: [
       'Interviewing client staff',
@@ -1136,8 +1142,8 @@ const careerList = [
     blurb: 'Find customers, understand their problem, and close the deal.',
     description:
       'Sales roles are among the most accessible graduate entry points in business, and among the most directly measured — performance is visible in numbers every month. Commission means earnings vary widely.',
-    education: "Bachelor's degree or demonstrated ability",
-    salaryRange: '$$–$$$$',
+    education: "Any degree; measured performance matters more than the certificate",
+    salaryRange: 'EGP 6–12k + commission',
     outlook: 'Stable',
     dayToDay: [
       'Prospecting and qualifying leads',

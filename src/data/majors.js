@@ -12,9 +12,9 @@ const majorList = [
     blurb: 'Build software, study algorithms, and work on how computers solve problems.',
     description:
       'Computer Science covers how software is designed, how data is organised, and how machines compute efficiently. Expect a heavy maths foundation early on, followed by systems, theory, and a specialisation such as AI, security, or graphics.',
-    typicalLength: '4 years (BSc)',
+    typicalLength: '4 years (Faculty of Computers & AI)',
     mathIntensity: 'High',
-    prerequisites: ['Algebra II', 'Pre-calculus or Calculus', 'Intro programming (helpful, not required)'],
+    prerequisites: ['Thanaweya Amma — Maths branch (علمي رياضة)', 'Science branch accepted at some faculties'],
     coreCourses: [
       'Programming Fundamentals',
       'Data Structures & Algorithms',
@@ -33,9 +33,9 @@ const majorList = [
     blurb: 'Turn messy real-world data into decisions using statistics and code.',
     description:
       'A blend of statistics, programming, and domain reasoning. You learn to collect and clean data, test hypotheses properly, build predictive models, and — just as importantly — communicate what the numbers do and do not support.',
-    typicalLength: '4 years (BSc)',
+    typicalLength: '4 years (Computers & AI, or Science — Statistics)',
     mathIntensity: 'High',
-    prerequisites: ['Algebra II', 'Calculus I', 'Intro statistics'],
+    prerequisites: ['Thanaweya Amma — Maths branch (علمي رياضة)', 'Strong maths record'],
     coreCourses: [
       'Probability & Statistics',
       'Linear Algebra',
@@ -54,9 +54,9 @@ const majorList = [
     blurb: 'Study structure, proof, and abstraction — the foundation under most technical fields.',
     description:
       'A maths degree is mostly about proof rather than calculation, which surprises people arriving from school-level maths. It is unusually portable: the reasoning transfers into finance, cryptography, modelling, and machine learning, so graduates end up across a wide spread of industries.',
-    typicalLength: '3–4 years (BSc)',
+    typicalLength: '4 years (Faculty of Science)',
     mathIntensity: 'Very high',
-    prerequisites: ['Calculus', 'Strong algebra foundation'],
+    prerequisites: ['Thanaweya Amma — Maths branch (علمي رياضة)'],
     coreCourses: [
       'Real Analysis',
       'Linear Algebra',
@@ -75,9 +75,10 @@ const majorList = [
     blurb: 'Design and analyse physical systems, from engines to medical devices.',
     description:
       'Mechanical Engineering applies physics and materials science to design things that move, hold load, or transfer energy. It is one of the broadest engineering degrees, which keeps career options wide open.',
-    typicalLength: '4 years (BEng/BSc)',
+    typicalLength: '5 years (Faculty of Engineering)',
     mathIntensity: 'High',
-    prerequisites: ['Calculus', 'Physics (mechanics)', 'Chemistry'],
+    tansik: '88.65%',
+    prerequisites: ['Thanaweya Amma — Maths branch (علمي رياضة)'],
     coreCourses: [
       'Statics & Dynamics',
       'Thermodynamics',
@@ -96,9 +97,10 @@ const majorList = [
     blurb: 'Work on circuits, signals, power systems, and embedded hardware.',
     description:
       'Electrical Engineering spans the very small (chip design, embedded systems) to the very large (power grids). It is widely considered one of the harder engineering degrees because so much of the subject is invisible — you reason about it through maths rather than by looking at it.',
-    typicalLength: '4 years (BEng/BSc)',
+    typicalLength: '5 years (Faculty of Engineering)',
     mathIntensity: 'Very high',
-    prerequisites: ['Calculus', 'Physics (electricity & magnetism)'],
+    tansik: '88.65%',
+    prerequisites: ['Thanaweya Amma — Maths branch (علمي رياضة)'],
     coreCourses: [
       'Circuit Analysis',
       'Signals & Systems',
@@ -117,9 +119,10 @@ const majorList = [
     blurb: 'Design the built environment — bridges, buildings, water, and transport.',
     description:
       'Civil engineers design and oversee infrastructure that has to stand for decades and fail safely. Public safety obligations shape the whole profession, so licensure carries real legal weight and the documentation culture is strict.',
-    typicalLength: '4 years (BEng/BSc)',
+    typicalLength: '5 years (Faculty of Engineering)',
     mathIntensity: 'High',
-    prerequisites: ['Calculus', 'Physics (mechanics)', 'Chemistry'],
+    tansik: '88.65%',
+    prerequisites: ['Thanaweya Amma — Maths branch (علمي رياضة)'],
     coreCourses: [
       'Structural Analysis',
       'Geotechnical Engineering',
@@ -137,10 +140,10 @@ const majorList = [
     category: 'Natural Sciences',
     blurb: 'Study living systems — a common route into medicine and research.',
     description:
-      'Biology spans molecules to ecosystems. It is the standard pre-medical track, but also leads into research, biotechnology, conservation, and public health. Lab work is a large part of the degree.',
-    typicalLength: '4 years (BSc)',
+      'Biology spans molecules to ecosystems. Note that in Egypt it is not a route into medicine — Medicine, Dentistry, Pharmacy and Veterinary Medicine are entered directly from Thanaweya Amma. Biology leads instead into research, biotechnology, conservation, food and public health, and teaching. Lab work is a large part of the degree.',
+    typicalLength: '4 years (Faculty of Science)',
     mathIntensity: 'Medium',
-    prerequisites: ['Biology', 'Chemistry', 'Algebra II'],
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
     coreCourses: [
       'Cell Biology',
       'Genetics',
@@ -159,9 +162,9 @@ const majorList = [
     blurb: 'Study matter and reactions — the bridge between physics and biology.',
     description:
       'Chemistry combines heavy lab work with theory across organic, inorganic, physical, and analytical branches. It underpins pharmaceuticals, materials, energy, and environmental work, and lab hours make it one of the more time-demanding science degrees.',
-    typicalLength: '4 years (BSc)',
+    typicalLength: '4 years (Faculty of Science)',
     mathIntensity: 'Medium',
-    prerequisites: ['Chemistry', 'Algebra II', 'Physics (helpful)'],
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
     coreCourses: [
       'Organic Chemistry',
       'Inorganic Chemistry',
@@ -180,9 +183,9 @@ const majorList = [
     blurb: 'Study the fundamental rules governing matter, energy, and spacetime.',
     description:
       'Physics is mathematically demanding and rewards people who enjoy reasoning from first principles. Relatively few graduates become physicists — the modelling and problem-solving skills route many into engineering, finance, data, and software instead.',
-    typicalLength: '3–4 years (BSc)',
+    typicalLength: '4 years (Faculty of Science)',
     mathIntensity: 'Very high',
-    prerequisites: ['Calculus', 'Physics', 'Strong algebra foundation'],
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)', 'Maths branch also accepted'],
     coreCourses: [
       'Classical Mechanics',
       'Electromagnetism',
@@ -201,9 +204,9 @@ const majorList = [
     blurb: 'Combine biology, chemistry, and policy to tackle environmental problems.',
     description:
       'An interdisciplinary degree pulling from ecology, chemistry, geology, and policy. Fieldwork is common, and roles split between technical analysis, consulting, and policy or advocacy work.',
-    typicalLength: '4 years (BSc)',
+    typicalLength: '4 years (Faculty of Science)',
     mathIntensity: 'Medium',
-    prerequisites: ['Biology', 'Chemistry', 'Algebra II'],
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
     coreCourses: [
       'Ecology',
       'Environmental Chemistry',
@@ -222,9 +225,9 @@ const majorList = [
     blurb: 'Train for direct patient care with one of the most direct routes into work.',
     description:
       'Nursing is unusually vocational: clinical placements start early and you graduate ready to practise after licensure. It is physically and emotionally demanding, shift-based, and consistently in short supply almost everywhere.',
-    typicalLength: '2 years (ADN) or 4 years (BSN)',
+    typicalLength: '4 years (Faculty of Nursing) + internship year',
     mathIntensity: 'Low',
-    prerequisites: ['Biology', 'Chemistry', 'Anatomy & Physiology'],
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
     coreCourses: [
       'Anatomy & Physiology',
       'Pharmacology',
@@ -243,9 +246,9 @@ const majorList = [
     blurb: 'Improve health at the level of populations rather than individual patients.',
     description:
       'Public Health looks at why whole communities get sick — sanitation, policy, access, behaviour — and what interventions actually change outcomes. It is a strong option if you want health impact without clinical practice, and it leans heavily on statistics.',
-    typicalLength: '4 years (BSc); MPH common',
+    typicalLength: '4 years; postgraduate public health common',
     mathIntensity: 'Medium',
-    prerequisites: ['Biology', 'Algebra II', 'Intro statistics (helpful)'],
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
     coreCourses: [
       'Epidemiology',
       'Biostatistics',
@@ -264,9 +267,9 @@ const majorList = [
     blurb: 'Study behaviour and the mind, with a strong research-methods core.',
     description:
       'Psychology is more quantitative than most students expect — statistics and research design are central. It leads to clinical practice (with graduate study), and also into UX research, HR, education, and policy.',
-    typicalLength: '4 years (BA/BSc)',
+    typicalLength: '4 years (Faculty of Arts — psychology)',
     mathIntensity: 'Medium',
-    prerequisites: ['Biology (helpful)', 'Algebra II'],
+    prerequisites: ['Thanaweya Amma — any branch'],
     coreCourses: [
       'Introduction to Psychology',
       'Research Methods',
@@ -285,9 +288,9 @@ const majorList = [
     blurb: 'Study how societies, institutions, and inequality actually work.',
     description:
       'Sociology examines group behaviour, social structures, and the forces that produce inequality. Like psychology it is methods-heavy, and it pairs unusually well with a quantitative or policy minor when it comes to hiring.',
-    typicalLength: '3–4 years (BA)',
+    typicalLength: '4 years (Faculty of Arts)',
     mathIntensity: 'Low–Medium',
-    prerequisites: ['No specific subject requirements'],
+    prerequisites: ['Thanaweya Amma — any branch'],
     coreCourses: [
       'Social Theory',
       'Research Methods',
@@ -306,9 +309,10 @@ const majorList = [
     blurb: 'Study how people, firms, and governments allocate scarce resources.',
     description:
       'Economics is far more mathematical than most applicants expect, particularly at the postgraduate level. It sits between the social sciences and quantitative fields, and is a common route into finance, consulting, and public policy.',
-    typicalLength: '3–4 years (BA/BSc)',
+    typicalLength: '4 years (Economics & Political Science, or Commerce)',
     mathIntensity: 'High',
-    prerequisites: ['Algebra II', 'Calculus (often required)'],
+    tansik: '85.24%',
+    prerequisites: ['Thanaweya Amma — Literature branch (أدبي)', 'Maths branch also accepted'],
     coreCourses: [
       'Microeconomics',
       'Macroeconomics',
@@ -327,9 +331,10 @@ const majorList = [
     blurb: 'Study government, power, and how policy actually gets made.',
     description:
       'Political Science covers political theory, institutions, and international relations. It is the traditional pre-law path, and also feeds public administration, campaigns, journalism, and policy analysis.',
-    typicalLength: '3–4 years (BA)',
+    typicalLength: '4 years (Faculty of Economics & Political Science)',
     mathIntensity: 'Low',
-    prerequisites: ['No specific subject requirements'],
+    tansik: '85.24%',
+    prerequisites: ['Thanaweya Amma — Literature branch (أدبي)'],
     coreCourses: [
       'Comparative Politics',
       'Political Theory',
@@ -348,9 +353,9 @@ const majorList = [
     blurb: 'Learn how organisations run — finance, marketing, operations, strategy.',
     description:
       'A broad degree covering accounting, finance, marketing, and management. Its value depends heavily on what you pair it with: internships, a quantitative minor, or a specialisation usually matter more than the degree title alone.',
-    typicalLength: '3–4 years (BBA/BSc)',
+    typicalLength: '4 years (Faculty of Commerce or Business Administration)',
     mathIntensity: 'Medium',
-    prerequisites: ['Algebra II', 'Economics (helpful)'],
+    prerequisites: ['Thanaweya Amma — any branch'],
     coreCourses: [
       'Financial Accounting',
       'Microeconomics',
@@ -369,9 +374,9 @@ const majorList = [
     blurb: 'Communicate visually across print, screen, and brand systems.',
     description:
       'Design programmes are portfolio-driven: what you make matters more than your transcript. Coursework covers typography, colour, layout, and increasingly digital product and motion work.',
-    typicalLength: '3–4 years (BA/BFA)',
+    typicalLength: '5 years (Faculty of Applied Arts) or 4 years (Fine Arts)',
     mathIntensity: 'Low',
-    prerequisites: ['Art portfolio (often required)', 'Any art or media coursework'],
+    prerequisites: ['Thanaweya Amma — any branch', 'Portfolio and aptitude test'],
     coreCourses: [
       'Typography',
       'Colour Theory',
@@ -390,9 +395,10 @@ const majorList = [
     blurb: 'Study how messages are made, carried, and received across media.',
     description:
       'Communications covers journalism, public relations, media theory, and increasingly digital and social strategy. It is a broad degree, so internships and a concrete specialism matter a great deal for what comes after it.',
-    typicalLength: '3–4 years (BA)',
+    typicalLength: '4 years (Faculty of Mass Communication)',
     mathIntensity: 'Low',
-    prerequisites: ['No specific subject requirements'],
+    tansik: '83.17%',
+    prerequisites: ['Thanaweya Amma — any branch'],
     coreCourses: [
       'Media Theory',
       'Writing for Media',
@@ -411,9 +417,9 @@ const majorList = [
     blurb: 'Train to teach, and study how people actually learn.',
     description:
       'Education degrees combine subject teaching methods, developmental psychology, and supervised classroom placements. Most countries require a licensure or certification step alongside the degree, so check your local requirements early.',
-    typicalLength: '4 years (BEd/BA) plus certification',
+    typicalLength: '4 years (Faculty of Education)',
     mathIntensity: 'Low',
-    prerequisites: ['Strong grades in your intended teaching subject'],
+    prerequisites: ['Thanaweya Amma — any branch', 'Branch must match your teaching subject'],
     coreCourses: [
       'Educational Psychology',
       'Curriculum Design',
@@ -432,9 +438,9 @@ const majorList = [
     blurb: 'Run the technology organisations depend on, and connect it to the business.',
     description:
       'Information Systems is the applied, business-facing cousin of computer science: less theory and algorithms, more networks, databases, security, and making systems work for real users. If you like technology but not proofs, this is often the better fit.',
-    typicalLength: '3–4 years (BSc)',
+    typicalLength: '4 years (Computers & Information, or BIS in Commerce)',
     mathIntensity: 'Low–Medium',
-    prerequisites: ['Algebra II', 'Any computing coursework (helpful)'],
+    prerequisites: ['Thanaweya Amma — Maths branch (علمي رياضة)', 'Literature branch accepted for BIS'],
     coreCourses: [
       'Database Design & Administration',
       'Networking Fundamentals',
@@ -453,9 +459,10 @@ const majorList = [
     blurb: 'Scale chemical processes from the lab bench up to industrial production.',
     description:
       'Chemical engineers design the reactors, separators, and pipelines that turn a reaction that works in a flask into one that runs safely at thousands of tonnes a year. It is consistently rated among the most demanding undergraduate degrees, and among the best paid at entry level.',
-    typicalLength: '4 years (BEng/BSc)',
+    typicalLength: '5 years (Faculty of Engineering)',
     mathIntensity: 'Very high',
-    prerequisites: ['Calculus', 'Chemistry', 'Physics'],
+    tansik: '88.65%',
+    prerequisites: ['Thanaweya Amma — Maths branch (علمي رياضة)'],
     coreCourses: [
       'Material & Energy Balances',
       'Thermodynamics',
@@ -474,9 +481,9 @@ const majorList = [
     blurb: 'Read the history and structure of the planet from its rocks.',
     description:
       'Geology combines chemistry, physics, and deep time to explain how the Earth formed and behaves. Fieldwork is central and often takes you somewhere remote, and the degree routes into energy, mining, groundwater, and natural hazard work.',
-    typicalLength: '4 years (BSc)',
+    typicalLength: '4 years (Faculty of Science)',
     mathIntensity: 'Medium',
-    prerequisites: ['Chemistry', 'Physics (helpful)', 'Algebra II'],
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
     coreCourses: [
       'Mineralogy & Petrology',
       'Structural Geology',
@@ -495,9 +502,9 @@ const majorList = [
     blurb: 'Study how food affects health, and translate that into clinical practice.',
     description:
       'Nutrition sits on a biochemistry foundation, then applies it to metabolism, disease, and public health. The clinical dietitian route is regulated in most countries, so check whether your programme is accredited before enrolling — an unaccredited degree closes that door.',
-    typicalLength: '4 years (BSc) plus supervised practice',
+    typicalLength: '4 years (Home Economics, or Science — nutrition)',
     mathIntensity: 'Low–Medium',
-    prerequisites: ['Biology', 'Chemistry'],
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
     coreCourses: [
       'Human Nutrition',
       'Biochemistry & Metabolism',
@@ -516,9 +523,9 @@ const majorList = [
     blurb: 'Train specifically to support people through crisis and disadvantage.',
     description:
       'Social Work is the vocational route into welfare practice, with supervised placements built into the degree and licensure at the end. It is emotionally heavy work with real statutory responsibility, and honest programmes are upfront about burnout and the need for supervision.',
-    typicalLength: '4 years (BSW); MSW for clinical roles',
+    typicalLength: '4 years (Faculty of Social Work)',
     mathIntensity: 'Low',
-    prerequisites: ['No specific subject requirements'],
+    prerequisites: ['Thanaweya Amma — any branch'],
     coreCourses: [
       'Social Work Practice',
       'Human Behaviour & Social Environment',
@@ -537,9 +544,9 @@ const majorList = [
     blurb: 'Study crime, punishment, and whether justice systems actually work.',
     description:
       'Criminology examines why crime happens and how societies respond, drawing on sociology, psychology, and law. It leads into policing, corrections, policy, and research — though be aware that many investigative roles have their own separate entry requirements.',
-    typicalLength: '3–4 years (BA/BSc)',
+    typicalLength: '4 years (Faculty of Law, or Social Work)',
     mathIntensity: 'Low–Medium',
-    prerequisites: ['No specific subject requirements'],
+    prerequisites: ['Thanaweya Amma — Literature branch (أدبي)'],
     coreCourses: [
       'Criminological Theory',
       'Criminal Law',
@@ -558,9 +565,9 @@ const majorList = [
     blurb: 'Study human cultures and societies, past and present, on their own terms.',
     description:
       'Anthropology spans cultural, biological, linguistic, and archaeological branches. Its signature method is ethnography — long immersion in a community — and that skill transfers unexpectedly well into user research and international development.',
-    typicalLength: '3–4 years (BA/BSc)',
+    typicalLength: '4 years (Faculty of Arts)',
     mathIntensity: 'Low',
-    prerequisites: ['No specific subject requirements'],
+    prerequisites: ['Thanaweya Amma — any branch'],
     coreCourses: [
       'Cultural Anthropology',
       'Biological Anthropology',
@@ -579,9 +586,9 @@ const majorList = [
     blurb: 'Specialise in the numbers side of business rather than the general degree.',
     description:
       'A focused alternative to general business administration, covering financial reporting, audit, tax, and corporate finance in depth. Its main advantage is that it usually maps directly onto professional exam exemptions — check which ones before you choose a programme.',
-    typicalLength: '3–4 years (BSc/BBA)',
+    typicalLength: '4 years (Faculty of Commerce — accounting)',
     mathIntensity: 'Medium–High',
-    prerequisites: ['Algebra II', 'Economics (helpful)'],
+    prerequisites: ['Thanaweya Amma — any branch'],
     coreCourses: [
       'Financial Accounting',
       'Management Accounting',
@@ -600,9 +607,9 @@ const majorList = [
     blurb: 'Study how products find audiences — and how that got so data-driven.',
     description:
       'Marketing covers consumer behaviour, branding, and campaign strategy, and has shifted heavily toward analytics and digital channels. Practical portfolio work and internships tend to carry more weight with employers than coursework alone.',
-    typicalLength: '3–4 years (BBA/BSc)',
+    typicalLength: '4 years (Faculty of Commerce, or Business Administration)',
     mathIntensity: 'Low–Medium',
-    prerequisites: ['Algebra II'],
+    prerequisites: ['Thanaweya Amma — any branch'],
     coreCourses: [
       'Consumer Behaviour',
       'Marketing Research',
@@ -621,9 +628,10 @@ const majorList = [
     blurb: 'Design buildings — where creative practice meets structure and regulation.',
     description:
       'Architecture is studio-based and famously time-intensive, with design projects reviewed in public critiques. Qualifying to practise is a long road in most countries: an accredited degree, then years of logged experience and professional exams.',
-    typicalLength: '5 years (BArch) or 3+2 (BA then MArch)',
+    typicalLength: '5 years (Faculty of Engineering — architecture branch)',
     mathIntensity: 'Medium',
-    prerequisites: ['Art or design portfolio (often required)', 'Physics or maths (helpful)'],
+    tansik: '88.65%',
+    prerequisites: ['Thanaweya Amma — Maths branch (علمي رياضة)', 'Drawing aptitude test at some faculties'],
     coreCourses: [
       'Design Studio',
       'Architectural History & Theory',
@@ -642,9 +650,9 @@ const majorList = [
     blurb: 'Shape how cities grow — zoning, transport, housing, and public space.',
     description:
       'Urban Planning combines geography, policy, and design to decide how land gets used. Much of the real work is mediating between residents, developers, and government, so the negotiation and public-communication side matters as much as the technical analysis.',
-    typicalLength: '4 years (BSc); MUP common for practice',
+    typicalLength: '5 years (Faculty of Regional & Urban Planning)',
     mathIntensity: 'Medium',
-    prerequisites: ['No specific subject requirements', 'Geography (helpful)'],
+    prerequisites: ['Thanaweya Amma — Maths branch (علمي رياضة)'],
     coreCourses: [
       'Urban Design',
       'Land Use & Zoning Law',
@@ -663,9 +671,9 @@ const majorList = [
     blurb: 'Study legal systems, reasoning, and how rules get applied in practice.',
     description:
       'Law degrees teach doctrine alongside a distinctive way of reasoning from precedent. Structure varies enormously by country — an undergraduate LLB in much of the world, a postgraduate JD in the US — so check the route to practise where you actually intend to work.',
-    typicalLength: '3–4 years (LLB) or 3 years postgraduate (JD)',
+    typicalLength: '4 years (Faculty of Law)',
     mathIntensity: 'Low',
-    prerequisites: ['Strong writing and reading record'],
+    prerequisites: ['Thanaweya Amma — Literature branch (أدبي)'],
     coreCourses: [
       'Contract Law',
       'Criminal Law',
@@ -684,9 +692,10 @@ const majorList = [
     blurb: 'Read closely, argue well, and write clearly — skills that travel widely.',
     description:
       'English trains you to interpret texts and build an argument in prose, which is less vocational than it is broadly applicable. Graduates spread across publishing, law, teaching, marketing, and communications, and the writing ability itself is the marketable asset.',
-    typicalLength: '3–4 years (BA)',
+    typicalLength: '4 years (Faculty of Al-Alsun, or Arts — English)',
     mathIntensity: 'None',
-    prerequisites: ['Strong reading and writing record'],
+    tansik: '84.26% (Al-Alsun)',
+    prerequisites: ['Thanaweya Amma — Literature branch (أدبي)', 'Strong English record'],
     coreCourses: [
       'Literary Theory & Criticism',
       'Shakespeare',
@@ -705,9 +714,9 @@ const majorList = [
     blurb: 'Work out what happened, why, and how we know — using conflicting evidence.',
     description:
       'History is really training in evidence: finding sources, weighing bias, and building a defensible account from incomplete material. That analytical habit is why it remains a common feeder into law, journalism, policy, and archives.',
-    typicalLength: '3–4 years (BA)',
+    typicalLength: '4 years (Faculty of Arts)',
     mathIntensity: 'None–Low',
-    prerequisites: ['Strong reading and writing record'],
+    prerequisites: ['Thanaweya Amma — Literature branch (أدبي)'],
     coreCourses: [
       'Historiography',
       'Research Methods & Archives',
@@ -726,9 +735,9 @@ const majorList = [
     blurb: 'Train in rigorous argument about questions that resist easy answers.',
     description:
       'Philosophy teaches you to construct and dismantle arguments precisely, covering logic, ethics, metaphysics, and epistemology. It has an unusually strong record on law and graduate admissions tests, and logic pairs surprisingly well with computer science.',
-    typicalLength: '3–4 years (BA)',
+    typicalLength: '4 years (Faculty of Arts)',
     mathIntensity: 'Low (Medium for logic)',
-    prerequisites: ['No specific subject requirements'],
+    prerequisites: ['Thanaweya Amma — Literature branch (أدبي)'],
     coreCourses: [
       'Formal Logic',
       'Ethics & Moral Philosophy',
@@ -747,9 +756,9 @@ const majorList = [
     blurb: 'Learn the craft of making film, video, and audio — hands-on.',
     description:
       'A practical, production-focused degree covering cinematography, editing, sound, and directing. Like most creative fields, it is portfolio-driven and competitive, and the crew relationships you build during the degree are a genuine part of what it gives you.',
-    typicalLength: '3–4 years (BA/BFA)',
+    typicalLength: '4 years (Higher Institute of Cinema, or Mass Communication)',
     mathIntensity: 'None–Low',
-    prerequisites: ['Showreel or portfolio (often required)'],
+    prerequisites: ['Thanaweya Amma — any branch', 'Portfolio or aptitude interview'],
     coreCourses: [
       'Cinematography',
       'Editing & Post-Production',
@@ -759,6 +768,115 @@ const majorList = [
       'Production Management',
     ],
     skills: ['Camera & lighting', 'Editing software', 'Storytelling', 'Working to deadline'],
+  },
+  {
+    id: 'medicine',
+    name: 'Medicine',
+    icon: '🩺',
+    category: 'Health',
+    blurb: 'Egypt’s most competitive faculty, entered straight from Thanaweya Amma.',
+    description:
+      'Medicine in Egypt is a direct-entry faculty — you do not take a science degree first. It is five to six years of study followed by a compulsory internship year, then registration with the Medical Syndicate. The cut-off is consistently the highest in Tansik, and the workload through the pre-clinical years is heavy.',
+    typicalLength: '5–6 years + internship year',
+    mathIntensity: 'Low–Medium',
+    tansik: '93.2%',
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)', 'Very high total score'],
+    coreCourses: [
+      'Anatomy & Histology',
+      'Physiology & Biochemistry',
+      'Pathology & Pharmacology',
+      'Internal Medicine',
+      'Surgery',
+      'Clinical Rotations',
+    ],
+    skills: ['Clinical reasoning', 'Sustained memorisation', 'Composure under pressure', 'Patient communication'],
+  },
+  {
+    id: 'dentistry',
+    name: 'Dentistry',
+    icon: '🦷',
+    category: 'Health',
+    blurb: 'Clinical training with a strong manual craft element, entered directly.',
+    description:
+      'Dentistry is a five-year direct-entry faculty followed by an internship year. It suits people with good fine motor control, and a large share of graduates eventually run their own clinic — which makes it a business as much as a clinical career.',
+    typicalLength: '5 years + internship year',
+    mathIntensity: 'Low',
+    tansik: '92.8%',
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
+    coreCourses: [
+      'Oral Anatomy',
+      'Dental Materials',
+      'Operative Dentistry',
+      'Prosthodontics',
+      'Oral Surgery',
+      'Clinical Practice',
+    ],
+    skills: ['Manual dexterity', 'Clinical diagnosis', 'Patient reassurance', 'Precision'],
+  },
+  {
+    id: 'pharmacy',
+    name: 'Pharmacy',
+    icon: '💊',
+    category: 'Health',
+    blurb: 'Drug science and practice — and a large industrial sector in Egypt.',
+    description:
+      'A five-year direct-entry faculty covering drug chemistry, formulation, and clinical practice. Egypt has a substantial pharmaceutical manufacturing industry, so graduates split between community pharmacy, hospital practice, and industry roles in production, quality control, and regulatory affairs.',
+    typicalLength: '5 years (PharmD variants run 6)',
+    mathIntensity: 'Medium',
+    tansik: '91.7%',
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
+    coreCourses: [
+      'Pharmaceutical Chemistry',
+      'Pharmacology',
+      'Pharmaceutics & Formulation',
+      'Microbiology',
+      'Clinical Pharmacy',
+      'Pharmacy Practice',
+    ],
+    skills: ['Pharmacology', 'Precision', 'Quality control', 'Patient counselling'],
+  },
+  {
+    id: 'physical-therapy',
+    name: 'Physical Therapy',
+    icon: '🦵',
+    category: 'Health',
+    blurb: 'Rehabilitation and movement science, with high Tansik demand.',
+    description:
+      'A five-year faculty training you to assess movement and rehabilitate patients after injury, surgery, or stroke. Demand has pushed its cut-off close to dentistry, and the work is hands-on and relationship-driven rather than lab-based.',
+    typicalLength: '5 years + internship',
+    mathIntensity: 'Low',
+    tansik: '92.2%',
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
+    coreCourses: [
+      'Anatomy & Kinesiology',
+      'Exercise Therapy',
+      'Electrotherapy',
+      'Orthopaedic Physical Therapy',
+      'Neurological Rehabilitation',
+      'Clinical Placement',
+    ],
+    skills: ['Manual technique', 'Anatomy', 'Motivational coaching', 'Patience'],
+  },
+  {
+    id: 'veterinary-medicine',
+    name: 'Veterinary Medicine',
+    icon: '🐾',
+    category: 'Health',
+    blurb: 'Animal health, livestock production, and food safety.',
+    description:
+      'A five-year direct-entry faculty covering companion animals, livestock, and public health. Beyond clinical practice it leads into food safety inspection, poultry and dairy production, and vaccine work — sectors that matter a great deal to Egyptian agriculture.',
+    typicalLength: '5 years',
+    mathIntensity: 'Low',
+    prerequisites: ['Thanaweya Amma — Science branch (علمي علوم)'],
+    coreCourses: [
+      'Veterinary Anatomy',
+      'Animal Physiology',
+      'Veterinary Pathology',
+      'Infectious Diseases',
+      'Food Hygiene & Safety',
+      'Clinical Training',
+    ],
+    skills: ['Animal handling', 'Clinical diagnosis', 'Public health awareness', 'Practical stamina'],
   },
 ]
 
