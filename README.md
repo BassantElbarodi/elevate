@@ -36,7 +36,7 @@ src/
   data/
     majors.js         The 41 majors (Egyptian faculties)
     careers.js        The 57 career paths (Egyptian routes and pay)
-    activities.js     The 24 activities and volunteering options
+    activities.js     The 29 Egyptian activities and volunteering options
     resources.js      The 15 study resources
   components/
     NavBar.jsx        Top navigation
@@ -128,6 +128,13 @@ science degree.
 
 Careers use Egyptian entry routes, including the professional syndicates that actually gate
 practice — Engineers, Medical, Pharmacists, Veterinary, and the Bar Association.
+
+Student activities and volunteering are Egypt-based too. Named organisations — Baheya, Resala, the
+Egyptian Red Crescent, the Egyptian Food Bank, 57357, Misr El Kheir, Enactus, AIESEC, ECPC and NTI —
+were checked against their own pages, and every link was confirmed to load in a real browser. Note
+that a few of these sites return 403 to command-line tools while working fine for real visitors, so
+don't assume a link is dead just because a script says so. Links are stored without `utm_*` or
+`fbclid` tracking parameters.
 
 ### What the numbers mean, and what they don't
 

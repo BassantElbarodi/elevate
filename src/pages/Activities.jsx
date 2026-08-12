@@ -30,9 +30,10 @@ export default function Activities() {
       </header>
 
       <p className="note">
-        Availability varies by school and country, so treat these as categories to go looking for
-        locally rather than a list of open places. Depth beats breadth: two things you stuck with
-        say more than eight you tried once.
+        Egypt-based, compiled in 2026. Named organisations were checked against their own
+        volunteering pages, but intake opens and closes between campaigns — confirm directly before
+        counting on a placement. Depth beats breadth: two things you stuck with say more than eight
+        you tried once.
       </p>
 
       <div className="filters">
@@ -112,6 +113,17 @@ export default function Activities() {
                 <strong style={{ color: 'var(--text)' }}>Getting started: </strong>
                 {activity.howToStart}
               </p>
+
+              {activity.url && (
+                <a
+                  href={activity.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ fontWeight: 600, fontSize: '0.9rem' }}
+                >
+                  Visit {activity.title} →
+                </a>
+              )}
             </article>
           ))}
         </div>
