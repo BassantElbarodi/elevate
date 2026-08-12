@@ -47,6 +47,17 @@ export default function NavBar() {
               </Link>
             )
           })}
+          {/* Sign in sits outside the section links because it is an action,
+              not a place — and keeping it out stops it competing with the
+              seven content sections. */}
+          <Link
+            href="/account"
+            className={
+              pathname.startsWith('/account') ? 'nav-link nav-signin active' : 'nav-link nav-signin'
+            }
+          >
+            Sign in
+          </Link>
         </div>
       </div>
     </nav>
