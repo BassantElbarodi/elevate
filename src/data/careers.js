@@ -26,7 +26,7 @@ export const careers = [
       'Design discussions with the team',
     ],
     skills: ['Programming', 'System design', 'Version control (Git)', 'Communication'],
-    majorIds: ['computer-science', 'data-science'],
+    majorIds: ['computer-science', 'data-science', 'mathematics'],
   },
   {
     id: 'machine-learning-engineer',
@@ -46,7 +46,7 @@ export const careers = [
       'Monitoring accuracy and latency in production',
     ],
     skills: ['Python', 'ML frameworks', 'Software engineering', 'Experiment design'],
-    majorIds: ['computer-science', 'data-science'],
+    majorIds: ['computer-science', 'data-science', 'mathematics'],
   },
   {
     id: 'data-scientist',
@@ -66,7 +66,7 @@ export const careers = [
       'Presenting findings to non-technical teams',
     ],
     skills: ['Statistics', 'Python or R', 'SQL', 'Data visualisation'],
-    majorIds: ['data-science', 'computer-science'],
+    majorIds: ['data-science', 'computer-science', 'mathematics', 'economics', 'physics'],
   },
   {
     id: 'security-analyst',
@@ -86,7 +86,7 @@ export const careers = [
       'Writing incident reports',
     ],
     skills: ['Networking', 'Threat analysis', 'Scripting', 'Attention to detail'],
-    majorIds: ['computer-science'],
+    majorIds: ['computer-science', 'mathematics'],
   },
   {
     id: 'devops-engineer',
@@ -126,7 +126,7 @@ export const careers = [
       'Playtesting and fixing bugs',
     ],
     skills: ['C++ or C#', 'Game engines', 'Maths for graphics', 'Debugging'],
-    majorIds: ['computer-science', 'graphic-design'],
+    majorIds: ['computer-science', 'graphic-design', 'mathematics'],
   },
   {
     id: 'qa-engineer',
@@ -166,7 +166,7 @@ export const careers = [
       'Coordinating with manufacturing',
     ],
     skills: ['CAD', 'Simulation (FEA/CFD)', 'Materials knowledge', 'Documentation'],
-    majorIds: ['mechanical-engineering'],
+    majorIds: ['mechanical-engineering', 'physics'],
   },
   {
     id: 'robotics-engineer',
@@ -186,7 +186,7 @@ export const careers = [
       'Diagnosing sensor and calibration issues',
     ],
     skills: ['Control systems', 'Programming', 'Mechanical design', 'Systems debugging'],
-    majorIds: ['mechanical-engineering', 'computer-science'],
+    majorIds: ['mechanical-engineering', 'computer-science', 'electrical-engineering'],
   },
   {
     id: 'aerospace-engineer',
@@ -206,7 +206,7 @@ export const careers = [
       'Writing certification documentation',
     ],
     skills: ['Fluid dynamics', 'Structural analysis', 'Simulation tools', 'Rigour'],
-    majorIds: ['mechanical-engineering'],
+    majorIds: ['mechanical-engineering', 'physics', 'electrical-engineering'],
   },
   {
     id: 'biomedical-engineer',
@@ -226,7 +226,7 @@ export const careers = [
       'Working with clinicians on requirements',
     ],
     skills: ['Device design', 'Biology fundamentals', 'Regulatory knowledge', 'Testing'],
-    majorIds: ['mechanical-engineering', 'biology'],
+    majorIds: ['mechanical-engineering', 'biology', 'electrical-engineering', 'chemistry'],
   },
   {
     id: 'healthcare-professional',
@@ -246,7 +246,7 @@ export const careers = [
       'Continuing education and recertification',
     ],
     skills: ['Clinical knowledge', 'Communication', 'Composure under pressure', 'Ethics'],
-    majorIds: ['biology', 'psychology'],
+    majorIds: ['biology', 'psychology', 'nursing', 'public-health'],
   },
   {
     id: 'pharmacist',
@@ -266,7 +266,7 @@ export const careers = [
       'Managing inventory and records',
     ],
     skills: ['Pharmacology', 'Precision', 'Patient communication', 'Ethics'],
-    majorIds: ['biology'],
+    majorIds: ['biology', 'chemistry'],
   },
   {
     id: 'physical-therapist',
@@ -286,7 +286,7 @@ export const careers = [
       'Documenting progress for insurers',
     ],
     skills: ['Anatomy', 'Motivational coaching', 'Manual technique', 'Patience'],
-    majorIds: ['biology', 'psychology'],
+    majorIds: ['biology', 'psychology', 'nursing'],
   },
   {
     id: 'clinical-psychologist',
@@ -326,7 +326,7 @@ export const careers = [
       'Briefing public health officials',
     ],
     skills: ['Biostatistics', 'Study design', 'Data analysis', 'Scientific writing'],
-    majorIds: ['biology', 'data-science'],
+    majorIds: ['biology', 'data-science', 'public-health', 'nursing', 'mathematics'],
   },
   {
     id: 'research-scientist',
@@ -346,7 +346,7 @@ export const careers = [
       'Presenting at conferences',
     ],
     skills: ['Experimental design', 'Statistics', 'Technical writing', 'Persistence'],
-    majorIds: ['biology', 'data-science', 'psychology', 'environmental-science', 'mechanical-engineering'],
+    majorIds: ['biology', 'data-science', 'psychology', 'environmental-science', 'mechanical-engineering', 'physics', 'chemistry', 'mathematics', 'economics', 'sociology', 'political-science', 'civil-engineering', 'electrical-engineering'],
   },
   {
     id: 'bioinformatics-scientist',
@@ -366,7 +366,7 @@ export const careers = [
       'Maintaining reproducible workflows',
     ],
     skills: ['Python or R', 'Genomics', 'Statistics', 'Pipeline engineering'],
-    majorIds: ['biology', 'data-science', 'computer-science'],
+    majorIds: ['biology', 'data-science', 'computer-science', 'mathematics'],
   },
   {
     id: 'conservation-scientist',
@@ -406,7 +406,7 @@ export const careers = [
       'Advising on regulatory compliance',
     ],
     skills: ['Field methods', 'GIS', 'Regulatory knowledge', 'Report writing'],
-    majorIds: ['environmental-science', 'biology'],
+    majorIds: ['environmental-science', 'biology', 'chemistry', 'civil-engineering', 'public-health'],
   },
   {
     id: 'urban-planner',
@@ -426,7 +426,7 @@ export const careers = [
       'Drafting zoning recommendations',
     ],
     skills: ['GIS', 'Policy analysis', 'Public speaking', 'Negotiation'],
-    majorIds: ['environmental-science', 'business'],
+    majorIds: ['environmental-science', 'business', 'civil-engineering', 'political-science'],
   },
   {
     id: 'business-analyst',
@@ -446,7 +446,7 @@ export const careers = [
       'Tracking metrics against targets',
     ],
     skills: ['SQL & spreadsheets', 'Process mapping', 'Stakeholder management', 'Clear writing'],
-    majorIds: ['business', 'data-science', 'environmental-science'],
+    majorIds: ['business', 'data-science', 'environmental-science', 'economics'],
   },
   {
     id: 'product-manager',
@@ -466,7 +466,7 @@ export const careers = [
       'Aligning design, engineering, and leadership',
     ],
     skills: ['Prioritisation', 'Written communication', 'Data literacy', 'Influence'],
-    majorIds: ['business', 'computer-science', 'graphic-design'],
+    majorIds: ['business', 'computer-science', 'graphic-design', 'communications'],
   },
   {
     id: 'accountant',
@@ -486,7 +486,7 @@ export const careers = [
       'Advising on compliance',
     ],
     skills: ['Accounting standards', 'Spreadsheets', 'Accuracy', 'Ethics'],
-    majorIds: ['business'],
+    majorIds: ['business', 'economics'],
   },
   {
     id: 'financial-analyst',
@@ -506,7 +506,7 @@ export const careers = [
       'Presenting to decision-makers',
     ],
     skills: ['Financial modelling', 'Valuation', 'Excel', 'Written analysis'],
-    majorIds: ['business', 'data-science'],
+    majorIds: ['business', 'data-science', 'economics', 'mathematics'],
   },
   {
     id: 'actuary',
@@ -526,7 +526,7 @@ export const careers = [
       'Studying for the next exam',
     ],
     skills: ['Probability', 'Statistical modelling', 'Programming', 'Self-discipline'],
-    majorIds: ['data-science', 'business'],
+    majorIds: ['data-science', 'business', 'mathematics', 'economics'],
   },
   {
     id: 'hr-specialist',
@@ -546,7 +546,7 @@ export const careers = [
       'Maintaining policy and compliance',
     ],
     skills: ['Interviewing', 'Conflict resolution', 'Discretion', 'Employment law basics'],
-    majorIds: ['psychology', 'business'],
+    majorIds: ['psychology', 'business', 'sociology', 'communications', 'education'],
   },
   {
     id: 'supply-chain-manager',
@@ -586,7 +586,7 @@ export const careers = [
       'Researching the competitive landscape',
     ],
     skills: ['Copywriting', 'Analytics', 'Brand strategy', 'Budgeting'],
-    majorIds: ['business', 'graphic-design'],
+    majorIds: ['business', 'graphic-design', 'communications'],
   },
   {
     id: 'entrepreneur',
@@ -646,7 +646,7 @@ export const careers = [
       'Sharing insights with product teams',
     ],
     skills: ['Interviewing', 'Survey design', 'Qualitative analysis', 'Synthesis'],
-    majorIds: ['psychology', 'graphic-design'],
+    majorIds: ['psychology', 'graphic-design', 'sociology'],
   },
   {
     id: 'animator',
@@ -686,7 +686,7 @@ export const careers = [
       'Maintaining style and structure',
     ],
     skills: ['Clear writing', 'Technical literacy', 'Information architecture', 'Editing'],
-    majorIds: ['computer-science', 'graphic-design'],
+    majorIds: ['computer-science', 'graphic-design', 'communications'],
   },
   {
     id: 'teacher',
@@ -706,7 +706,7 @@ export const careers = [
       'Meeting with parents and colleagues',
     ],
     skills: ['Explaining clearly', 'Patience', 'Lesson planning', 'Assessment design'],
-    majorIds: ['biology', 'psychology', 'computer-science', 'environmental-science', 'business'],
+    majorIds: ['biology', 'psychology', 'computer-science', 'environmental-science', 'business', 'education', 'mathematics', 'physics', 'chemistry', 'sociology', 'political-science', 'communications'],
   },
   {
     id: 'social-worker',
@@ -726,7 +726,7 @@ export const careers = [
       'Maintaining detailed case records',
     ],
     skills: ['Active listening', 'Advocacy', 'Crisis management', 'Boundary setting'],
-    majorIds: ['psychology'],
+    majorIds: ['psychology', 'sociology', 'public-health', 'education'],
   },
   {
     id: 'lawyer',
@@ -746,7 +746,7 @@ export const careers = [
       'Negotiating settlements',
     ],
     skills: ['Legal research', 'Persuasive writing', 'Argumentation', 'Attention to detail'],
-    majorIds: ['business', 'psychology', 'environmental-science'],
+    majorIds: ['business', 'psychology', 'environmental-science', 'political-science', 'economics'],
   },
 ]
 

@@ -34,7 +34,7 @@ src/
   App.jsx             Layout shell and all route definitions
   index.css           Design tokens and every style in the app
   data/
-    majors.js         The 8 majors
+    majors.js         The 20 majors
     careers.js        The 37 career paths
     resources.js      The 12 study resources
   components/
