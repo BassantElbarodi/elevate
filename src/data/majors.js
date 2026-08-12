@@ -3,7 +3,7 @@
 // Majors do NOT list their careers here — careers.js owns that link via its
 // `majorIds` field, so the relationship is only ever written in one place.
 
-export const majors = [
+const majorList = [
   {
     id: 'computer-science',
     name: 'Computer Science',
@@ -424,7 +424,370 @@ export const majors = [
     ],
     skills: ['Lesson planning', 'Explaining clearly', 'Behaviour management', 'Assessment design'],
   },
+  {
+    id: 'information-systems',
+    name: 'Information Systems & IT',
+    icon: '🖥️',
+    category: 'STEM',
+    blurb: 'Run the technology organisations depend on, and connect it to the business.',
+    description:
+      'Information Systems is the applied, business-facing cousin of computer science: less theory and algorithms, more networks, databases, security, and making systems work for real users. If you like technology but not proofs, this is often the better fit.',
+    typicalLength: '3–4 years (BSc)',
+    mathIntensity: 'Low–Medium',
+    prerequisites: ['Algebra II', 'Any computing coursework (helpful)'],
+    coreCourses: [
+      'Database Design & Administration',
+      'Networking Fundamentals',
+      'Systems Analysis & Design',
+      'Information Security',
+      'Cloud & Infrastructure',
+      'IT Project Management',
+    ],
+    skills: ['Database administration', 'Networking', 'Troubleshooting', 'Requirements gathering'],
+  },
+  {
+    id: 'chemical-engineering',
+    name: 'Chemical Engineering',
+    icon: '🧪',
+    category: 'Engineering',
+    blurb: 'Scale chemical processes from the lab bench up to industrial production.',
+    description:
+      'Chemical engineers design the reactors, separators, and pipelines that turn a reaction that works in a flask into one that runs safely at thousands of tonnes a year. It is consistently rated among the most demanding undergraduate degrees, and among the best paid at entry level.',
+    typicalLength: '4 years (BEng/BSc)',
+    mathIntensity: 'Very high',
+    prerequisites: ['Calculus', 'Chemistry', 'Physics'],
+    coreCourses: [
+      'Material & Energy Balances',
+      'Thermodynamics',
+      'Transport Phenomena',
+      'Reaction Engineering',
+      'Separation Processes',
+      'Process Control & Safety',
+    ],
+    skills: ['Process design', 'Safety analysis', 'Simulation software', 'Scale-up reasoning'],
+  },
+  {
+    id: 'geology',
+    name: 'Geology & Earth Sciences',
+    icon: '🪨',
+    category: 'Natural Sciences',
+    blurb: 'Read the history and structure of the planet from its rocks.',
+    description:
+      'Geology combines chemistry, physics, and deep time to explain how the Earth formed and behaves. Fieldwork is central and often takes you somewhere remote, and the degree routes into energy, mining, groundwater, and natural hazard work.',
+    typicalLength: '4 years (BSc)',
+    mathIntensity: 'Medium',
+    prerequisites: ['Chemistry', 'Physics (helpful)', 'Algebra II'],
+    coreCourses: [
+      'Mineralogy & Petrology',
+      'Structural Geology',
+      'Sedimentology & Stratigraphy',
+      'Geochemistry',
+      'Hydrogeology',
+      'Field Camp',
+    ],
+    skills: ['Field mapping', 'Sample analysis', 'Spatial reasoning', 'GIS'],
+  },
+  {
+    id: 'nutrition-dietetics',
+    name: 'Nutrition & Dietetics',
+    icon: '🥗',
+    category: 'Health',
+    blurb: 'Study how food affects health, and translate that into clinical practice.',
+    description:
+      'Nutrition sits on a biochemistry foundation, then applies it to metabolism, disease, and public health. The clinical dietitian route is regulated in most countries, so check whether your programme is accredited before enrolling — an unaccredited degree closes that door.',
+    typicalLength: '4 years (BSc) plus supervised practice',
+    mathIntensity: 'Low–Medium',
+    prerequisites: ['Biology', 'Chemistry'],
+    coreCourses: [
+      'Human Nutrition',
+      'Biochemistry & Metabolism',
+      'Medical Nutrition Therapy',
+      'Food Science',
+      'Community Nutrition',
+      'Clinical Placement',
+    ],
+    skills: ['Nutritional assessment', 'Patient counselling', 'Evidence appraisal', 'Meal planning'],
+  },
+  {
+    id: 'social-work',
+    name: 'Social Work',
+    icon: '🤲',
+    category: 'Social Sciences',
+    blurb: 'Train specifically to support people through crisis and disadvantage.',
+    description:
+      'Social Work is the vocational route into welfare practice, with supervised placements built into the degree and licensure at the end. It is emotionally heavy work with real statutory responsibility, and honest programmes are upfront about burnout and the need for supervision.',
+    typicalLength: '4 years (BSW); MSW for clinical roles',
+    mathIntensity: 'Low',
+    prerequisites: ['No specific subject requirements'],
+    coreCourses: [
+      'Social Work Practice',
+      'Human Behaviour & Social Environment',
+      'Social Welfare Policy',
+      'Child & Family Welfare',
+      'Ethics in Social Work',
+      'Field Placement',
+    ],
+    skills: ['Case management', 'Active listening', 'Advocacy', 'Boundary setting'],
+  },
+  {
+    id: 'criminology',
+    name: 'Criminology & Criminal Justice',
+    icon: '🔍',
+    category: 'Social Sciences',
+    blurb: 'Study crime, punishment, and whether justice systems actually work.',
+    description:
+      'Criminology examines why crime happens and how societies respond, drawing on sociology, psychology, and law. It leads into policing, corrections, policy, and research — though be aware that many investigative roles have their own separate entry requirements.',
+    typicalLength: '3–4 years (BA/BSc)',
+    mathIntensity: 'Low–Medium',
+    prerequisites: ['No specific subject requirements'],
+    coreCourses: [
+      'Criminological Theory',
+      'Criminal Law',
+      'Policing & Society',
+      'Corrections & Punishment',
+      'Research Methods',
+      'Victimology',
+    ],
+    skills: ['Critical analysis', 'Research methods', 'Report writing', 'Ethical reasoning'],
+  },
+  {
+    id: 'anthropology',
+    name: 'Anthropology',
+    icon: '🗿',
+    category: 'Social Sciences',
+    blurb: 'Study human cultures and societies, past and present, on their own terms.',
+    description:
+      'Anthropology spans cultural, biological, linguistic, and archaeological branches. Its signature method is ethnography — long immersion in a community — and that skill transfers unexpectedly well into user research and international development.',
+    typicalLength: '3–4 years (BA/BSc)',
+    mathIntensity: 'Low',
+    prerequisites: ['No specific subject requirements'],
+    coreCourses: [
+      'Cultural Anthropology',
+      'Biological Anthropology',
+      'Archaeology',
+      'Ethnographic Methods',
+      'Linguistic Anthropology',
+      'Anthropological Theory',
+    ],
+    skills: ['Ethnography', 'Cross-cultural analysis', 'Interviewing', 'Descriptive writing'],
+  },
+  {
+    id: 'accounting-finance',
+    name: 'Accounting & Finance',
+    icon: '🧮',
+    category: 'Business',
+    blurb: 'Specialise in the numbers side of business rather than the general degree.',
+    description:
+      'A focused alternative to general business administration, covering financial reporting, audit, tax, and corporate finance in depth. Its main advantage is that it usually maps directly onto professional exam exemptions — check which ones before you choose a programme.',
+    typicalLength: '3–4 years (BSc/BBA)',
+    mathIntensity: 'Medium–High',
+    prerequisites: ['Algebra II', 'Economics (helpful)'],
+    coreCourses: [
+      'Financial Accounting',
+      'Management Accounting',
+      'Auditing',
+      'Taxation',
+      'Corporate Finance',
+      'Financial Markets',
+    ],
+    skills: ['Financial reporting', 'Modelling', 'Accuracy', 'Regulatory knowledge'],
+  },
+  {
+    id: 'marketing',
+    name: 'Marketing',
+    icon: '📢',
+    category: 'Business',
+    blurb: 'Study how products find audiences — and how that got so data-driven.',
+    description:
+      'Marketing covers consumer behaviour, branding, and campaign strategy, and has shifted heavily toward analytics and digital channels. Practical portfolio work and internships tend to carry more weight with employers than coursework alone.',
+    typicalLength: '3–4 years (BBA/BSc)',
+    mathIntensity: 'Low–Medium',
+    prerequisites: ['Algebra II'],
+    coreCourses: [
+      'Consumer Behaviour',
+      'Marketing Research',
+      'Digital & Social Media Marketing',
+      'Brand Management',
+      'Marketing Analytics',
+      'Advertising & Campaigns',
+    ],
+    skills: ['Campaign strategy', 'Analytics', 'Copywriting', 'Market research'],
+  },
+  {
+    id: 'architecture',
+    name: 'Architecture',
+    icon: '🏗️',
+    category: 'Architecture & Built Environment',
+    blurb: 'Design buildings — where creative practice meets structure and regulation.',
+    description:
+      'Architecture is studio-based and famously time-intensive, with design projects reviewed in public critiques. Qualifying to practise is a long road in most countries: an accredited degree, then years of logged experience and professional exams.',
+    typicalLength: '5 years (BArch) or 3+2 (BA then MArch)',
+    mathIntensity: 'Medium',
+    prerequisites: ['Art or design portfolio (often required)', 'Physics or maths (helpful)'],
+    coreCourses: [
+      'Design Studio',
+      'Architectural History & Theory',
+      'Building Structures',
+      'Environmental Systems',
+      'Building Codes & Practice',
+      'Digital Modelling (BIM/CAD)',
+    ],
+    skills: ['Spatial design', 'CAD & BIM', 'Model making', 'Critique & iteration'],
+  },
+  {
+    id: 'urban-planning',
+    name: 'Urban Planning',
+    icon: '🗺️',
+    category: 'Architecture & Built Environment',
+    blurb: 'Shape how cities grow — zoning, transport, housing, and public space.',
+    description:
+      'Urban Planning combines geography, policy, and design to decide how land gets used. Much of the real work is mediating between residents, developers, and government, so the negotiation and public-communication side matters as much as the technical analysis.',
+    typicalLength: '4 years (BSc); MUP common for practice',
+    mathIntensity: 'Medium',
+    prerequisites: ['No specific subject requirements', 'Geography (helpful)'],
+    coreCourses: [
+      'Urban Design',
+      'Land Use & Zoning Law',
+      'Transportation Planning',
+      'Geographic Information Systems (GIS)',
+      'Housing & Community Development',
+      'Planning Studio',
+    ],
+    skills: ['GIS', 'Policy analysis', 'Public consultation', 'Site planning'],
+  },
+  {
+    id: 'law',
+    name: 'Law',
+    icon: '⚖️',
+    category: 'Law',
+    blurb: 'Study legal systems, reasoning, and how rules get applied in practice.',
+    description:
+      'Law degrees teach doctrine alongside a distinctive way of reasoning from precedent. Structure varies enormously by country — an undergraduate LLB in much of the world, a postgraduate JD in the US — so check the route to practise where you actually intend to work.',
+    typicalLength: '3–4 years (LLB) or 3 years postgraduate (JD)',
+    mathIntensity: 'Low',
+    prerequisites: ['Strong writing and reading record'],
+    coreCourses: [
+      'Contract Law',
+      'Criminal Law',
+      'Constitutional Law',
+      'Tort Law',
+      'Property Law',
+      'Legal Research & Writing',
+    ],
+    skills: ['Legal reasoning', 'Persuasive writing', 'Close reading', 'Argumentation'],
+  },
+  {
+    id: 'english-literature',
+    name: 'English & Literature',
+    icon: '📚',
+    category: 'Arts & Humanities',
+    blurb: 'Read closely, argue well, and write clearly — skills that travel widely.',
+    description:
+      'English trains you to interpret texts and build an argument in prose, which is less vocational than it is broadly applicable. Graduates spread across publishing, law, teaching, marketing, and communications, and the writing ability itself is the marketable asset.',
+    typicalLength: '3–4 years (BA)',
+    mathIntensity: 'None',
+    prerequisites: ['Strong reading and writing record'],
+    coreCourses: [
+      'Literary Theory & Criticism',
+      'Shakespeare',
+      'The Novel',
+      'Poetry & Poetics',
+      'Postcolonial Literature',
+      'Creative or Critical Writing',
+    ],
+    skills: ['Close reading', 'Persuasive writing', 'Editing', 'Constructing an argument'],
+  },
+  {
+    id: 'history',
+    name: 'History',
+    icon: '🏺',
+    category: 'Arts & Humanities',
+    blurb: 'Work out what happened, why, and how we know — using conflicting evidence.',
+    description:
+      'History is really training in evidence: finding sources, weighing bias, and building a defensible account from incomplete material. That analytical habit is why it remains a common feeder into law, journalism, policy, and archives.',
+    typicalLength: '3–4 years (BA)',
+    mathIntensity: 'None–Low',
+    prerequisites: ['Strong reading and writing record'],
+    coreCourses: [
+      'Historiography',
+      'Research Methods & Archives',
+      'Modern World History',
+      'Regional Specialisation',
+      'Social & Economic History',
+      'Dissertation',
+    ],
+    skills: ['Source evaluation', 'Archival research', 'Synthesis', 'Long-form writing'],
+  },
+  {
+    id: 'philosophy',
+    name: 'Philosophy',
+    icon: '🤔',
+    category: 'Arts & Humanities',
+    blurb: 'Train in rigorous argument about questions that resist easy answers.',
+    description:
+      'Philosophy teaches you to construct and dismantle arguments precisely, covering logic, ethics, metaphysics, and epistemology. It has an unusually strong record on law and graduate admissions tests, and logic pairs surprisingly well with computer science.',
+    typicalLength: '3–4 years (BA)',
+    mathIntensity: 'Low (Medium for logic)',
+    prerequisites: ['No specific subject requirements'],
+    coreCourses: [
+      'Formal Logic',
+      'Ethics & Moral Philosophy',
+      'Epistemology',
+      'Metaphysics',
+      'History of Philosophy',
+      'Philosophy of Mind',
+    ],
+    skills: ['Logical rigour', 'Argument analysis', 'Conceptual clarity', 'Precise writing'],
+  },
+  {
+    id: 'film-media-production',
+    name: 'Film & Media Production',
+    icon: '🎥',
+    category: 'Arts & Humanities',
+    blurb: 'Learn the craft of making film, video, and audio — hands-on.',
+    description:
+      'A practical, production-focused degree covering cinematography, editing, sound, and directing. Like most creative fields, it is portfolio-driven and competitive, and the crew relationships you build during the degree are a genuine part of what it gives you.',
+    typicalLength: '3–4 years (BA/BFA)',
+    mathIntensity: 'None–Low',
+    prerequisites: ['Showreel or portfolio (often required)'],
+    coreCourses: [
+      'Cinematography',
+      'Editing & Post-Production',
+      'Sound Design',
+      'Screenwriting',
+      'Directing',
+      'Production Management',
+    ],
+    skills: ['Camera & lighting', 'Editing software', 'Storytelling', 'Working to deadline'],
+  },
 ]
+
+// Browse order. Sorting by category here means you can append a new major
+// anywhere in the list above and it still shows up beside its subject group —
+// no need to insert it in the right position by hand. Sort is stable, so
+// majors within a category keep the order they're written in, and a category
+// missing from this list sorts to the end rather than jumping to the front.
+const categoryOrder = [
+  'STEM',
+  'Engineering',
+  'Natural Sciences',
+  'Health',
+  'Social Sciences',
+  'Business',
+  'Architecture & Built Environment',
+  'Law',
+  'Arts & Humanities',
+  'Education',
+]
+
+const categoryRank = (category) => {
+  const index = categoryOrder.indexOf(category)
+  return index === -1 ? categoryOrder.length : index
+}
+
+export const majors = [...majorList].sort(
+  (a, b) => categoryRank(a.category) - categoryRank(b.category),
+)
 
 export const majorCategories = [...new Set(majors.map((m) => m.category))].sort()
 

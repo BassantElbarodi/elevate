@@ -34,8 +34,8 @@ src/
   App.jsx             Layout shell and all route definitions
   index.css           Design tokens and every style in the app
   data/
-    majors.js         The 20 majors
-    careers.js        The 37 career paths
+    majors.js         The 36 majors
+    careers.js        The 57 career paths
     resources.js      The 12 study resources
   components/
     NavBar.jsx        Top navigation
@@ -54,9 +54,14 @@ src/
 
 All content lives in `src/data/` — you don't need to touch any components to add to the site.
 
-To add a major, append an object to the `majors` array in `src/data/majors.js`. To add a career, do
-the same in `src/data/careers.js`. The category and field filter dropdowns build themselves from
-whatever values you use, so a new category appears automatically.
+To add a major, append an object to the list in `src/data/majors.js`. To add a career, do the same
+in `src/data/careers.js`. The category and field filter dropdowns build themselves from whatever
+values you use, so a new category appears automatically.
+
+You can append anywhere in either list — the browse pages sort by category (majors) and field
+(careers) at the bottom of each file, so a new entry lands beside its group without you having to
+insert it in the right position. If you introduce a brand new category or field, add it to
+`categoryOrder` / `fieldOrder` to place it; anything not listed sorts to the end.
 
 Majors and careers link to each other in both directions on the site, but you only write that link
 once. **`careers.js` owns it**, through each career's `majorIds` array. Major pages derive their

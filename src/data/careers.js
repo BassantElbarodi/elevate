@@ -7,7 +7,7 @@
 // Each id must match an entry in ./majors.js — major pages read this field to
 // work out which careers to show, so you only ever edit the link in one place.
 
-export const careers = [
+const careerList = [
   {
     id: 'software-engineer',
     title: 'Software Engineer',
@@ -26,7 +26,7 @@ export const careers = [
       'Design discussions with the team',
     ],
     skills: ['Programming', 'System design', 'Version control (Git)', 'Communication'],
-    majorIds: ['computer-science', 'data-science', 'mathematics'],
+    majorIds: ['computer-science', 'data-science', 'mathematics', 'information-systems'],
   },
   {
     id: 'machine-learning-engineer',
@@ -86,7 +86,7 @@ export const careers = [
       'Writing incident reports',
     ],
     skills: ['Networking', 'Threat analysis', 'Scripting', 'Attention to detail'],
-    majorIds: ['computer-science', 'mathematics'],
+    majorIds: ['computer-science', 'mathematics', 'information-systems'],
   },
   {
     id: 'devops-engineer',
@@ -106,7 +106,7 @@ export const careers = [
       'Improving build and deploy times',
     ],
     skills: ['Linux', 'Cloud platforms', 'Scripting', 'Incident response'],
-    majorIds: ['computer-science'],
+    majorIds: ['computer-science', 'information-systems'],
   },
   {
     id: 'game-developer',
@@ -126,7 +126,7 @@ export const careers = [
       'Playtesting and fixing bugs',
     ],
     skills: ['C++ or C#', 'Game engines', 'Maths for graphics', 'Debugging'],
-    majorIds: ['computer-science', 'graphic-design', 'mathematics'],
+    majorIds: ['computer-science', 'graphic-design', 'mathematics', 'film-media-production'],
   },
   {
     id: 'qa-engineer',
@@ -146,7 +146,7 @@ export const careers = [
       'Reviewing release readiness',
     ],
     skills: ['Test automation', 'Scripting', 'Systematic thinking', 'Clear bug reports'],
-    majorIds: ['computer-science'],
+    majorIds: ['computer-science', 'information-systems'],
   },
   {
     id: 'mechanical-engineer',
@@ -191,7 +191,7 @@ export const careers = [
   {
     id: 'aerospace-engineer',
     title: 'Aerospace Engineer',
-    icon: '🚀',
+    icon: '✈️',
     field: 'Engineering',
     blurb: 'Design aircraft, spacecraft, and the systems that keep them flying.',
     description:
@@ -226,7 +226,7 @@ export const careers = [
       'Working with clinicians on requirements',
     ],
     skills: ['Device design', 'Biology fundamentals', 'Regulatory knowledge', 'Testing'],
-    majorIds: ['mechanical-engineering', 'biology', 'electrical-engineering', 'chemistry'],
+    majorIds: ['mechanical-engineering', 'biology', 'electrical-engineering', 'chemistry', 'chemical-engineering'],
   },
   {
     id: 'healthcare-professional',
@@ -246,7 +246,7 @@ export const careers = [
       'Continuing education and recertification',
     ],
     skills: ['Clinical knowledge', 'Communication', 'Composure under pressure', 'Ethics'],
-    majorIds: ['biology', 'psychology', 'nursing', 'public-health'],
+    majorIds: ['biology', 'psychology', 'nursing', 'public-health', 'nutrition-dietetics'],
   },
   {
     id: 'pharmacist',
@@ -346,7 +346,7 @@ export const careers = [
       'Presenting at conferences',
     ],
     skills: ['Experimental design', 'Statistics', 'Technical writing', 'Persistence'],
-    majorIds: ['biology', 'data-science', 'psychology', 'environmental-science', 'mechanical-engineering', 'physics', 'chemistry', 'mathematics', 'economics', 'sociology', 'political-science', 'civil-engineering', 'electrical-engineering'],
+    majorIds: ['biology', 'data-science', 'psychology', 'environmental-science', 'mechanical-engineering', 'physics', 'chemistry', 'mathematics', 'economics', 'sociology', 'political-science', 'civil-engineering', 'electrical-engineering', 'chemical-engineering', 'anthropology', 'geology', 'philosophy'],
   },
   {
     id: 'bioinformatics-scientist',
@@ -386,7 +386,7 @@ export const careers = [
       'Monitoring restoration projects',
     ],
     skills: ['Field ecology', 'GIS', 'Stakeholder negotiation', 'Report writing'],
-    majorIds: ['environmental-science', 'biology'],
+    majorIds: ['environmental-science', 'biology', 'geology'],
   },
   {
     id: 'environmental-scientist',
@@ -406,7 +406,7 @@ export const careers = [
       'Advising on regulatory compliance',
     ],
     skills: ['Field methods', 'GIS', 'Regulatory knowledge', 'Report writing'],
-    majorIds: ['environmental-science', 'biology', 'chemistry', 'civil-engineering', 'public-health'],
+    majorIds: ['environmental-science', 'biology', 'chemistry', 'civil-engineering', 'public-health', 'chemical-engineering', 'geology'],
   },
   {
     id: 'urban-planner',
@@ -426,7 +426,7 @@ export const careers = [
       'Drafting zoning recommendations',
     ],
     skills: ['GIS', 'Policy analysis', 'Public speaking', 'Negotiation'],
-    majorIds: ['environmental-science', 'business', 'civil-engineering', 'political-science'],
+    majorIds: ['environmental-science', 'business', 'civil-engineering', 'political-science', 'urban-planning', 'architecture'],
   },
   {
     id: 'business-analyst',
@@ -446,7 +446,7 @@ export const careers = [
       'Tracking metrics against targets',
     ],
     skills: ['SQL & spreadsheets', 'Process mapping', 'Stakeholder management', 'Clear writing'],
-    majorIds: ['business', 'data-science', 'environmental-science', 'economics'],
+    majorIds: ['business', 'data-science', 'environmental-science', 'economics', 'accounting-finance', 'information-systems'],
   },
   {
     id: 'product-manager',
@@ -466,7 +466,7 @@ export const careers = [
       'Aligning design, engineering, and leadership',
     ],
     skills: ['Prioritisation', 'Written communication', 'Data literacy', 'Influence'],
-    majorIds: ['business', 'computer-science', 'graphic-design', 'communications'],
+    majorIds: ['business', 'computer-science', 'graphic-design', 'communications', 'information-systems'],
   },
   {
     id: 'accountant',
@@ -486,7 +486,7 @@ export const careers = [
       'Advising on compliance',
     ],
     skills: ['Accounting standards', 'Spreadsheets', 'Accuracy', 'Ethics'],
-    majorIds: ['business', 'economics'],
+    majorIds: ['business', 'economics', 'accounting-finance'],
   },
   {
     id: 'financial-analyst',
@@ -506,7 +506,7 @@ export const careers = [
       'Presenting to decision-makers',
     ],
     skills: ['Financial modelling', 'Valuation', 'Excel', 'Written analysis'],
-    majorIds: ['business', 'data-science', 'economics', 'mathematics'],
+    majorIds: ['business', 'data-science', 'economics', 'mathematics', 'accounting-finance'],
   },
   {
     id: 'actuary',
@@ -526,7 +526,7 @@ export const careers = [
       'Studying for the next exam',
     ],
     skills: ['Probability', 'Statistical modelling', 'Programming', 'Self-discipline'],
-    majorIds: ['data-science', 'business', 'mathematics', 'economics'],
+    majorIds: ['data-science', 'business', 'mathematics', 'economics', 'accounting-finance'],
   },
   {
     id: 'hr-specialist',
@@ -566,7 +566,7 @@ export const careers = [
       'Analysing cost and lead-time data',
     ],
     skills: ['Logistics planning', 'Negotiation', 'Data analysis', 'Problem solving'],
-    majorIds: ['business', 'mechanical-engineering'],
+    majorIds: ['business', 'mechanical-engineering', 'information-systems'],
   },
   {
     id: 'marketing-manager',
@@ -586,7 +586,7 @@ export const careers = [
       'Researching the competitive landscape',
     ],
     skills: ['Copywriting', 'Analytics', 'Brand strategy', 'Budgeting'],
-    majorIds: ['business', 'graphic-design', 'communications'],
+    majorIds: ['business', 'graphic-design', 'communications', 'marketing'],
   },
   {
     id: 'entrepreneur',
@@ -606,7 +606,7 @@ export const careers = [
       'Hiring and team building',
     ],
     skills: ['Sales', 'Resilience', 'Prioritisation', 'Financial literacy'],
-    majorIds: ['business', 'computer-science', 'graphic-design'],
+    majorIds: ['business', 'computer-science', 'graphic-design', 'marketing', 'accounting-finance'],
   },
   {
     id: 'product-designer',
@@ -626,7 +626,7 @@ export const careers = [
       'Working through feedback with engineers',
     ],
     skills: ['Figma', 'User research', 'Visual hierarchy', 'Giving and taking critique'],
-    majorIds: ['graphic-design', 'psychology', 'mechanical-engineering'],
+    majorIds: ['graphic-design', 'psychology', 'mechanical-engineering', 'architecture'],
   },
   {
     id: 'ux-researcher',
@@ -646,7 +646,7 @@ export const careers = [
       'Sharing insights with product teams',
     ],
     skills: ['Interviewing', 'Survey design', 'Qualitative analysis', 'Synthesis'],
-    majorIds: ['psychology', 'graphic-design', 'sociology'],
+    majorIds: ['psychology', 'graphic-design', 'sociology', 'anthropology'],
   },
   {
     id: 'animator',
@@ -666,7 +666,7 @@ export const careers = [
       'Revising to client feedback',
     ],
     skills: ['Animation principles', 'Motion software', 'Timing', 'Taking direction'],
-    majorIds: ['graphic-design'],
+    majorIds: ['graphic-design', 'film-media-production'],
   },
   {
     id: 'technical-writer',
@@ -686,7 +686,7 @@ export const careers = [
       'Maintaining style and structure',
     ],
     skills: ['Clear writing', 'Technical literacy', 'Information architecture', 'Editing'],
-    majorIds: ['computer-science', 'graphic-design', 'communications'],
+    majorIds: ['computer-science', 'graphic-design', 'communications', 'english-literature'],
   },
   {
     id: 'teacher',
@@ -706,7 +706,7 @@ export const careers = [
       'Meeting with parents and colleagues',
     ],
     skills: ['Explaining clearly', 'Patience', 'Lesson planning', 'Assessment design'],
-    majorIds: ['biology', 'psychology', 'computer-science', 'environmental-science', 'business', 'education', 'mathematics', 'physics', 'chemistry', 'sociology', 'political-science', 'communications'],
+    majorIds: ['biology', 'psychology', 'computer-science', 'environmental-science', 'business', 'education', 'mathematics', 'physics', 'chemistry', 'sociology', 'political-science', 'communications', 'english-literature', 'history', 'philosophy'],
   },
   {
     id: 'social-worker',
@@ -726,7 +726,7 @@ export const careers = [
       'Maintaining detailed case records',
     ],
     skills: ['Active listening', 'Advocacy', 'Crisis management', 'Boundary setting'],
-    majorIds: ['psychology', 'sociology', 'public-health', 'education'],
+    majorIds: ['psychology', 'sociology', 'public-health', 'education', 'social-work', 'criminology'],
   },
   {
     id: 'lawyer',
@@ -746,9 +746,435 @@ export const careers = [
       'Negotiating settlements',
     ],
     skills: ['Legal research', 'Persuasive writing', 'Argumentation', 'Attention to detail'],
-    majorIds: ['business', 'psychology', 'environmental-science', 'political-science', 'economics'],
+    majorIds: ['business', 'psychology', 'environmental-science', 'political-science', 'economics', 'law', 'criminology', 'philosophy', 'history', 'english-literature'],
+  },
+  {
+    id: 'network-engineer',
+    title: 'Network Engineer',
+    icon: '🌐',
+    field: 'Technology',
+    blurb: 'Design and maintain the networks everything else runs over.',
+    description:
+      'Network engineers plan, configure, and troubleshoot the routing, switching, and connectivity that organisations depend on. Vendor certifications carry real weight here — often more than the degree itself.',
+    education: "Bachelor's degree or certifications (CCNA and up)",
+    salaryRange: '$$$',
+    outlook: 'Stable',
+    dayToDay: [
+      'Configuring routers, switches, and firewalls',
+      'Diagnosing latency and outage reports',
+      'Planning capacity and network upgrades',
+      'Documenting network topology',
+    ],
+    skills: ['Routing & switching', 'Network security', 'Troubleshooting', 'Documentation'],
+    majorIds: ['information-systems', 'computer-science', 'electrical-engineering'],
+  },
+  {
+    id: 'it-support-specialist',
+    title: 'IT Support Specialist',
+    icon: '🛠️',
+    field: 'Technology',
+    blurb: 'Keep an organisation’s people and machines working.',
+    description:
+      'IT support diagnoses hardware, software, and account problems, and is one of the most accessible entry points into technology — many infrastructure and security careers start at a help desk.',
+    education: 'Certifications or associate degree; degree optional',
+    salaryRange: '$',
+    outlook: 'Stable',
+    dayToDay: [
+      'Resolving support tickets',
+      'Setting up hardware and accounts',
+      'Troubleshooting software issues',
+      'Maintaining asset inventories',
+    ],
+    skills: ['Troubleshooting', 'Operating systems', 'Patience', 'Clear explanation'],
+    majorIds: ['information-systems'],
+  },
+  {
+    id: 'civil-engineer',
+    title: 'Civil / Structural Engineer',
+    icon: '🌉',
+    field: 'Engineering',
+    blurb: 'Design infrastructure that has to stand for decades and fail safely.',
+    description:
+      'Civil engineers design bridges, buildings, roads, and water systems, then oversee their construction. Public safety duties are legally binding, so professional licensure genuinely gates the senior work.',
+    education: "Bachelor's degree; PE licensure for senior roles",
+    salaryRange: '$$$',
+    outlook: 'Growing',
+    dayToDay: [
+      'Running structural calculations',
+      'Reviewing drawings against codes',
+      'Site inspections during construction',
+      'Coordinating with contractors and planners',
+    ],
+    skills: ['Structural analysis', 'Codes & standards', 'Site judgement', 'Project coordination'],
+    majorIds: ['civil-engineering', 'architecture'],
+  },
+  {
+    id: 'chemical-engineer',
+    title: 'Chemical / Process Engineer',
+    icon: '🏭',
+    field: 'Engineering',
+    blurb: 'Turn reactions that work in a flask into industrial-scale processes.',
+    description:
+      'Chemical engineers design and optimise production processes across pharmaceuticals, energy, food, and materials. Safety analysis is a permanent part of the job, because the failure modes at industrial scale are severe.',
+    education: "Bachelor's degree; chartered status for senior roles",
+    salaryRange: '$$$',
+    outlook: 'Stable',
+    dayToDay: [
+      'Modelling and optimising process flows',
+      'Running safety and hazard reviews',
+      'Troubleshooting plant performance',
+      'Scaling lab processes to production',
+    ],
+    skills: ['Process simulation', 'Thermodynamics', 'Hazard analysis', 'Optimisation'],
+    majorIds: ['chemical-engineering', 'chemistry'],
+  },
+  {
+    id: 'architect',
+    title: 'Architect',
+    icon: '🏛️',
+    field: 'Design',
+    blurb: 'Design buildings that work as spaces, structures, and legal documents.',
+    description:
+      'Architects develop designs from brief to construction drawings, balancing client wishes against budget, code, and physics. Licensure takes years of logged practice after the degree, so treat the timeline realistically.',
+    education: 'Accredited degree, logged experience, and licensure exams',
+    salaryRange: '$$',
+    outlook: 'Stable',
+    dayToDay: [
+      'Developing designs and drawings',
+      'Meeting clients and consultants',
+      'Checking designs against building codes',
+      'Visiting sites during construction',
+    ],
+    skills: ['Spatial design', 'CAD & BIM', 'Building regulations', 'Client communication'],
+    majorIds: ['architecture'],
+  },
+  {
+    id: 'veterinarian',
+    title: 'Veterinarian',
+    icon: '🐾',
+    field: 'Health',
+    blurb: 'Diagnose and treat animals, from pets to livestock.',
+    description:
+      'Veterinary medicine is as academically demanding as human medicine and admission is famously competitive. Practice spans companion animals, farm work, and public health, and the emotional side — including euthanasia — is a real part of the role.',
+    education: 'Veterinary degree (DVM/BVSc) plus licensure',
+    salaryRange: '$$$',
+    outlook: 'Growing',
+    dayToDay: [
+      'Examining and diagnosing animals',
+      'Performing surgery and procedures',
+      'Advising owners on care',
+      'Handling emergencies on call',
+    ],
+    skills: ['Clinical diagnosis', 'Surgical technique', 'Animal handling', 'Emotional resilience'],
+    majorIds: ['biology'],
+  },
+  {
+    id: 'dentist',
+    title: 'Dentist',
+    icon: '🦷',
+    field: 'Health',
+    blurb: 'Diagnose and treat oral health, with a strong practical craft element.',
+    description:
+      'Dentistry combines clinical diagnosis with fine manual work, and many dentists eventually run their own practice — which makes it a business as well as a clinical career. Entry is competitive and the training is long.',
+    education: 'Dental degree (DDS/DMD/BDS) plus licensure',
+    salaryRange: '$$$$',
+    outlook: 'Growing',
+    dayToDay: [
+      'Examining patients and reading X-rays',
+      'Performing fillings, extractions, and procedures',
+      'Planning longer-term treatment',
+      'Running or managing a practice',
+    ],
+    skills: ['Manual dexterity', 'Clinical diagnosis', 'Patient reassurance', 'Business sense'],
+    majorIds: ['biology', 'chemistry'],
+  },
+  {
+    id: 'dietitian',
+    title: 'Dietitian / Nutritionist',
+    icon: '🥗',
+    field: 'Health',
+    blurb: 'Use nutrition clinically to manage disease and improve health.',
+    description:
+      'Dietitians assess nutritional needs and design plans for patients with diabetes, kidney disease, allergies, and more. "Dietitian" is a protected title in many countries while "nutritionist" often is not — the accredited route matters.',
+    education: "Accredited Bachelor's plus supervised practice and registration",
+    salaryRange: '$$',
+    outlook: 'Growing',
+    dayToDay: [
+      'Assessing patients’ nutritional status',
+      'Designing therapeutic meal plans',
+      'Counselling patients on changes',
+      'Working with medical teams',
+    ],
+    skills: ['Nutritional assessment', 'Counselling', 'Evidence appraisal', 'Clear explanation'],
+    majorIds: ['nutrition-dietetics', 'biology'],
+  },
+  {
+    id: 'counsellor',
+    title: 'Counsellor / Therapist',
+    icon: '💬',
+    field: 'Health',
+    blurb: 'Provide talking therapy — a shorter route than clinical psychology.',
+    description:
+      'Counsellors and psychotherapists help clients work through anxiety, grief, relationships, and addiction. It typically requires a Master’s plus supervised hours rather than a doctorate, making it a faster path into therapeutic work.',
+    education: "Master's plus supervised hours and licensure",
+    salaryRange: '$$',
+    outlook: 'Growing fast',
+    dayToDay: [
+      'Running individual or group sessions',
+      'Building treatment plans with clients',
+      'Keeping confidential case notes',
+      'Attending own clinical supervision',
+    ],
+    skills: ['Active listening', 'Therapeutic technique', 'Boundary setting', 'Self-awareness'],
+    majorIds: ['psychology', 'social-work'],
+  },
+  {
+    id: 'forensic-scientist',
+    title: 'Forensic Scientist',
+    icon: '🧫',
+    field: 'Science',
+    blurb: 'Analyse physical evidence to support criminal investigations.',
+    description:
+      'Forensic scientists process DNA, toxicology, and trace evidence in the lab, and may testify to their findings in court. The real work is slower and far more procedural than television suggests — chain of custody is everything.',
+    education: "Bachelor's in a natural science; forensic specialisation",
+    salaryRange: '$$',
+    outlook: 'Growing',
+    dayToDay: [
+      'Analysing samples in the lab',
+      'Documenting chain of custody',
+      'Writing findings into formal reports',
+      'Testifying as an expert witness',
+    ],
+    skills: ['Lab technique', 'Meticulous documentation', 'Impartiality', 'Courtroom communication'],
+    majorIds: ['criminology', 'chemistry', 'biology'],
+  },
+  {
+    id: 'geologist',
+    title: 'Geologist',
+    icon: '🪨',
+    field: 'Science',
+    blurb: 'Investigate the ground — for resources, hazards, and construction.',
+    description:
+      'Geologists map subsurface conditions for energy, mining, groundwater, and construction projects, and assess hazards like landslides and earthquakes. Fieldwork is often remote and rotational.',
+    education: "Bachelor's degree; Master's for many roles",
+    salaryRange: '$$$',
+    outlook: 'Stable',
+    dayToDay: [
+      'Field mapping and sample collection',
+      'Interpreting seismic and borehole data',
+      'Assessing ground and hazard risk',
+      'Writing technical site reports',
+    ],
+    skills: ['Field mapping', 'Data interpretation', 'GIS', 'Technical writing'],
+    majorIds: ['geology', 'environmental-science'],
+  },
+  {
+    id: 'policy-analyst',
+    title: 'Policy Analyst',
+    icon: '📋',
+    field: 'Public Sector',
+    blurb: 'Research options and advise on what a government or body should do.',
+    description:
+      'Policy analysts evaluate evidence, model the impact of proposals, and write the briefs decision-makers actually read. Writing concisely under time pressure is the core skill — a good analyst can compress a month of research into two pages.',
+    education: "Bachelor's minimum; Master's common",
+    salaryRange: '$$',
+    outlook: 'Stable',
+    dayToDay: [
+      'Reviewing evidence and existing policy',
+      'Modelling costs and likely impact',
+      'Writing briefing papers',
+      'Consulting stakeholders and experts',
+    ],
+    skills: ['Policy analysis', 'Concise writing', 'Data literacy', 'Stakeholder consultation'],
+    majorIds: ['political-science', 'economics', 'public-health', 'sociology', 'urban-planning', 'philosophy'],
+  },
+  {
+    id: 'paralegal',
+    title: 'Paralegal / Legal Assistant',
+    icon: '📑',
+    field: 'Law',
+    blurb: 'Do substantive legal work without the full qualification route.',
+    description:
+      'Paralegals research case law, draft documents, and manage case files under a lawyer’s supervision. It is a genuine legal career in its own right, and also a common way to test the field before committing to law school.',
+    education: 'Certificate or degree; requirements vary by jurisdiction',
+    salaryRange: '$$',
+    outlook: 'Growing',
+    dayToDay: [
+      'Researching case law and precedent',
+      'Drafting and proofing legal documents',
+      'Organising case files and evidence',
+      'Liaising with clients and courts',
+    ],
+    skills: ['Legal research', 'Document drafting', 'Organisation', 'Discretion'],
+    majorIds: ['law', 'criminology', 'political-science'],
+  },
+  {
+    id: 'journalist',
+    title: 'Journalist / Reporter',
+    icon: '📰',
+    field: 'Communication',
+    blurb: 'Find out what is happening and explain it to the public.',
+    description:
+      'Journalists research stories, interview sources, verify facts, and write to deadline. The industry has contracted and freelancing is common, so a body of published work matters more than any particular degree.',
+    education: "Bachelor's in any field, plus published clippings",
+    salaryRange: '$$',
+    outlook: 'Competitive',
+    dayToDay: [
+      'Chasing leads and interviewing sources',
+      'Verifying facts and documents',
+      'Writing to tight deadlines',
+      'Pitching stories to editors',
+    ],
+    skills: ['Interviewing', 'Fact-checking', 'Fast clear writing', 'Persistence'],
+    majorIds: ['communications', 'english-literature', 'history', 'political-science'],
+  },
+  {
+    id: 'editor',
+    title: 'Editor / Copywriter',
+    icon: '✒️',
+    field: 'Communication',
+    blurb: 'Shape other people’s writing, or produce the words a brand runs on.',
+    description:
+      'Editors structure and sharpen text for publication; copywriters produce it for marketing and product. Both live or die on judgement about audience — knowing what to cut is most of the craft.',
+    education: "Bachelor's in any field, plus a writing portfolio",
+    salaryRange: '$$',
+    outlook: 'Stable',
+    dayToDay: [
+      'Editing drafts for structure and clarity',
+      'Writing headlines and marketing copy',
+      'Maintaining a style guide',
+      'Briefing and coaching writers',
+    ],
+    skills: ['Editing', 'Style and voice', 'Audience judgement', 'Deadline discipline'],
+    majorIds: ['english-literature', 'communications'],
+  },
+  {
+    id: 'museum-curator',
+    title: 'Museum Curator / Archivist',
+    icon: '🏺',
+    field: 'Arts & Culture',
+    blurb: 'Care for collections and build the exhibitions the public sees.',
+    description:
+      'Curators research and interpret collections, plan exhibitions, and oversee conservation; archivists catalogue and preserve records. Posts are scarce and competitive, and volunteering or internships are close to expected before hiring.',
+    education: "Bachelor's minimum; Master's usually expected",
+    salaryRange: '$$',
+    outlook: 'Competitive',
+    dayToDay: [
+      'Researching and cataloguing objects',
+      'Planning exhibitions and displays',
+      'Overseeing conservation and storage',
+      'Writing interpretation and labels',
+    ],
+    skills: ['Research', 'Cataloguing', 'Conservation awareness', 'Public interpretation'],
+    majorIds: ['history', 'anthropology'],
+  },
+  {
+    id: 'film-producer',
+    title: 'Film / Video Producer',
+    icon: '🎥',
+    field: 'Arts & Culture',
+    blurb: 'Make productions actually happen — money, people, and schedule.',
+    description:
+      'Producers assemble funding, crew, and schedule, then keep a production on track. It is the least glamorous and most decisive role on a set, and the work is overwhelmingly project-based rather than salaried.',
+    education: 'Portfolio and production credits; degree optional',
+    salaryRange: 'Highly variable',
+    outlook: 'Competitive',
+    dayToDay: [
+      'Budgeting and securing funding',
+      'Hiring crew and booking locations',
+      'Managing the shooting schedule',
+      'Solving problems as they arise on set',
+    ],
+    skills: ['Budgeting', 'Negotiation', 'Logistics', 'Staying calm under pressure'],
+    majorIds: ['film-media-production', 'communications'],
+  },
+  {
+    id: 'video-editor',
+    title: 'Video Editor',
+    icon: '🎞️',
+    field: 'Design',
+    blurb: 'Assemble raw footage into something that holds attention.',
+    description:
+      'Editors choose takes, set pacing, and shape the story in post-production — arguably where a film is really written. Demand has expanded well beyond film into social, corporate, and online content.',
+    education: 'Showreel and software fluency; degree optional',
+    salaryRange: '$$',
+    outlook: 'Growing',
+    dayToDay: [
+      'Reviewing and logging footage',
+      'Cutting sequences for pace and clarity',
+      'Colour grading and sound balancing',
+      'Working through client revisions',
+    ],
+    skills: ['Editing software', 'Pacing & rhythm', 'Colour and sound basics', 'Taking direction'],
+    majorIds: ['film-media-production', 'graphic-design'],
+  },
+  {
+    id: 'management-consultant',
+    title: 'Management Consultant',
+    icon: '💼',
+    field: 'Business',
+    blurb: 'Advise organisations on strategy, operations, and change.',
+    description:
+      'Consultants diagnose business problems and recommend fixes across short client engagements. It offers unusually fast exposure to senior decision-making, at the cost of long hours and frequent travel.',
+    education: "Bachelor's degree; MBA for advancement",
+    salaryRange: '$$$$',
+    outlook: 'Growing',
+    dayToDay: [
+      'Interviewing client staff',
+      'Analysing operational and financial data',
+      'Building recommendation decks',
+      'Presenting findings to executives',
+    ],
+    skills: ['Structured problem solving', 'Financial analysis', 'Presenting', 'Working at pace'],
+    majorIds: ['business', 'economics', 'mathematics', 'accounting-finance'],
+  },
+  {
+    id: 'sales-executive',
+    title: 'Sales / Account Executive',
+    icon: '📞',
+    field: 'Business',
+    blurb: 'Find customers, understand their problem, and close the deal.',
+    description:
+      'Sales roles are among the most accessible graduate entry points in business, and among the most directly measured — performance is visible in numbers every month. Commission means earnings vary widely.',
+    education: "Bachelor's degree or demonstrated ability",
+    salaryRange: '$$–$$$$',
+    outlook: 'Stable',
+    dayToDay: [
+      'Prospecting and qualifying leads',
+      'Running demos and client meetings',
+      'Negotiating terms and pricing',
+      'Maintaining the pipeline in a CRM',
+    ],
+    skills: ['Listening', 'Negotiation', 'Resilience to rejection', 'Pipeline management'],
+    majorIds: ['business', 'marketing', 'communications'],
   },
 ]
+
+// Browse order, same idea as majors.js: append a career anywhere above and it
+// still lands beside its field. Stable sort keeps the written order within a
+// field, and an unlisted field sorts to the end.
+const fieldOrder = [
+  'Technology',
+  'Engineering',
+  'Health',
+  'Science',
+  'Research',
+  'Business',
+  'Design',
+  'Arts & Culture',
+  'Communication',
+  'Education',
+  'Social Impact',
+  'Public Sector',
+  'Law',
+]
+
+const fieldRank = (field) => {
+  const index = fieldOrder.indexOf(field)
+  return index === -1 ? fieldOrder.length : index
+}
+
+export const careers = [...careerList].sort((a, b) => fieldRank(a.field) - fieldRank(b.field))
 
 export const careerFields = [...new Set(careers.map((c) => c.field))].sort()
 
