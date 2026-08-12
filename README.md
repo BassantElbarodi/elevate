@@ -37,6 +37,7 @@ src/
     majors.js         The 41 majors (Egyptian faculties)
     careers.js        The 57 career paths (Egyptian routes and pay)
     activities.js     The 29 Egyptian activities and volunteering options
+    scholarships.js   The 12 scholarships open to Egyptians
     resources.js      The 18 study resources
   components/
     NavBar.jsx        Top navigation
@@ -48,6 +49,7 @@ src/
     Careers.jsx       Searchable career list
     CareerDetail.jsx  One career, plus the majors that lead there
     Activities.jsx    Searchable activities and volunteering list
+    Scholarships.jsx  Searchable scholarships list
     Resources.jsx     Searchable resource list
     NotFound.jsx      404 page
 ```
@@ -142,6 +144,14 @@ were checked against their own pages, and every link was confirmed to load in a 
 that a few of these sites return 403 to command-line tools while working fine for real visitors, so
 don't assume a link is dead just because a script says so. Links are stored without `utm_*` or
 `fbclid` tracking parameters.
+
+Scholarships cover both Egyptian awards (Sawiris Distinction, AUC, Nile University, Zewail City,
+AMIDEAST) and fully funded routes abroad that Egypt is eligible for (Fulbright, Chevening, DAAD,
+Erasmus Mundus, MEXT, Türkiye Bursları, Stipendium Hungaricum). **No deadlines are stored**, by
+design — they change annually and a stale date is worse than no date, so every entry links to the
+official page instead. Where sources disagree on a requirement, the data says to check the official
+page rather than repeating a number: Chevening's work-experience threshold is stated as both two
+and five years across secondary sources, so neither is printed here.
 
 ### What the numbers mean, and what they don't
 

@@ -222,13 +222,18 @@ a:hover {
    on a phone. Tightening the links keeps all four on a single row below the
    brand instead of spilling onto a third. */
 @media (max-width: 520px) {
+  .nav-inner {
+    padding-block: 0.4rem;
+    min-height: 0;
+  }
+
   .nav-links {
     gap: 0.1rem;
   }
 
   .nav-link {
-    padding: 0.35rem 0.5rem;
-    font-size: 0.85rem;
+    padding: 0.3rem 0.45rem;
+    font-size: 0.82rem;
   }
 }
 

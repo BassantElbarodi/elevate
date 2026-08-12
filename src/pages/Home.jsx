@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { majors } from '../data/majors'
 import { careers } from '../data/careers'
 import { activities } from '../data/activities'
+import { scholarships } from '../data/scholarships'
 import { resources } from '../data/resources'
 
 const features = [
@@ -25,6 +26,13 @@ const features = [
     text: 'Volunteering, clubs, and competitions that test a career before you commit years to it.',
     to: '/activities',
     cta: 'See student activities',
+  },
+  {
+    icon: '🏅',
+    title: 'Find funding',
+    text: 'Scholarships Egyptians can apply for — at home, and fully funded routes abroad.',
+    to: '/scholarships',
+    cta: 'See scholarships',
   },
   {
     icon: '🛠️',
@@ -76,7 +84,7 @@ export default function Home() {
             Currently covering <strong style={{ color: 'var(--text)' }}>{majors.length} majors</strong>,{' '}
             <strong style={{ color: 'var(--text)' }}>{careers.length} career paths</strong>,{' '}
             <strong style={{ color: 'var(--text)' }}>{activities.length} student activities</strong>,{' '}
-            and{' '}
+            <strong style={{ color: 'var(--text)' }}>{scholarships.length} scholarships</strong>, and{' '}
             <strong style={{ color: 'var(--text)' }}>{resources.length} study resources</strong>.
           </p>
         </div>
