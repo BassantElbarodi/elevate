@@ -36,6 +36,7 @@ src/
   data/
     majors.js         The 36 majors
     careers.js        The 57 career paths
+    activities.js     The 24 activities and volunteering options
     resources.js      The 12 study resources
   components/
     NavBar.jsx        Top navigation
@@ -46,6 +47,7 @@ src/
     MajorDetail.jsx   One major, plus the careers it leads to
     Careers.jsx       Searchable career list
     CareerDetail.jsx  One career, plus the majors that lead there
+    Activities.jsx    Searchable activities and volunteering list
     Resources.jsx     Searchable resource list
     NotFound.jsx      404 page
 ```

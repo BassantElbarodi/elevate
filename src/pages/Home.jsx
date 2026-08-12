@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { majors } from '../data/majors'
 import { careers } from '../data/careers'
+import { activities } from '../data/activities'
 import { resources } from '../data/resources'
 
 const features = [
@@ -17,6 +18,13 @@ const features = [
     text: 'Trace where each field of study leads, what the work looks like day to day, and what it takes to get there.',
     to: '/careers',
     cta: 'Explore careers',
+  },
+  {
+    icon: '🙌',
+    title: 'Get involved',
+    text: 'Volunteering, clubs, and competitions that test a career before you commit years to it.',
+    to: '/activities',
+    cta: 'Find activities',
   },
   {
     icon: '🛠️',
@@ -66,7 +74,8 @@ export default function Home() {
         <div className="panel" style={{ textAlign: 'center' }}>
           <p style={{ margin: 0, color: 'var(--text-muted)' }}>
             Currently covering <strong style={{ color: 'var(--text)' }}>{majors.length} majors</strong>,{' '}
-            <strong style={{ color: 'var(--text)' }}>{careers.length} career paths</strong>, and{' '}
+            <strong style={{ color: 'var(--text)' }}>{careers.length} career paths</strong>,{' '}
+            <strong style={{ color: 'var(--text)' }}>{activities.length} activities</strong>, and{' '}
             <strong style={{ color: 'var(--text)' }}>{resources.length} study resources</strong>.
           </p>
         </div>
