@@ -50,6 +50,7 @@ src/
     CareerDetail.jsx  One career, plus the majors that lead there
     Activities.jsx    Searchable activities and volunteering list
     Scholarships.jsx  Searchable scholarships list
+    About.jsx         About Elevate — mission and vision
     Resources.jsx     Searchable resource list
     NotFound.jsx      404 page
 ```

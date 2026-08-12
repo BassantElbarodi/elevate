@@ -9,6 +9,7 @@ import CareerDetail from './pages/CareerDetail'
 import Activities from './pages/Activities'
 import Scholarships from './pages/Scholarships'
 import Resources from './pages/Resources'
+import About from './pages/About'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/activities" element={<Activities />} />
           <Route path="/scholarships" element={<Scholarships />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

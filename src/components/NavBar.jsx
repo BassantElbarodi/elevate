@@ -6,6 +6,7 @@ const links = [
   { to: '/activities', label: 'Student Activities' },
   { to: '/scholarships', label: 'Scholarships' },
   { to: '/resources', label: 'Resources' },
+  { to: '/about', label: 'About' },
 ]
 
 export default function NavBar() {
