@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { getMajor } from '../data/majors'
-import { getCareer } from '../data/careers'
+import { getCareersForMajor } from '../data/careers'
 
 export default function MajorDetail() {
   const { id } = useParams()
@@ -18,7 +18,7 @@ export default function MajorDetail() {
     )
   }
 
-  const relatedCareers = major.careerIds.map(getCareer).filter(Boolean)
+  const relatedCareers = getCareersForMajor(major.id)
 
   return (
     <div className="page container">

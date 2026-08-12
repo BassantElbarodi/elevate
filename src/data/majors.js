@@ -1,6 +1,7 @@
 // Sample dataset. Replace the entries below with real data from your
 // institution's course catalogue before presenting this as fact.
-// `careerIds` must match ids in ./careers.js
+// Majors do NOT list their careers here — careers.js owns that link via its
+// `majorIds` field, so the relationship is only ever written in one place.
 
 export const majors = [
   {
@@ -23,7 +24,6 @@ export const majors = [
       'Databases',
     ],
     skills: ['Problem decomposition', 'Programming', 'Algorithmic thinking', 'Debugging'],
-    careerIds: ['software-engineer', 'data-scientist', 'security-analyst'],
   },
   {
     id: 'data-science',
@@ -45,7 +45,6 @@ export const majors = [
       'Experimental Design',
     ],
     skills: ['Statistical reasoning', 'Python/R', 'Data storytelling', 'Critical thinking'],
-    careerIds: ['data-scientist', 'business-analyst', 'research-scientist'],
   },
   {
     id: 'mechanical-engineering',
@@ -67,7 +66,6 @@ export const majors = [
       'Control Systems',
     ],
     skills: ['CAD modelling', 'Physical intuition', 'Prototyping', 'Technical drawing'],
-    careerIds: ['mechanical-engineer', 'product-designer', 'research-scientist'],
   },
   {
     id: 'biology',
@@ -89,7 +87,6 @@ export const majors = [
       'Biochemistry',
     ],
     skills: ['Lab technique', 'Scientific method', 'Data recording', 'Scientific writing'],
-    careerIds: ['research-scientist', 'healthcare-professional', 'environmental-scientist'],
   },
   {
     id: 'psychology',
@@ -111,7 +108,6 @@ export const majors = [
       'Abnormal Psychology',
     ],
     skills: ['Research design', 'Statistical literacy', 'Interviewing', 'Empathy'],
-    careerIds: ['healthcare-professional', 'ux-researcher', 'research-scientist'],
   },
   {
     id: 'business',
@@ -133,7 +129,6 @@ export const majors = [
       'Corporate Finance',
     ],
     skills: ['Financial literacy', 'Presenting', 'Negotiation', 'Project management'],
-    careerIds: ['business-analyst', 'marketing-manager', 'entrepreneur'],
   },
   {
     id: 'graphic-design',
@@ -155,7 +150,6 @@ export const majors = [
       'Portfolio Studio',
     ],
     skills: ['Visual hierarchy', 'Adobe/Figma tooling', 'Critique & iteration', 'Storytelling'],
-    careerIds: ['product-designer', 'ux-researcher', 'marketing-manager'],
   },
   {
     id: 'environmental-science',
@@ -177,7 +171,6 @@ export const majors = [
       'Field Methods',
     ],
     skills: ['Field sampling', 'GIS mapping', 'Policy analysis', 'Report writing'],
-    careerIds: ['environmental-scientist', 'research-scientist', 'business-analyst'],
   },
 ]
 

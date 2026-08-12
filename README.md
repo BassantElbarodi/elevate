@@ -35,7 +35,7 @@ src/
   index.css           Design tokens and every style in the app
   data/
     majors.js         The 8 majors
-    careers.js        The 12 career paths
+    careers.js        The 37 career paths
     resources.js      The 12 study resources
   components/
     NavBar.jsx        Top navigation
@@ -58,13 +58,14 @@ To add a major, append an object to the `majors` array in `src/data/majors.js`. 
 the same in `src/data/careers.js`. The category and field filter dropdowns build themselves from
 whatever values you use, so a new category appears automatically.
 
-Majors and careers link to each other in both directions:
+Majors and careers link to each other in both directions on the site, but you only write that link
+once. **`careers.js` owns it**, through each career's `majorIds` array. Major pages derive their
+list by asking which careers point at them (`getCareersForMajor`), so majors don't carry a matching
+list of their own and the two can't drift out of sync.
 
-- a major's `careerIds` must contain ids that exist in `careers.js`
-- a career's `majorIds` must contain ids that exist in `majors.js`
-
-If an id doesn't match, that entry is silently skipped rather than crashing the page — so if a link
-you expected isn't showing up, check the spelling of the id first.
+So to connect a career to a major, add the major's id to that career's `majorIds`. That's the whole
+step. Every id must exist in `majors.js` — if one doesn't match, that link is silently skipped
+rather than crashing the page, so check the spelling first if an expected link isn't showing up.
 
 ### Styling
 
