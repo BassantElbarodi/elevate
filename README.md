@@ -37,6 +37,7 @@ src/
     majors.js         The 41 majors (Egyptian faculties)
     careers.js        The 57 career paths (Egyptian routes and pay)
     activities.js     The 29 Egyptian activities and volunteering options
+    workshops.js      The 13 Elevate mentorship workshops
     scholarships.js   The 12 scholarships open to Egyptians
     resources.js      The 18 study resources
   components/
@@ -49,6 +50,7 @@ src/
     Careers.jsx       Searchable career list
     CareerDetail.jsx  One career, plus the majors that lead there
     Activities.jsx    Searchable activities and volunteering list
+    Mentorship.jsx    Searchable workshops list
     Scholarships.jsx  Searchable scholarships list
     About.jsx         About Elevate — mission and vision
     Resources.jsx     Searchable resource list
@@ -118,8 +120,8 @@ as confusing. If it needs crediting, the footer is the place.
 
 There's one stylesheet, `src/index.css`. Colours, spacing, and radii are CSS custom properties at
 the top, and there's a dark theme that follows the operating system setting. The dark theme is
-derived only from the four brand colours — violet becomes the surface family and periwinkle carries
-interface text — so no off-brand hues were invented.
+derived only from the brand hues — the blue end becomes the surface family and lilac carries
+interface text — so no off-brand colours were invented.
 
 One gotcha: `.page`, `.hero`, and `.nav-inner` are used together with `.container`, so they set
 `padding-block` rather than the `padding` shorthand. Using the shorthand there would reset the
@@ -153,6 +155,13 @@ design — they change annually and a stale date is worse than no date, so every
 official page instead. Where sources disagree on a requirement, the data says to check the official
 page rather than repeating a number: Chevening's work-experience threshold is stated as both two
 and five years across secondary sources, so neither is printed here.
+
+Mentorship is the one dataset that is not external: `workshops.js` describes what Elevate itself
+offers, across soft skills, Microsoft skills, technical learning, and creative sessions. The source
+research was written throughout for "young women"; it is stored here addressed to students
+generally, so it matches the About page and the rest of the site. If Elevate is in fact a
+women-focused programme, this is the file to change — along with the About page and the meta
+description, so the site says so consistently rather than in one section only.
 
 ### What the numbers mean, and what they don't
 

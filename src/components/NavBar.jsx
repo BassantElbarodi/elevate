@@ -4,6 +4,7 @@ const links = [
   { to: '/majors', label: 'Majors' },
   { to: '/careers', label: 'Careers' },
   { to: '/activities', label: 'Student Activities' },
+  { to: '/mentorship', label: 'Mentorship' },
   { to: '/scholarships', label: 'Scholarships' },
   { to: '/resources', label: 'Resources' },
   { to: '/about', label: 'About' },
