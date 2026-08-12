@@ -30,8 +30,9 @@
   --shadow: 0 1px 2px rgb(46 17 120 / 6%), 0 6px 20px rgb(46 17 120 / 8%);
   --max-width: 1080px;
 
-  --font-display: "Playfair Display", Georgia, serif;
-  --font-body: "Nunito", system-ui, -apple-system, sans-serif;
+  /* Fed by next/font in app/layout.jsx, which self-hosts the files. */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-nunito), system-ui, -apple-system, sans-serif;
 
   color-scheme: light dark;
 }

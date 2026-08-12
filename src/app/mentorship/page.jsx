@@ -1,5 +1,7 @@
+'use client'
+
 import { useMemo, useState } from 'react'
-import { workshops, workshopCategories } from '../data/workshops'
+import { workshops, workshopCategories } from '@/data/workshops'
 
 export default function Mentorship() {
   const [query, setQuery] = useState('')

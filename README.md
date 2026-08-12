@@ -3,7 +3,24 @@
 An education website that helps students plan their academic path — explore majors, trace where
 they lead as careers, and find study resources.
 
-Built with React 19, Vite, and React Router.
+Built with Next.js 16 (App Router) and React 19, deployable free on Vercel.
+
+## Stack notes
+
+Routing is file-based: a folder under `src/app/` with a `page.jsx` becomes a URL. The six list
+pages carry `'use client'` because they hold search and filter state; everything else renders on
+the server. Both detail routes use `generateStaticParams`, so all 41 major and 57 career pages are
+prerendered at build time — 108 static pages in total, which is why the site can be hosted free.
+
+Fonts load through `next/font`, which self-hosts them and reserves the right space while they load.
+
+Two configuration points worth knowing. `@/` is an alias for `src/`, set in `jsconfig.json`. And
+oxlint's `react/only-export-components` rule is switched off: it is a Vite fast-refresh rule, while
+the App Router *requires* non-component exports from page files (`metadata`, `generateStaticParams`,
+`generateMetadata`), so it only produced false positives.
+
+The nav logo is a plain `<img>` rather than `next/image` on purpose — the dark-mode swap needs
+`<picture>` with a media query, which `next/image` cannot art-direct.
 
 ## Running it
 
@@ -15,24 +32,29 @@ npm install
 npm run dev
 ```
 
-Then open http://localhost:5173.
+Then open http://localhost:3000.
 
 Other commands:
 
 | Command           | What it does                                  |
 | ----------------- | --------------------------------------------- |
 | `npm run dev`     | Start the dev server with hot reload           |
-| `npm run build`   | Build the production site into `dist/`         |
-| `npm run preview` | Serve the built site locally to check it       |
+| `npm run build`   | Build the production site into `.next/`        |
+| `npm run start`   | Serve the production build locally             |
 | `npm run lint`    | Lint the source with oxlint                    |
 
 ## How it's organised
 
 ```
 src/
-  main.jsx            App entry — mounts the router
-  App.jsx             Layout shell and all route definitions
-  index.css           Design tokens and every style in the app
+  app/                Next.js App Router — one folder per route
+    layout.jsx        Shell: fonts, metadata, nav and footer
+    globals.css       Design tokens and every style in the app
+    page.jsx          Home
+    majors/           List page, plus [id]/ for each major
+    careers/          List page, plus [id]/ for each career
+    activities/ mentorship/ scholarships/ resources/ about/
+    not-found.jsx     404
   data/
     majors.js         The 41 majors (Egyptian faculties)
     careers.js        The 57 career paths (Egyptian routes and pay)
@@ -43,18 +65,6 @@ src/
   components/
     NavBar.jsx        Top navigation
     Footer.jsx        Site footer
-  pages/
-    Home.jsx          Landing page
-    Majors.jsx        Searchable major list
-    MajorDetail.jsx   One major, plus the careers it leads to
-    Careers.jsx       Searchable career list
-    CareerDetail.jsx  One career, plus the majors that lead there
-    Activities.jsx    Searchable activities and volunteering list
-    Mentorship.jsx    Searchable workshops list
-    Scholarships.jsx  Searchable scholarships list
-    About.jsx         About Elevate — mission and vision
-    Resources.jsx     Searchable resource list
-    NotFound.jsx      404 page
 ```
 
 ### Adding content
@@ -82,7 +92,7 @@ rather than crashing the page, so check the spelling first if an expected link i
 ### Brand
 
 The site follows the Elevate script-wordmark identity. The palette is sampled from the
-artwork itself and defined as `--brand-*` custom properties at the top of `src/index.css`:
+artwork itself and defined as `--brand-*` custom properties at the top of `src/app/globals.css`:
 
 | Colour | Hex | Role |
 | ------ | --- | ---- |
@@ -99,7 +109,7 @@ Dark mode inverts which end of the gradient works: brand blue drops to 2.34:1 on
 so orchid becomes the accent and the blue end is only used in the brightened logo variant.
 
 Typography is Playfair Display for the two largest headings, echoing the serif tagline in the logo
-artwork, with Nunito for body and UI. Both load from Google Fonts in `index.html`.
+artwork, with Nunito for body and UI. Both load via `next/font` in `src/app/layout.jsx`.
 
 Logo files live in `public/`:
 
@@ -118,7 +128,7 @@ as confusing. If it needs crediting, the footer is the place.
 
 ### Styling
 
-There's one stylesheet, `src/index.css`. Colours, spacing, and radii are CSS custom properties at
+There's one stylesheet, `src/app/globals.css`. Colours, spacing, and radii are CSS custom properties at
 the top, and there's a dark theme that follows the operating system setting. The dark theme is
 derived only from the brand hues — the blue end becomes the surface family and lilac carries
 interface text — so no off-brand colours were invented.
@@ -195,10 +205,15 @@ before presenting them as that faculty's curriculum.
 
 ## Deploying
 
-`npm run build` produces a static `dist/` folder that can be hosted anywhere — GitHub Pages,
-Netlify, Vercel.
+The site is built for **Vercel**, which is free for a project like this on the Hobby plan and
+requires no configuration — Vercel made Next.js, so it detects everything.
 
-Because the app uses client-side routing, the host has to serve `index.html` for unknown paths.
-Without that, loading `/majors/biology` directly returns a 404 even though it works when you
-navigate there from within the site. Netlify and Vercel handle this with a config file; GitHub Pages
-needs a `404.html` copy of `index.html` as a workaround.
+1. Push this repo to GitHub.
+2. Import it at [vercel.com/new](https://vercel.com/new) and deploy. No build settings to change.
+
+Two things to know about the free tier. Hobby is **non-commercial only** under Vercel's terms, so
+it covers a student project but not a revenue-generating one. And if you ever exceed a limit,
+Vercel pauses the project rather than charging you — there is no surprise bill.
+
+Because every page is prerendered, the deep links that needed a workaround under the old static
+build (`/majors/biology` and friends) now just work.

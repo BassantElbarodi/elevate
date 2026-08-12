@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom'
-import { majors } from '../data/majors'
-import { careers } from '../data/careers'
-import { activities } from '../data/activities'
-import { workshops } from '../data/workshops'
-import { scholarships } from '../data/scholarships'
-import { resources } from '../data/resources'
+import Link from 'next/link'
+import { majors } from '@/data/majors'
+import { careers } from '@/data/careers'
+import { activities } from '@/data/activities'
+import { workshops } from '@/data/workshops'
+import { scholarships } from '@/data/scholarships'
+import { resources } from '@/data/resources'
 
 const features = [
   {
@@ -62,10 +62,10 @@ export default function Home() {
           up under pressure.
         </p>
         <div className="hero-actions">
-          <Link to="/majors" className="btn btn-primary">
+          <Link href="/majors" className="btn btn-primary">
             Explore majors
           </Link>
-          <Link to="/careers" className="btn btn-secondary">
+          <Link href="/careers" className="btn btn-secondary">
             Browse careers
           </Link>
         </div>
@@ -74,7 +74,7 @@ export default function Home() {
       <section className="container">
         <div className="grid">
           {features.map((feature) => (
-            <Link key={feature.to} to={feature.to} className="card">
+            <Link key={feature.to} href={feature.to} className="card">
               <span className="card-icon">{feature.icon}</span>
               <h3>{feature.title}</h3>
               <p>{feature.text}</p>

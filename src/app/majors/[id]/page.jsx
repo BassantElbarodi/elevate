@@ -1,9 +1,22 @@
-import { Link, useParams } from 'react-router-dom'
-import { getMajor } from '../data/majors'
-import { getCareersForMajor } from '../data/careers'
+import Link from 'next/link'
+import { getMajor, majors } from '@/data/majors'
+import { getCareersForMajor } from '@/data/careers'
 
-export default function MajorDetail() {
-  const { id } = useParams()
+// Prerender every major page at build time — the data is static, so
+// there is no reason to render these on demand.
+export function generateStaticParams() {
+  return majors.map((item) => ({ id: item.id }))
+}
+
+export async function generateMetadata({ params }) {
+  const { id } = await params
+  const item = getMajor(id)
+  if (!item) return { title: 'Not found — Elevate' }
+  return { title: `${item.name} — Elevate`, description: item.blurb }
+}
+
+export default async function MajorDetail({ params }) {
+  const { id } = await params
   const major = getMajor(id)
 
   if (!major) {
@@ -11,7 +24,7 @@ export default function MajorDetail() {
       <div className="page container">
         <h1>Major not found</h1>
         <p>We don’t have a page for “{id}”.</p>
-        <Link to="/majors" className="btn btn-primary">
+        <Link href="/majors" className="btn btn-primary">
           Back to all majors
         </Link>
       </div>
@@ -22,7 +35,7 @@ export default function MajorDetail() {
 
   return (
     <div className="page container">
-      <Link to="/majors" className="back-link">
+      <Link href="/majors" className="back-link">
         ← All majors
       </Link>
 
@@ -68,7 +81,7 @@ export default function MajorDetail() {
                 {relatedCareers.map((career) => (
                   <Link
                     key={career.id}
-                    to={`/careers/${career.id}`}
+                    href={`/careers/${career.id}`}
                     className="card"
                     style={{ boxShadow: 'none' }}
                   >

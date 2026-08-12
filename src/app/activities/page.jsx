@@ -1,5 +1,7 @@
+'use client'
+
 import { useMemo, useState } from 'react'
-import { activities, activityTypes } from '../data/activities'
+import { activities, activityTypes } from '@/data/activities'
 
 export default function Activities() {
   const [query, setQuery] = useState('')

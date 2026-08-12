@@ -1,5 +1,7 @@
+'use client'
+
 import { useMemo, useState } from 'react'
-import { resources, resourceTypes } from '../data/resources'
+import { resources, resourceTypes } from '@/data/resources'
 
 export default function Resources() {
   const [query, setQuery] = useState('')

@@ -1,6 +1,8 @@
+'use client'
+
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { careers, careerFields } from '../data/careers'
+import Link from 'next/link'
+import { careers, careerFields } from '@/data/careers'
 
 export default function Careers() {
   const [query, setQuery] = useState('')
@@ -75,7 +77,7 @@ export default function Careers() {
       ) : (
         <div className="grid">
           {filtered.map((career) => (
-            <Link key={career.id} to={`/careers/${career.id}`} className="card">
+            <Link key={career.id} href={`/careers/${career.id}`} className="card">
               <span className="card-icon">{career.icon}</span>
               <h3>{career.title}</h3>
               <p>{career.blurb}</p>

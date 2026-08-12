@@ -1,6 +1,8 @@
+'use client'
+
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { majors, majorCategories } from '../data/majors'
+import Link from 'next/link'
+import { majors, majorCategories } from '@/data/majors'
 
 export default function Majors() {
   const [query, setQuery] = useState('')
@@ -73,7 +75,7 @@ export default function Majors() {
       ) : (
         <div className="grid">
           {filtered.map((major) => (
-            <Link key={major.id} to={`/majors/${major.id}`} className="card">
+            <Link key={major.id} href={`/majors/${major.id}`} className="card">
               <span className="card-icon">{major.icon}</span>
               <h3>{major.name}</h3>
               <p>{major.blurb}</p>

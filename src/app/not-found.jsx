@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 export default function NotFound() {
   return (
@@ -8,10 +8,10 @@ export default function NotFound() {
         That page doesn’t exist. Try starting from one of the sections below.
       </p>
       <div className="hero-actions">
-        <Link to="/" className="btn btn-primary">
+        <Link href="/" className="btn btn-primary">
           Go home
         </Link>
-        <Link to="/majors" className="btn btn-secondary">
+        <Link href="/majors" className="btn btn-secondary">
           Explore majors
         </Link>
       </div>

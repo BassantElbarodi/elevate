@@ -1,5 +1,7 @@
+'use client'
+
 import { useMemo, useState } from 'react'
-import { scholarships, scholarshipTypes } from '../data/scholarships'
+import { scholarships, scholarshipTypes } from '@/data/scholarships'
 
 export default function Scholarships() {
   const [query, setQuery] = useState('')
