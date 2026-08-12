@@ -6,7 +6,7 @@ export default function Footer() {
             makes it reachable from all pages rather than the home page only. */}
         <p className="footer-contact">
           <strong>Contact us</strong>
-          <a href="mailto:Bassant.ashraf987@gmail.com">Bassant.ashraf987@gmail.com</a>
+          <a href="mailto:elevate.egypt@gmail.com">elevate.egypt@gmail.com</a>
           <span>Cairo, Egypt</span>
         </p>
         <p style={{ margin: 0 }}>
