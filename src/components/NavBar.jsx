@@ -11,7 +11,7 @@ export default function NavBar() {
     <nav className="nav">
       <div className="container nav-inner">
         <Link to="/" className="nav-brand">
-          🎓 PathFinder
+          🎓 Elevate
         </Link>
         <div className="nav-links">
           {links.map((link) => (

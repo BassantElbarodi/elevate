@@ -1,4 +1,4 @@
-# PathFinder
+# Elevate
 
 An education website that helps students plan their academic path — explore majors, trace where
 they lead as careers, and find study resources.
