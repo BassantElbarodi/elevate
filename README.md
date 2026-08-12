@@ -74,15 +74,46 @@ So to connect a career to a major, add the major's id to that career's `majorIds
 step. Every id must exist in `majors.js` — if one doesn't match, that link is silently skipped
 rather than crashing the page, so check the spelling first if an expected link isn't showing up.
 
+### Brand
+
+The site follows the Elevate visual identity. Four source colours, defined as
+`--brand-*` custom properties at the top of `src/index.css`:
+
+| Colour | Hex | Role |
+| ------ | --- | ---- |
+| Violet | `#5620D6` | Primary — logo, links, buttons |
+| Coral | `#FF7F50` | Accent — arrow, highlights, tag tints |
+| Periwinkle | `#C0B8FF` | Secondary — borders, chips, dark-mode text |
+| Cream | `#F5E9E5` | Page background |
+
+**Coral is never used for text.** It only reaches 2.1:1 against cream, well below the 4.5:1
+minimum for body copy, so it's reserved for fills, rules, and the logo arrow. Where a coral-family
+label is needed, the tag uses a pale coral tint behind darkened coral ink (6.2:1). Violet carries
+text at 6.87:1 on cream, and body copy uses a deeper violet ink for long reading.
+
+Typography is Anton for the two largest headings and Fira Sans Condensed for everything else, both
+loaded from Google Fonts in `index.html`. The identity also lists Hobo, which is a licensed Adobe
+font with no free web equivalent, so Anton covers display type instead.
+
+Logo files live in `public/`:
+
+- `elevate-logo.svg` — violet wordmark, for light backgrounds
+- `elevate-logo-reverse.svg` — cream wordmark, for dark backgrounds
+- `favicon.svg` — the coral arrow-E mark on a violet tile
+
+All three are real vector, extracted from the identity PDF rather than traced or retyped. The nav
+swaps between the two wordmarks with a `<picture>` media query.
+
 ### Styling
 
 There's one stylesheet, `src/index.css`. Colours, spacing, and radii are CSS custom properties at
-the top, and there's a dark theme that follows the operating system setting. Changing `--accent`
-reskins the whole site.
+the top, and there's a dark theme that follows the operating system setting. The dark theme is
+derived only from the four brand colours — violet becomes the surface family and periwinkle carries
+interface text — so no off-brand hues were invented.
 
-One gotcha: `.page` and `.hero` are used together with `.container`, so they set `padding-block`
-rather than the `padding` shorthand. Using the shorthand there would reset the container's
-horizontal padding and push content flush against the screen edge.
+One gotcha: `.page`, `.hero`, and `.nav-inner` are used together with `.container`, so they set
+`padding-block` rather than the `padding` shorthand. Using the shorthand there would reset the
+container's horizontal padding and push content flush against the screen edge.
 
 ## Before you submit this
 

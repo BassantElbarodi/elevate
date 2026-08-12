@@ -1,36 +1,59 @@
+/* Elevate brand identity.
+   Four source colours, taken from the visual identity PDF:
+     violet     #5620D6   primary
+     coral      #FF7F50   accent
+     periwinkle #C0B8FF   secondary
+     cream      #F5E9E5   background
+   Coral is only 2.1:1 on cream, so it never carries text — it is used for
+   fills, rules, arrows and large display type. Violet carries text at
+   6.87:1, and body copy uses a darker violet ink for long reading. */
 :root {
-  --bg: #f7f8fb;
+  --brand-violet: #5620d6;
+  --brand-coral: #ff7f50;
+  --brand-periwinkle: #c0b8ff;
+  --brand-cream: #f5e9e5;
+
+  --bg: var(--brand-cream);
   --surface: #ffffff;
-  --surface-alt: #f0f2f7;
-  --border: #e0e4ed;
-  --text: #16192b;
-  --text-muted: #5b6379;
-  --accent: #3d5afe;
-  --accent-soft: #e8ecff;
-  --accent-strong: #2a3fd6;
-  --success: #12805c;
-  --success-soft: #dff5ec;
+  --surface-alt: #efe3de;
+  --border: #ded5f2;
+  --text: #2e1178;
+  --text-muted: #5b4a9e;
+  --accent: var(--brand-violet);
+  --accent-soft: #e6e2ff;
+  --accent-strong: #4318b0;
+  /* second tag colour: coral tint behind dark coral ink, since coral itself
+     is unreadable as text on a light surface */
+  --success: #8f3a12;
+  --success-soft: #ffe4d8;
+
   --radius: 12px;
-  --shadow: 0 1px 2px rgb(16 24 40 / 6%), 0 6px 20px rgb(16 24 40 / 6%);
+  --shadow: 0 1px 2px rgb(46 17 120 / 6%), 0 6px 20px rgb(46 17 120 / 8%);
   --max-width: 1080px;
+
+  --font-display: "Anton", "Fira Sans Condensed", system-ui, sans-serif;
+  --font-body: "Fira Sans Condensed", system-ui, -apple-system, sans-serif;
 
   color-scheme: light dark;
 }
 
+/* Dark theme, derived strictly from the brand hues — violet becomes the
+   surface family, periwinkle carries interface text, coral stays the accent.
+   No colours outside the identity were invented. */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0f1117;
-    --surface: #171a23;
-    --surface-alt: #1e222d;
-    --border: #2a2f3d;
-    --text: #eef0f6;
-    --text-muted: #9aa2b6;
-    --accent: #8296ff;
-    --accent-soft: #23294a;
-    --accent-strong: #a3b2ff;
-    --success: #4ad2a5;
-    --success-soft: #14312a;
-    --shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 6px 20px rgb(0 0 0 / 30%);
+    --bg: #150a38;
+    --surface: #1e0f4a;
+    --surface-alt: #2a1566;
+    --border: #3a2280;
+    --text: var(--brand-cream);
+    --text-muted: var(--brand-periwinkle);
+    --accent: var(--brand-periwinkle);
+    --accent-soft: #2a1566;
+    --accent-strong: #d9d4ff;
+    --success: #ffb499;
+    --success-soft: #4a2113;
+    --shadow: 0 1px 2px rgb(0 0 0 / 35%), 0 6px 20px rgb(0 0 0 / 35%);
   }
 }
 
@@ -44,7 +67,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -57,12 +80,25 @@ h3 {
   letter-spacing: -0.02em;
 }
 
+/* Anton is a heavy display face with a single weight — it carries the two
+   largest levels only. h3 stays in the body face so card titles don't shout. */
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
 h1 {
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-size: clamp(2.1rem, 4.4vw, 3rem);
 }
 
 h2 {
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+}
+
+h3 {
+  font-weight: 600;
 }
 
 p {
@@ -131,18 +167,31 @@ a:hover {
   /* min-height, not height: the links wrap to a second row on narrow
      screens and would otherwise overflow the bar. */
   min-height: 62px;
-  padding: 0.6rem 0;
+  /* padding-block only — .nav-inner is combined with .container, and the
+     shorthand would reset its horizontal padding to zero. */
+  padding-block: 0.6rem;
 }
 
 .nav-brand {
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--text);
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .nav-brand:hover {
   text-decoration: none;
+}
+
+.nav-logo {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+@media (max-width: 520px) {
+  .nav-logo {
+    height: 24px;
+  }
 }
 
 .nav-links {

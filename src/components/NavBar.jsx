@@ -11,8 +11,13 @@ export default function NavBar() {
   return (
     <nav className="nav">
       <div className="container nav-inner">
-        <Link to="/" className="nav-brand">
-          🎓 Elevate
+        <Link to="/" className="nav-brand" aria-label="Elevate — home">
+          {/* The wordmark is violet on light and cream on dark, so the two
+              variants are swapped by media query rather than recoloured. */}
+          <picture>
+            <source srcSet="/elevate-logo-reverse.svg" media="(prefers-color-scheme: dark)" />
+            <img src="/elevate-logo.svg" alt="Elevate" className="nav-logo" />
+          </picture>
         </Link>
         <div className="nav-links">
           {links.map((link) => (
