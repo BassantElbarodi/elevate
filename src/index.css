@@ -498,28 +498,6 @@ a.card:hover {
   margin-top: 2.5rem;
 }
 
-/* Contact */
-.contact-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 3rem;
-  margin-top: 0.5rem;
-}
-
-.contact-label {
-  margin: 0 0 0.2rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Long email addresses must not push the panel wider than the screen. */
-.contact-details a {
-  overflow-wrap: anywhere;
-}
-
 /* Footer */
 .footer {
   border-top: 1px solid var(--border);
