@@ -3,6 +3,8 @@
 An education website that helps students plan their academic path — explore majors, trace where
 they lead as careers, and find study resources.
 
+**Live:** https://elevate-psi-eosin.vercel.app
+
 Built with Next.js 16 (App Router) and React 19, deployable free on Vercel.
 
 ## Stack notes
@@ -217,3 +219,19 @@ Vercel pauses the project rather than charging you — there is no surprise bill
 
 Because every page is prerendered, the deep links that needed a workaround under the old static
 build (`/majors/biology` and friends) now just work.
+
+### If sign-in doesn't work on the live site
+
+Accounts need two environment variables set in **Vercel → Settings → Environment Variables**, ticked
+for Production and Preview:
+
+| Name | Value |
+| ---- | ----- |
+| `NEXT_PUBLIC_SUPABASE_URL` | your project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | the `sb_publishable_…` key |
+
+They only apply to **new** builds, so redeploy afterwards — adding them does not update the
+deployment already running. If `/account` says "Profiles aren't set up yet", this is why.
+
+Then add the live URL to **Supabase → Authentication → URL Configuration**, as both the Site URL
+and a Redirect URL, or sign-in will be rejected.
