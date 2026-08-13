@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server'
+import { createClient, isSupabaseConfigured } from '@/lib/supabase/server'
 import AuthForm from './AuthForm'
 import ProfileForm from './ProfileForm'
 
@@ -11,6 +11,23 @@ export const metadata = {
 export const dynamic = 'force-dynamic'
 
 export default async function AccountPage() {
+  // Say plainly what is wrong rather than throwing a 500 that gives the
+  // student no idea why the page is broken.
+  if (!isSupabaseConfigured()) {
+    return (
+      <div className="page container">
+        <header className="page-header">
+          <h1>Profiles aren’t set up yet</h1>
+          <p>
+            Accounts need two environment variables — <code>NEXT_PUBLIC_SUPABASE_URL</code> and{' '}
+            <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code>. Add them in your hosting settings and
+            redeploy. The rest of the site works without them.
+          </p>
+        </header>
+      </div>
+    )
+  }
+
   const supabase = await createClient()
   const {
     data: { user },

@@ -7,9 +7,20 @@ import { NextResponse } from 'next/server'
 export async function middleware(request) {
   let response = NextResponse.next({ request })
 
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  // Without credentials, creating a client throws — and because this runs on
+  // every route, that would turn a missing environment variable into a 500 on
+  // all 108 pages, static content included. Accounts are one feature; the rest
+  // of the site does not depend on them, so degrade instead of collapsing.
+  if (!url || !key) {
+    return response
+  }
+
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    url,
+    key,
     {
       cookies: {
         getAll() {

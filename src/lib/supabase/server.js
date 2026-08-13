@@ -4,6 +4,12 @@ import { cookies } from 'next/headers'
 // Client for server components, server actions and route handlers.
 // Sessions live in cookies, so the server needs its own client rather than
 // reusing the browser one.
+// True when the Supabase environment variables are present. Callers use this
+// to show a clear "not configured" message instead of crashing the page.
+export function isSupabaseConfigured() {
+  return Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
+}
+
 export async function createClient() {
   const cookieStore = await cookies()
 
