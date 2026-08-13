@@ -8,6 +8,7 @@ const links = [
   { to: '/careers', label: 'Careers' },
   { to: '/activities', label: 'Student Activities' },
   { to: '/mentorship', label: 'Mentorship' },
+  { to: '/your-space', label: 'Your Space' },
   { to: '/scholarships', label: 'Scholarships' },
   { to: '/resources', label: 'Resources' },
   { to: '/about', label: 'About' },

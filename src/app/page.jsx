@@ -36,6 +36,13 @@ const features = [
     cta: 'See mentorship',
   },
   {
+    icon: '🌱',
+    title: 'Look after yourself',
+    text: 'Fear of failure, burnout, and anxiety about the future — the pressure around studying.',
+    to: '/your-space',
+    cta: 'Visit Your Space',
+  },
+  {
     icon: '🏅',
     title: 'Find funding',
     text: 'Scholarships Egyptians can apply for — at home, and fully funded routes abroad.',

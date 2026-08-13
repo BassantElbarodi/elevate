@@ -62,6 +62,7 @@ src/
     careers.js        The 57 career paths (Egyptian routes and pay)
     activities.js     The 29 Egyptian activities and volunteering options
     workshops.js      The 13 Elevate mentorship workshops
+    wellbeing.js      The 3 Your Space wellbeing topics
     scholarships.js   The 12 scholarships open to Egyptians
     resources.js      The 18 study resources
   components/
@@ -167,6 +168,12 @@ design — they change annually and a stale date is worse than no date, so every
 official page instead. Where sources disagree on a requirement, the data says to check the official
 page rather than repeating a number: Chevening's work-experience threshold is stated as both two
 and five years across secondary sources, so neither is printed here.
+
+Your Space (`wellbeing.js`) covers fear of failure, burnout and future anxiety. Two things about
+that page are deliberate and should not be quietly dropped: it states plainly that these are peer
+support sessions rather than therapy, and it carries Egypt's national mental health line, **16328**
+— free, confidential, 24/7, run by the Ministry of Health. A student in real difficulty may land
+there first, and should not have to go looking for help.
 
 Mentorship is the one dataset that is not external: `workshops.js` describes what Elevate itself
 offers, across soft skills, Microsoft skills, technical learning, and creative sessions. The source
