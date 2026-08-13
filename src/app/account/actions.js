@@ -65,9 +65,19 @@ export async function signIn(prevState, formData) {
   const supabase = await createClient()
   const { error } = await supabase.auth.signInWithPassword({ email, password })
 
-  // Deliberately vague: saying which of the two was wrong tells an attacker
-  // whether an email is registered.
-  if (error) return { error: 'That email and password combination did not work.' }
+  if (error) {
+    // An unconfirmed account is not a secret worth protecting, and hiding it
+    // sends the student hunting for a password problem they do not have.
+    if (error.code === 'email_not_confirmed') {
+      return {
+        error:
+          'Almost there — check your email for a confirmation link, then sign in. Look in spam too.',
+      }
+    }
+    // Everything else stays vague on purpose: naming which half was wrong
+    // would let someone test whether a given student is registered.
+    return { error: 'That email and password combination did not work.' }
+  }
 
   revalidatePath('/account')
   redirect('/account')
