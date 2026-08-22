@@ -9,6 +9,13 @@
 // pay is generally lower; multinationals and USD-paying employers, higher.
 // Re-check before relying on any figure. Sources are listed in the README.
 //
+// `roadmap` is the step-by-step route into the career, ordered from school
+// onwards. Every entry has five steps of `{ when, title, detail }`, where
+// `when` is a short timing label rather than a promise — routes vary by
+// faculty and by person, and the years are indicative. Keep each roadmap
+// consistent with that career's `education` field, since the two are read
+// side by side on the detail page.
+//
 // `majorIds` is the single source of truth for how majors and careers connect.
 // Each id must match an entry in ./majors.js — major pages read this field to
 // work out which careers to show, so you only ever edit the link in one place.
@@ -32,6 +39,43 @@ const careerList = [
       'Design discussions with the team',
     ],
     skills: ['Programming', 'System design', 'Version control (Git)', 'Communication'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Take the Maths branch and start coding early',
+        detail:
+          'The Maths branch (علمي رياضة) keeps both Computers & AI and Engineering open. Nothing stops you writing code before university — most hiring later rewards the years you started, not the degree.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Faculty of Computers & AI, or Engineering',
+        detail:
+          'Either faculty gets you there. Treat data structures, algorithms and operating systems as the courses that actually show up in interviews.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Build and ship things publicly',
+        detail:
+          'Three finished projects on GitHub outweigh a long list of tutorials. Summer internships at Egyptian software houses are the usual first rung; ITIDA and NTI run free tracks if yours does not offer one.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Junior developer on a real team',
+        detail:
+          'The first job is mostly reading other people’s code and learning the review culture. Choose a team that reviews properly over one that pays slightly more.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or go remote',
+        detail:
+          'Backend, mobile, data or infrastructure — depth starts paying around year three. This is also the point where USD-paying remote work becomes realistic, and it changes the salary picture completely.',
+      },
+    ],
     majorIds: ['computer-science', 'data-science', 'mathematics', 'information-systems'],
   },
   {
@@ -52,6 +96,43 @@ const careerList = [
       'Monitoring accuracy and latency in production',
     ],
     skills: ['Python', 'ML frameworks', 'Software engineering', 'Experiment design'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Maths branch, and take the maths seriously',
+        detail:
+          'Take the Maths branch (علمي رياضة). Linear algebra and probability are not background here — they are the job.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Computers & AI, Engineering, or Statistics',
+        detail:
+          'Any of the three works. Push for the probability, optimisation and linear algebra courses rather than avoiding them.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Train models end to end, not just in notebooks',
+        detail:
+          'Do a full project: data collection, training, evaluation, then actually deploy it behind an API. That last step is what separates ML engineers from people who have finished a course.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Enter through software or data first',
+        detail:
+          'Very few employers hire fresh graduates straight into ML. Most people arrive from a backend or data role after a year or two — that is the normal route, not a detour.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2+',
+        title: 'Postgraduate study, or production depth',
+        detail:
+          'An MSc opens research posts and study abroad; staying in industry, the scarce skill is keeping models reliable in production, not building new ones.',
+      },
+    ],
     majorIds: ['computer-science', 'data-science', 'mathematics'],
   },
   {
@@ -72,6 +153,43 @@ const careerList = [
       'Presenting findings to non-technical teams',
     ],
     skills: ['Statistics', 'Python or R', 'SQL', 'Data visualisation'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Maths branch',
+        detail:
+          'Take the Maths branch (علمي رياضة). Statistics is the spine of this job and it starts at school.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Computers & AI, Science (Statistics), or Economics',
+        detail:
+          'Statistics from Science and programming from Computers & AI both lead here — you just fill the other half yourself.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Learn SQL properly, then analyse something real',
+        detail:
+          'SQL is asked about in almost every interview and taught in almost no course. Publish two analyses of real datasets with the reasoning written out, not just charts.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Analyst role at a bank, telecom or e-commerce company',
+        detail:
+          'Egypt’s banks, telecoms and e-commerce players hold the largest datasets and hire the most juniors. Expect the first year to be mostly data cleaning — that is the job, not a hazing ritual.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Depth in a domain, or a move into ML',
+        detail:
+          'Knowing one industry’s data deeply is worth more than a wider list of models. From here the paths split towards ML engineering, analytics leadership, or product.',
+      },
+    ],
     majorIds: ['data-science', 'computer-science', 'mathematics', 'economics', 'physics'],
   },
   {
@@ -92,6 +210,43 @@ const careerList = [
       'Writing incident reports',
     ],
     skills: ['Networking', 'Threat analysis', 'Scripting', 'Attention to detail'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Maths or Science branch',
+        detail:
+          'Either branch opens Computers & AI. Start reading about how systems break as soon as you are curious about it.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Computers & AI or Engineering',
+        detail:
+          'Networking and operating systems matter more here than any other pair of courses. Learn Linux until you are comfortable in it.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Certifications and hands-on labs',
+        detail:
+          'This field weighs certifications heavily — Security+ then a practical one. NTI runs free cybersecurity tracks, and capture-the-flag competitions are the cheapest real practice there is.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'SOC analyst, monitoring alerts',
+        detail:
+          'Almost everyone starts in a security operations centre triaging alerts, often on shifts. It is repetitive, and it is where you learn what normal traffic looks like.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Choose offence or defence',
+        detail:
+          'Penetration testing, incident response, or governance and compliance. Banks and telecoms in Egypt pay the most; remote work for foreign employers pays more again.',
+      },
+    ],
     majorIds: ['computer-science', 'mathematics', 'information-systems'],
   },
   {
@@ -112,6 +267,43 @@ const careerList = [
       'Improving build and deploy times',
     ],
     skills: ['Linux', 'Cloud platforms', 'Scripting', 'Incident response'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Maths or Science branch',
+        detail:
+          'Either opens Computers & AI or Engineering. No specialised preparation needed at this stage.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Computers & AI or Engineering',
+        detail:
+          'Operating systems and networking are the courses that carry over. Nobody arrives at this role straight from graduation, so plan for a first job elsewhere.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Live in Linux, then learn one cloud',
+        detail:
+          'Run Linux as your daily machine. Pick one cloud — AWS or Azure — and take its associate certification; employers screen on it.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Start as a developer or sysadmin',
+        detail:
+          'You need to have shipped software before you can build the pipeline that ships it. Volunteer for the deployment work nobody on your team wants.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2+',
+        title: 'Move into platform or SRE work',
+        detail:
+          'Infrastructure as code, containers, and being on call. It is one of the strongest fields in Egypt for remote contracts, because the work has no need to be in the room.',
+      },
+    ],
     majorIds: ['computer-science', 'information-systems'],
   },
   {
@@ -132,6 +324,43 @@ const careerList = [
       'Playtesting and fixing bugs',
     ],
     skills: ['C++ or C#', 'Game engines', 'Maths for graphics', 'Debugging'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Maths branch, and start making small games',
+        detail:
+          'Take the Maths branch (علمي رياضة). Graphics is applied linear algebra, and a game finished at sixteen is still a game finished.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Computers & AI — or skip the degree if the portfolio is strong',
+        detail:
+          'This is one of the few fields where a portfolio genuinely substitutes for the certificate. Either way, C++ or C# and a real engine.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Finish games — small ones',
+        detail:
+          'Three finished small games beat one ambitious unfinished one, every time. Game jams force you to finish, and Egypt’s scene runs them regularly.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Studio work, or mobile',
+        detail:
+          'Egypt’s studios cluster around mobile and casual games, which is where the local jobs are. Pay starts lower than general software — go in knowing that.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or aim abroad',
+        detail:
+          'Engine, graphics, gameplay or tools. The larger studios are outside Egypt, so many developers here work remotely or relocate; publishing your own titles is the third route.',
+      },
+    ],
     majorIds: ['computer-science', 'graphic-design', 'mathematics', 'film-media-production'],
   },
   {
@@ -152,6 +381,43 @@ const careerList = [
       'Reviewing release readiness',
     ],
     skills: ['Test automation', 'Scripting', 'Systematic thinking', 'Clear bug reports'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any science branch',
+        detail:
+          'Maths or Science both work. This role is unusually open to people arriving from other directions.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Computers & AI, or any technical degree',
+        detail:
+          'A computing degree is the straight route, but engineering and science graduates get hired here regularly.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Learn one automation framework',
+        detail:
+          'Manual testing gets you in; automation is what keeps you moving. Selenium or Playwright plus a scripting language is enough to start.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Junior QA on a product team',
+        detail:
+          'One of the most accessible entry points into software in Egypt, and a legitimate side door for people whose degree was not computing.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Automation lead — or step across into development',
+        detail:
+          'Test automation is real software engineering, and plenty of QA engineers move into development from it. Others go deeper into performance or security testing.',
+      },
+    ],
     majorIds: ['computer-science', 'information-systems'],
   },
   {
@@ -172,6 +438,43 @@ const careerList = [
       'Coordinating with manufacturing',
     ],
     skills: ['CAD', 'Simulation (FEA/CFD)', 'Materials knowledge', 'Documentation'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Maths branch',
+        detail:
+          'The Maths branch (علمي رياضة) is the only route into Faculty of Engineering. Engineering sits near the top of the Tansik scale, so the score matters.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Faculty of Engineering, mechanical department',
+        detail:
+          'Five years. The first is a general preparatory year; you choose the department after it, and your first-year result decides whether you get your choice.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–5',
+        title: 'Summer training, and learn CAD properly',
+        detail:
+          'Summer training in a factory or workshop is a graduation requirement — use it to see production rather than to collect a stamp. SolidWorks or AutoCAD, then a simulation package.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Register with the Engineers Syndicate',
+        detail:
+          'Registration with the Engineers Syndicate (نقابة المهندسين) is what makes you an engineer in the legal sense. It is a paperwork step, but you cannot practise or sign work without it.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–5',
+        title: 'Site, factory or design office',
+        detail:
+          'Most graduates start in production, maintenance or a design office. Depth in one sector — automotive, HVAC, oil and gas, manufacturing — is what raises pay after the first few years.',
+      },
+    ],
     majorIds: ['mechanical-engineering', 'physics'],
   },
   {
@@ -192,6 +495,43 @@ const careerList = [
       'Diagnosing sensor and calibration issues',
     ],
     skills: ['Control systems', 'Programming', 'Mechanical design', 'Systems debugging'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Maths branch',
+        detail:
+          'The Maths branch (علمي رياضة), and a high score: this route runs through Engineering.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Engineering — mechatronics, mechanical, or electrical',
+        detail:
+          'Mechatronics departments are the direct fit; mechanical and electrical both arrive here too. Control systems is the course that matters most.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–5',
+        title: 'Build robots and compete',
+        detail:
+          'Student competition teams are the real training — Egypt sends teams to regional and international robotics contests every year. Learn ROS while you are at it.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Engineers Syndicate registration',
+        detail:
+          'Standard for every engineering graduate, and required before you can practise.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–5',
+        title: 'Automation first, robotics later',
+        detail:
+          'Egypt’s market is mostly industrial automation and PLC work rather than research robotics — a good, real place to start. Research posts usually need a postgraduate degree, often abroad.',
+      },
+    ],
     majorIds: ['mechanical-engineering', 'computer-science', 'electrical-engineering'],
   },
   {
@@ -212,6 +552,43 @@ const careerList = [
       'Writing certification documentation',
     ],
     skills: ['Fluid dynamics', 'Structural analysis', 'Simulation tools', 'Rigour'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Maths branch',
+        detail:
+          'The Maths branch (علمي رياضة), with a strong score. Be clear-eyed early: the local employer list here is short.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Engineering — aerospace or mechanical',
+        detail:
+          'Cairo University has an aerospace department; mechanical engineering elsewhere reaches the same place through aerodynamics and structures.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–5',
+        title: 'Fluid dynamics, structures, and simulation tools',
+        detail:
+          'This is a simulation-heavy field. Learn a CFD and an FEA package well enough to defend your results.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Engineers Syndicate, then aim at the real employers',
+        detail:
+          'EgyptAir maintenance, the Arab Organization for Industrialization, and defence manufacturing are the main local doors. Many graduates go abroad or into adjacent mechanical work instead.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2+',
+        title: 'Postgraduate study or emigration, honestly',
+        detail:
+          'The field concentrates in Europe, the Gulf and the US. A funded Master’s abroad is the most common way Egyptian graduates actually reach aerospace work — plan for it early rather than discovering it late.',
+      },
+    ],
     majorIds: ['mechanical-engineering', 'physics', 'electrical-engineering'],
   },
   {
@@ -232,6 +609,43 @@ const careerList = [
       'Working with clinicians on requirements',
     ],
     skills: ['Device design', 'Biology fundamentals', 'Regulatory knowledge', 'Testing'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Maths branch',
+        detail:
+          'The Maths branch (علمي رياضة) — note that it is Maths, not Science, that Engineering requires — even though this career is medical.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Engineering, biomedical department',
+        detail:
+          'Five years. Cairo, Helwan and several private universities run biomedical departments; the syllabus mixes electronics, mechanics and human physiology.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–5',
+        title: 'Train inside a hospital',
+        detail:
+          'Get summer training in a hospital’s biomedical department. Seeing how imaging equipment actually fails in service teaches you more than a semester of theory.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Engineers Syndicate registration',
+        detail:
+          'Required like any engineering branch before you practise.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–5',
+        title: 'Devices, then regulation or clinical engineering',
+        detail:
+          'Most start maintaining and commissioning equipment for hospitals or medical device distributors. From there: regulatory affairs, sales engineering, or postgraduate research into device design.',
+      },
+    ],
     majorIds: ['mechanical-engineering', 'biology', 'electrical-engineering', 'chemistry', 'chemical-engineering'],
   },
   {
@@ -252,6 +666,43 @@ const careerList = [
       'Continuing education and recertification',
     ],
     skills: ['Clinical knowledge', 'Communication', 'Composure under pressure', 'Ethics'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم) is required for Medicine, Nursing and the allied health faculties. Medicine sits at the very top of the Tansik scale.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–6',
+        title: 'Choose your route — they differ enormously',
+        detail:
+          'Medicine is 5–6 years plus an internship year; Nursing is 4. Same field, very different length, cost and ceiling, so choose with the timeline in front of you.',
+      },
+      {
+        kind: 'gate',
+        when: 'Internship',
+        title: 'The امتياز year',
+        detail:
+          'Medicine graduates do a supervised rotation year across departments. It is where you find out which specialty you can actually live inside.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Syndicate registration',
+        detail:
+          'The Medical Syndicate for doctors, the Nursing Syndicate for nurses. Practice is not legal without it.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2+',
+        title: 'Residency and specialisation',
+        detail:
+          'Egyptian Fellowship, a Master’s, or a Ministry of Health residency. Specialisation is where pay and autonomy change — and it adds years, so decide deliberately rather than by drift.',
+      },
+    ],
     majorIds: ['biology', 'psychology', 'nursing', 'public-health', 'nutrition-dietetics', 'medicine'],
   },
   {
@@ -272,6 +723,43 @@ const careerList = [
       'Managing inventory and records',
     ],
     skills: ['Pharmacology', 'Precision', 'Patient communication', 'Ethics'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم). Pharmacy is a five-year faculty entered directly from school, not after a science degree.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Faculty of Pharmacy',
+        detail:
+          'Five years, covering pharmacology, pharmaceutics, and medicinal chemistry. Some faculties run a PharmD track — check the length before you commit.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–5',
+        title: 'Train in both directions',
+        detail:
+          'Do training in a community pharmacy and in a manufacturer. Most graduates end up in industry rather than behind a counter, and you want to have seen both before choosing.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Pharmacists Syndicate registration',
+        detail:
+          'Registration with the Pharmacists Syndicate (نقابة الصيادلة) is required to dispense. It also sets the profession’s minimum pay scale.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–5',
+        title: 'Community, industry, or regulatory',
+        detail:
+          'Community pharmacy is the fastest start; pharmaceutical manufacturing and medical representation pay better; regulatory affairs and clinical pharmacy need extra study but have the strongest ceiling.',
+      },
+    ],
     majorIds: ['biology', 'chemistry', 'pharmacy'],
   },
   {
@@ -292,6 +780,43 @@ const careerList = [
       'Documenting progress for insurers',
     ],
     skills: ['Anatomy', 'Motivational coaching', 'Manual technique', 'Patience'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم). Physical Therapy is its own five-year faculty, entered straight from Thanaweya Amma.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Faculty of Physical Therapy',
+        detail:
+          'Five years. Anatomy and biomechanics early, then the clinical specialisms — orthopaedic, neurological, paediatric, cardiopulmonary.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 4–5',
+        title: 'Clinical placements',
+        detail:
+          'Rotations across hospital departments. Hands-on technique cannot be learned from a book, and the placement is where you build it.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Register, then join a clinic or hospital',
+        detail:
+          'Registration is required to practise. Sports clubs, hospitals and private clinics all hire graduates.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2+',
+        title: 'Specialise, then consider your own clinic',
+        detail:
+          'Manual therapy, sports rehabilitation or neurological rehab. Many physical therapists in Egypt eventually run their own practice, which makes it a business as well as a clinical career.',
+      },
+    ],
     majorIds: ['biology', 'psychology', 'nursing', 'physical-therapy'],
   },
   {
@@ -312,6 +837,43 @@ const careerList = [
       'Consulting with other clinicians',
     ],
     skills: ['Clinical assessment', 'Therapeutic technique', 'Ethics', 'Emotional resilience'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Science or Literature branch',
+        detail:
+          'Psychology is reachable from both — Faculty of Arts takes أدبي, and some routes accept علمي. Check the specific faculty.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Psychology degree',
+        detail:
+          'Four years at Arts or a private university. Push towards the clinical and assessment courses, and take the statistics seriously.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 4–5',
+        title: 'Volunteer clinical exposure',
+        detail:
+          'Hospitals, NGOs and helplines take volunteers. You need to know how you respond to distress before you build a career on it.',
+      },
+      {
+        kind: 'gate',
+        when: 'Years 5–7',
+        title: 'Postgraduate diploma, then Master’s',
+        detail:
+          'The clinical route runs through a diploma and an MA in clinical psychology, with supervised hours. This is a long runway — plan for years, not months.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 7+',
+        title: 'Supervised practice, then independent',
+        detail:
+          'Practise under supervision before working alone, and keep your own supervision going afterwards. Egypt’s mental health sector is growing and under-supplied.',
+      },
+    ],
     majorIds: ['psychology'],
   },
   {
@@ -332,6 +894,43 @@ const careerList = [
       'Briefing public health officials',
     ],
     skills: ['Biostatistics', 'Study design', 'Data analysis', 'Scientific writing'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم), for Medicine or Science. A statistics-led route through the Maths branch also reaches this field.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–6',
+        title: 'Medicine, Science, or Public Health',
+        detail:
+          'Doctors, biologists and statisticians all become epidemiologists. Whichever you start from, you will need to add the other half.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3+',
+        title: 'Learn biostatistics and a statistical language',
+        detail:
+          'R or Stata, and study design done properly. This is the skill that makes you employable rather than merely interested.',
+      },
+      {
+        kind: 'study',
+        when: 'Postgraduate',
+        title: 'MPH or a public health Master’s',
+        detail:
+          'Effectively required. Egyptian faculties of public health offer it, and it is a common target for Fulbright and Chevening applicants.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2+',
+        title: 'Ministry of Health, WHO, or research',
+        detail:
+          'Surveillance units, international organisations with Cairo offices, and university research groups are the main employers. Outbreak work is the visible part; most of it is careful, unglamorous data.',
+      },
+    ],
     majorIds: ['biology', 'data-science', 'public-health', 'nursing', 'mathematics', 'medicine'],
   },
   {
@@ -352,6 +951,43 @@ const careerList = [
       'Presenting at conferences',
     ],
     skills: ['Experimental design', 'Statistics', 'Technical writing', 'Persistence'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Science or Maths branch',
+        detail:
+          'The Science branch (علمي علوم) or the Maths branch (علمي رياضة), depending on the discipline. Curiosity about why, not just what, is the actual entry requirement.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Faculty of Science, Engineering, or Medicine',
+        detail:
+          'Four years for most sciences. Your graduation project is the first piece of research you will be judged on — choose the supervisor as carefully as the topic.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Join a lab as an undergraduate',
+        detail:
+          'Ask to help in a research group before you graduate. A named supervisor who will write you a real letter is worth more than a high grade alone.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 4–8',
+        title: 'MSc, then PhD',
+        detail:
+          'Academic research requires a doctorate. In Egypt, a معيد (teaching assistant) post funds your postgraduate study while you work — it is the standard route, and competitive.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 8+',
+        title: 'Publish, or move to industry research',
+        detail:
+          'University and research-institute posts run on publications and grants. Industry research — pharmaceuticals, energy, technology — pays better and asks different questions; funded study abroad is the third door.',
+      },
+    ],
     majorIds: ['biology', 'data-science', 'psychology', 'environmental-science', 'mechanical-engineering', 'physics', 'chemistry', 'mathematics', 'economics', 'sociology', 'political-science', 'civil-engineering', 'electrical-engineering', 'chemical-engineering', 'anthropology', 'geology', 'philosophy', 'medicine', 'pharmacy'],
   },
   {
@@ -372,6 +1008,43 @@ const careerList = [
       'Maintaining reproducible workflows',
     ],
     skills: ['Python or R', 'Genomics', 'Statistics', 'Pipeline engineering'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم) for biology; the Maths branch works if you enter from the computing side.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Biology, or Computers & AI',
+        detail:
+          'Either half is a legitimate start, and you build the other one yourself. Biologists usually find the programming harder to add than programmers find the biology.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Learn Python or R on real biological data',
+        detail:
+          'Public genomic datasets are free. Reproducing a published analysis end to end teaches more than any course.',
+      },
+      {
+        kind: 'study',
+        when: 'Postgraduate',
+        title: 'MSc in bioinformatics or genomics',
+        detail:
+          'Effectively required. Zewail City, Nile University and several Egyptian faculties run programmes; funded routes abroad are common in this field.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2+',
+        title: 'Research institute, pharma, or remote',
+        detail:
+          'Egypt’s research institutes and pharmaceutical companies hire; so do international groups who will take remote analysts. Genomics is expanding faster than the supply of people who can do both halves.',
+      },
+    ],
     majorIds: ['biology', 'data-science', 'computer-science', 'mathematics', 'pharmacy'],
   },
   {
@@ -392,6 +1065,43 @@ const careerList = [
       'Monitoring restoration projects',
     ],
     skills: ['Field ecology', 'GIS', 'Stakeholder negotiation', 'Report writing'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم), for Faculty of Science — ecology or environmental.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Science — ecology or environmental sciences',
+        detail:
+          'Four years. Ecology, botany and zoology, with the field methods courses being the ones that matter most in practice.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Field surveys and GIS',
+        detail:
+          'Volunteer on protected-area surveys — Egypt has protectorates from Wadi El Rayan to Ras Mohammed. Learn QGIS; it appears in nearly every job description in this field.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'NGO, protectorate, or environment ministry',
+        detail:
+          'The Egyptian Environmental Affairs Agency, protected area teams, and conservation NGOs are the main employers. Posts are few, so build contacts through volunteering before you graduate.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Postgraduate study, or project management',
+        detail:
+          'An MSc opens research and international project posts. Much of the funded work runs through international programmes, so grant writing becomes a core skill.',
+      },
+    ],
     majorIds: ['environmental-science', 'biology', 'geology'],
   },
   {
@@ -412,6 +1122,43 @@ const careerList = [
       'Advising on regulatory compliance',
     ],
     skills: ['Field methods', 'GIS', 'Regulatory knowledge', 'Report writing'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم) for Science; the Maths branch if you route through environmental engineering instead.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Science (environmental), or Engineering',
+        detail:
+          'Four years at Science, five through Engineering. Both reach the consulting work that employs most people in this field.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Learn EIA and GIS',
+        detail:
+          'Environmental impact assessment is the document this profession produces. Learn what regulators require, and learn GIS alongside it.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'Environmental consultancy',
+        detail:
+          'Consultancies preparing impact assessments for developers and industry are the largest employer. Expect field sampling and long reports in equal measure.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Industry compliance, or policy',
+        detail:
+          'Corporate environmental compliance in industry, EEAA and ministry posts, or international organisations. Egypt’s renewable energy and water programmes are pulling demand upward.',
+      },
+    ],
     majorIds: ['environmental-science', 'biology', 'chemistry', 'civil-engineering', 'public-health', 'chemical-engineering', 'geology'],
   },
   {
@@ -432,6 +1179,43 @@ const careerList = [
       'Drafting zoning recommendations',
     ],
     skills: ['GIS', 'Policy analysis', 'Public speaking', 'Negotiation'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Maths branch',
+        detail:
+          'The Maths branch (علمي رياضة), for the Faculty of Regional and Urban Planning at Cairo University, or the architecture route through Engineering.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Regional & Urban Planning, or Engineering (architecture)',
+        detail:
+          'Four to five years depending on the faculty. Land use, transport planning and urban economics are the core.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'GIS, seriously',
+        detail:
+          'GIS is the working tool of this profession. Learn QGIS or ArcGIS well enough to build an analysis, not just a map.',
+      },
+      {
+        kind: 'work',
+        when: 'Graduation',
+        title: 'Ministry, authority, or consultancy',
+        detail:
+          'The Ministry of Housing, the New Urban Communities Authority, GOPP and private planning consultancies are the employers. Egypt’s new cities programme is the largest driver of demand.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or postgraduate study',
+        detail:
+          'Transport, housing policy, or heritage and informal areas. A Master’s strengthens the move into policy and international development work.',
+      },
+    ],
     majorIds: ['environmental-science', 'business', 'civil-engineering', 'political-science', 'urban-planning', 'architecture'],
   },
   {
@@ -452,6 +1236,43 @@ const careerList = [
       'Tracking metrics against targets',
     ],
     skills: ['SQL & spreadsheets', 'Process mapping', 'Stakeholder management', 'Clear writing'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Commerce and Business Information Systems take all branches; a maths background helps with the analytical half.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Commerce, Economics, or Business Information Systems',
+        detail:
+          'Four years. Statistics, accounting and information systems are the courses that carry directly into the work.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Excel to a serious level, then SQL',
+        detail:
+          'Spreadsheet modelling and SQL are the two tools you will be tested on. Process mapping is the third, and almost nobody learns it before their first job.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Analyst at a bank, telecom, or consultancy',
+        detail:
+          'Egypt’s banks, telecoms and shared service centres hire analysts in volume, and multinational back offices in Cairo are a strong entry point.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or move into product or consulting',
+        detail:
+          'Depth in a domain — banking, supply chain, healthcare — raises your value fast. Business analysis is also the most common route into product management.',
+      },
+    ],
     majorIds: ['business', 'data-science', 'environmental-science', 'economics', 'accounting-finance', 'information-systems'],
   },
   {
@@ -472,6 +1293,43 @@ const careerList = [
       'Aligning design, engineering, and leadership',
     ],
     skills: ['Prioritisation', 'Written communication', 'Data literacy', 'Influence'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'No requirement. This role is entered sideways, not straight out of school.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Any degree — engineering, business, or design',
+        detail:
+          'The degree is not the gate. Writing clearly and arguing from evidence are the transferable skills to build wherever you study.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Ship something with other people',
+        detail:
+          'Run a student project, a startup competition team, or a club with real users. The core skill is getting a group to agree on what to build next.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'Enter through engineering, design, or analysis',
+        detail:
+          'Almost nobody is hired as a product manager straight from graduation. Two or three years as a developer, designer or analyst is the normal entry ticket.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Associate PM, then own a product',
+        detail:
+          'Egypt’s fintech and e-commerce companies are the largest hirers. From there: senior PM, product lead, or founding your own — the skills overlap heavily.',
+      },
+    ],
     majorIds: ['business', 'computer-science', 'graphic-design', 'communications', 'information-systems'],
   },
   {
@@ -492,6 +1350,43 @@ const careerList = [
       'Advising on compliance',
     ],
     skills: ['Accounting standards', 'Spreadsheets', 'Accuracy', 'Ethics'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Faculty of Commerce accepts all Thanaweya Amma branches. Comfort with arithmetic helps more than a maths background.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Faculty of Commerce, accounting division',
+        detail:
+          'Four years. Choose the English section if you can — it opens multinational and Big Four hiring, which is where the pay difference starts.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Internship at an audit firm',
+        detail:
+          'A busy-season internship at an audit firm tells you quickly whether you can live with the hours. It is also the main recruiting pipeline.',
+      },
+      {
+        kind: 'work',
+        when: 'Graduation',
+        title: 'Audit firm, or corporate finance',
+        detail:
+          'The Big Four and Egyptian audit firms hire graduates in cohorts. Audit is harder work with a faster learning curve; corporate accounting is steadier.',
+      },
+      {
+        kind: 'gate',
+        when: 'Years 2–6',
+        title: 'Certify — ESAA, ACCA or CMA',
+        detail:
+          'This is where the salary curve actually bends. ESAA registration is the Egyptian licence to sign audits; ACCA and CMA open multinational and Gulf roles.',
+      },
+    ],
     majorIds: ['business', 'economics', 'accounting-finance'],
   },
   {
@@ -512,6 +1407,43 @@ const careerList = [
       'Presenting to decision-makers',
     ],
     skills: ['Financial modelling', 'Valuation', 'Excel', 'Written analysis'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Commerce and Economics take all branches. The Maths branch helps but is not required.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Commerce, Economics, or Business Administration',
+        detail:
+          'Four years, English section if possible. Corporate finance, valuation and statistics are the relevant courses.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Build models, and follow the EGX',
+        detail:
+          'Financial modelling in Excel is the hard skill; following listed Egyptian companies and writing your own short valuations is the practice nobody assigns you.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Analyst at a bank, brokerage, or corporate',
+        detail:
+          'Investment banking and brokerage pay most and demand the hours; corporate finance and FP&A roles are far more liveable. Both are legitimate starts.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2–5',
+        title: 'CFA, then specialise',
+        detail:
+          'The CFA is three levels over at least two years and is the recognised credential for investment work. Equity research, asset management, private equity and corporate finance diverge from here.',
+      },
+    ],
     majorIds: ['business', 'data-science', 'economics', 'mathematics', 'accounting-finance'],
   },
   {
@@ -532,6 +1464,43 @@ const careerList = [
       'Studying for the next exam',
     ],
     skills: ['Probability', 'Statistical modelling', 'Programming', 'Self-discipline'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Maths branch',
+        detail:
+          'The Maths branch (علمي رياضة). This is one career where the maths is genuinely non-negotiable.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Commerce (insurance/actuarial) or Science (mathematics)',
+        detail:
+          'Cairo University’s Faculty of Commerce runs an actuarial division; a mathematics or statistics degree reaches the same place.',
+      },
+      {
+        kind: 'gate',
+        when: 'Years 2–4',
+        title: 'Start the professional exams early',
+        detail:
+          'The exams, not the degree, gate this profession — IFoA, SOA, or the Egyptian actuarial route. Passing the first one or two before graduating puts you well ahead.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'Actuarial trainee at an insurer',
+        detail:
+          'Egypt’s insurance companies and the Financial Regulatory Authority hire trainees, usually with study support and paid exam attempts. Ask about that support before accepting.',
+      },
+      {
+        kind: 'gate',
+        when: 'Years 3–8',
+        title: 'Qualify, and keep studying',
+        detail:
+          'Full qualification takes most people six to ten years of exams alongside work. It is a long grind with an unusually secure and well-paid destination, including in the Gulf.',
+      },
+    ],
     majorIds: ['data-science', 'business', 'mathematics', 'economics', 'accounting-finance'],
   },
   {
@@ -552,6 +1521,43 @@ const careerList = [
       'Maintaining policy and compliance',
     ],
     skills: ['Interviewing', 'Conflict resolution', 'Discretion', 'Employment law basics'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Commerce, Arts and Business Administration all accept a range of branches.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Commerce, Business Administration, or Psychology',
+        detail:
+          'Four years. Organisational behaviour and labour law are the two most directly useful courses.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Run recruitment for a student organisation',
+        detail:
+          'Student activities like AIESEC and Enactus recruit and manage large teams — genuinely relevant experience, and it is on offer to anyone who joins.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'HR coordinator or recruiter',
+        detail:
+          'Recruitment is the usual entry point and the fastest to learn in. Egyptian labour law knowledge separates competent HR from administrative HR early.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise — or go generalist and lead',
+        detail:
+          'Talent acquisition, compensation and benefits, or learning and development. An HR diploma or CIPD strengthens the move into business partner and management roles.',
+      },
+    ],
     majorIds: ['psychology', 'business', 'sociology', 'communications', 'education'],
   },
   {
@@ -572,6 +1578,43 @@ const careerList = [
       'Analysing cost and lead-time data',
     ],
     skills: ['Logistics planning', 'Negotiation', 'Data analysis', 'Problem solving'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Commerce takes all branches; the Maths branch is needed if you route in through Engineering.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Commerce, or Engineering (industrial)',
+        detail:
+          'Four years through Commerce, five through Engineering. Logistics, operations research and statistics are the relevant strands.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Learn the analytics, and see a warehouse',
+        detail:
+          'Excel and inventory modelling, plus an internship in an actual distribution operation. The gap between the model and the loading dock is the whole job.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'Planning, procurement, or logistics coordination',
+        detail:
+          'FMCG multinationals, manufacturers and the logistics companies clustered around the Suez Canal and Alexandria hire steadily at this level.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Certify and broaden',
+        detail:
+          'CSCP or CIPS strengthens the move upward. Egypt’s position on the canal makes this an unusually strong local field, with a direct bridge to Gulf logistics roles.',
+      },
+    ],
     majorIds: ['business', 'mechanical-engineering', 'information-systems'],
   },
   {
@@ -592,6 +1635,43 @@ const careerList = [
       'Researching the competitive landscape',
     ],
     skills: ['Copywriting', 'Analytics', 'Brand strategy', 'Budgeting'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Mass Communication and Commerce take all branches.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Mass Communication, Commerce, or Business Administration',
+        detail:
+          'Four years. Consumer behaviour, market research and statistics matter more than the creative courses people expect.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Run real campaigns and learn the analytics',
+        detail:
+          'Manage social accounts for a student club, a small business, or your own project. Google Analytics and Meta’s ad tools are learnable free and are screened for in hiring.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Agency or brand — pick deliberately',
+        detail:
+          'Agencies teach speed and breadth across clients; brand-side marketing teaches depth and ownership. Cairo has a large agency scene, and it is the more common start.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, then manage',
+        detail:
+          'Performance marketing, brand, or content. The data-led side pays better and is the harder half to fake, so it is the safer specialisation.',
+      },
+    ],
     majorIds: ['business', 'graphic-design', 'communications', 'marketing'],
   },
   {
@@ -612,6 +1692,43 @@ const careerList = [
       'Hiring and team building',
     ],
     skills: ['Sales', 'Resilience', 'Prioritisation', 'Financial literacy'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'Anytime',
+        title: 'No entry requirement — and no safety net',
+        detail:
+          'There is no gate on this path, which is exactly why it needs planning the others do not. Most ventures fail; go in knowing what you can afford to lose.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'University, and the ecosystem around it',
+        detail:
+          'Any degree. Incubators — AUC Venture Lab, Falak, Flat6Labs — and competitions like Enactus give you mentors and a first network at no cost.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Sell something small, now',
+        detail:
+          'The skill is finding someone who will pay, and it is learnable only by trying. A tiny business that makes real money teaches more than a business plan that wins a prize.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'Get a job first, honestly',
+        detail:
+          'Working somewhere else for two or three years buys you savings, a network, and an understanding of how businesses actually run. Founders who do this fail less often.',
+      },
+      {
+        kind: 'gate',
+        when: 'Anytime',
+        title: 'Register properly, then raise if you need to',
+        detail:
+          'GAFI handles company registration; the tax and licensing steps are real work. Egypt’s funding scene is most active in fintech and e-commerce — but revenue is a better first target than investment.',
+      },
+    ],
     majorIds: ['business', 'computer-science', 'graphic-design', 'marketing', 'accounting-finance'],
   },
   {
@@ -632,6 +1749,43 @@ const careerList = [
       'Working through feedback with engineers',
     ],
     skills: ['Figma', 'User research', 'Visual hierarchy', 'Giving and taking critique'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Applied and Fine Arts have their own aptitude exams (اختبارات القدرات) alongside the Thanaweya Amma score — check the dates, they are separate.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Applied Arts, Fine Arts — or no degree at all',
+        detail:
+          'This is a portfolio-first field. A design degree helps, but psychology and engineering graduates move into it regularly.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Learn Figma, then build case studies',
+        detail:
+          'Three or four case studies that explain your reasoning — the problem, what you tried, what you changed after testing. Pretty screens without reasoning get filtered out.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Junior designer at an agency or product team',
+        detail:
+          'Agencies give you volume and variety; product teams give you the feedback loop of watching real users. Egypt’s startup scene hires designers steadily.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or go senior generalist',
+        detail:
+          'Design systems, research-led design, or product ownership. Design is one of the strongest fields for remote work with foreign employers, which changes the pay ceiling substantially.',
+      },
+    ],
     majorIds: ['graphic-design', 'psychology', 'mechanical-engineering', 'architecture'],
   },
   {
@@ -652,6 +1806,43 @@ const careerList = [
       'Sharing insights with product teams',
     ],
     skills: ['Interviewing', 'Survey design', 'Qualitative analysis', 'Synthesis'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Science or Literature branch',
+        detail:
+          'Psychology and the social sciences accept both, depending on the faculty.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Psychology, Sociology, or Anthropology',
+        detail:
+          'Four years. The research methods and statistics courses are the direct qualification — this is one of the few careers where they transfer literally.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Interview people, and write up what you learn',
+        detail:
+          'Run a small study on something real: how students choose a faculty, how people use a local app. The write-up is your portfolio.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Enter through design, product, or market research',
+        detail:
+          'Dedicated junior research posts are rare in Egypt. Market research agencies and design teams are the realistic doors in.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Own research for a product',
+        detail:
+          'Mixed-methods depth, and the harder skill of getting teams to act on findings. Frequently done remotely for foreign product companies.',
+      },
+    ],
     majorIds: ['psychology', 'graphic-design', 'sociology', 'anthropology'],
   },
   {
@@ -672,6 +1863,43 @@ const careerList = [
       'Revising to client feedback',
     ],
     skills: ['Animation principles', 'Motion software', 'Timing', 'Taking direction'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch, plus the aptitude exam',
+        detail:
+          'Applied and Fine Arts require اختبارات القدرات in addition to your score. Start drawing and animating long before then.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Applied Arts, Fine Arts — or a showreel instead',
+        detail:
+          'The degree is optional if the reel is strong. Either way, learn the twelve principles of animation properly; software changes, they do not.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Build a showreel, not a portfolio',
+        detail:
+          'Sixty seconds of your best work, newest first. Freelance jobs on small local projects both pay and fill the reel.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Studio, agency, or freelance',
+        detail:
+          'Egypt has a real animation and motion graphics scene serving advertising and regional broadcasters. Motion graphics pays more reliably than character animation locally.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, and look outward',
+        detail:
+          'Character animation, 3D, VFX or motion design. Gulf broadcasters and international remote contracts are where the rates rise sharply.',
+      },
+    ],
     majorIds: ['graphic-design', 'film-media-production'],
   },
   {
@@ -692,6 +1920,43 @@ const careerList = [
       'Maintaining style and structure',
     ],
     skills: ['Clear writing', 'Technical literacy', 'Information architecture', 'Editing'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Al-Alsun and Arts take أدبي; a technical degree route needs the relevant science branch.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Al-Alsun, Arts, or a technical degree',
+        detail:
+          'Either strong English plus technical curiosity, or a technical degree plus the patience to explain things. Both routes work.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Write, and publish it',
+        detail:
+          'Document an open-source project, or write tutorials for something you learned. Public writing samples are the entire hiring process here.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Documentation at a software company',
+        detail:
+          'Software companies and the Cairo offices of multinationals hire technical writers. Learning the docs-as-code toolchain — Git, Markdown, static site generators — makes you noticeably more employable.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or lead documentation',
+        detail:
+          'API documentation pays best. This is a field with unusually strong remote demand from foreign employers, and English fluency is the qualification that travels.',
+      },
+    ],
     majorIds: ['computer-science', 'graphic-design', 'communications', 'english-literature'],
   },
   {
@@ -712,6 +1977,43 @@ const careerList = [
       'Meeting with parents and colleagues',
     ],
     skills: ['Explaining clearly', 'Patience', 'Lesson planning', 'Assessment design'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Faculty of Education has divisions matching each branch — science, maths, languages, humanities.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Faculty of Education, or a subject degree plus a diploma',
+        detail:
+          'Four years at Education, or a subject degree from Science or Arts followed by an educational diploma (دبلوم تربوي). Both routes qualify you.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Teaching practice, in a real classroom',
+        detail:
+          'The التربية العملية placement is where you find out whether you can hold a room. Tutoring alongside it is common and genuinely useful practice.',
+      },
+      {
+        kind: 'work',
+        when: 'Graduation',
+        title: 'Ministry appointment, or a private school',
+        detail:
+          'Ministry of Education appointment through the مسابقة competition gives security and a modest salary. International and language schools pay considerably more and hire faster.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or move into leadership',
+        detail:
+          'Subject leadership, an international curriculum qualification like IB or IGCSE training, or a Master’s in education. The international school sector is where the pay ceiling is.',
+      },
+    ],
     majorIds: ['biology', 'psychology', 'computer-science', 'environmental-science', 'business', 'education', 'mathematics', 'physics', 'chemistry', 'sociology', 'political-science', 'communications', 'english-literature', 'history', 'philosophy'],
   },
   {
@@ -732,6 +2034,43 @@ const careerList = [
       'Maintaining detailed case records',
     ],
     skills: ['Active listening', 'Advocacy', 'Crisis management', 'Boundary setting'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Faculty of Social Work accepts a range of branches; the Literature branch (أدبي) is the most common route in.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Faculty of Social Work',
+        detail:
+          'Four years covering case work, community organisation, and social policy. Field training runs through the degree.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Volunteer with real organisations',
+        detail:
+          'Resala, Misr El Kheir, the Egyptian Food Bank and hospital social services all take volunteers. Do this before you commit — the emotional load is the part no syllabus prepares you for.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'School, hospital, or NGO case work',
+        detail:
+          'Schools, hospitals, and NGOs are the main employers. Pay is low relative to the responsibility, which is worth knowing plainly rather than discovering later.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or move into programme management',
+        detail:
+          'Child protection, medical social work, or community development. Programme and grant management at larger NGOs and international organisations pays better and uses the same understanding.',
+      },
+    ],
     majorIds: ['psychology', 'sociology', 'public-health', 'education', 'social-work', 'criminology'],
   },
   {
@@ -752,6 +2091,43 @@ const careerList = [
       'Negotiating settlements',
     ],
     skills: ['Legal research', 'Persuasive writing', 'Argumentation', 'Attention to detail'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Literature branch is the usual route',
+        detail:
+          'The Literature branch (أدبي) for Faculty of Law, though other branches are accepted at some faculties. Check the current Tansik rules.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Faculty of Law',
+        detail:
+          'Four years. Egyptian civil, criminal and commercial law, with the French-influenced civil code as the foundation.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Train inside a law office',
+        detail:
+          'Sit in a practising office during your degree. Drafting and procedure are learned there, not in lectures.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Bar Association registration',
+        detail:
+          'Registration with the Bar Association (نقابة المحامين) is what allows you to practise, starting under supervision as a trainee (محامٍ تحت التمرين).',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2–10',
+        title: 'Climb the court grades',
+        detail:
+          'Your right of audience rises with years of registration — from first instance up through appeal and cassation. Corporate law firms pay substantially more than litigation practice early on; litigation gives you courtroom standing sooner.',
+      },
+    ],
     majorIds: ['business', 'psychology', 'environmental-science', 'political-science', 'economics', 'law', 'criminology', 'philosophy', 'history', 'english-literature'],
   },
   {
@@ -772,6 +2148,43 @@ const careerList = [
       'Documenting network topology',
     ],
     skills: ['Routing & switching', 'Network security', 'Troubleshooting', 'Documentation'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Maths or Science branch',
+        detail:
+          'Either opens Computers & AI or Engineering; the communications branch of Engineering is the closest fit.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Computers & AI, Engineering (communications), or NTI tracks',
+        detail:
+          'This is a field where NTI’s free networking programmes carry weight on their own, degree or not.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'CCNA, and build a lab',
+        detail:
+          'Vendor certifications count for more than the degree here. Practise on emulated topologies at home until the commands are automatic.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Network support at an ISP, telecom or integrator',
+        detail:
+          'Egypt’s telecoms and system integrators hire steadily at this level. Expect night shifts early on.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Design and senior certification',
+        detail:
+          'Move from maintaining networks to designing them; CCNP and beyond. Gulf employers recruit heavily from Egypt at this stage.',
+      },
+    ],
     majorIds: ['information-systems', 'computer-science', 'electrical-engineering'],
   },
   {
@@ -792,6 +2205,43 @@ const careerList = [
       'Maintaining asset inventories',
     ],
     skills: ['Troubleshooting', 'Operating systems', 'Patience', 'Clear explanation'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'No branch requirement. This is the most open door in technology.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–2',
+        title: 'Diploma, NTI training, or a degree — any of them',
+        detail:
+          'A full degree is optional here. A technical diploma or an NTI track plus certifications is a working route in.',
+      },
+      {
+        kind: 'build',
+        when: 'Anytime',
+        title: 'CompTIA A+ or a Microsoft certification',
+        detail:
+          'Certifications matter more than the certificate. Fixing machines for people you know is genuine, citable experience.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Help desk',
+        detail:
+          'The classic first technology job in Egypt. Take the tickets nobody wants — networking, servers, security — because that is how you leave the help desk.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2+',
+        title: 'Use it as a doorway',
+        detail:
+          'Systems administration, networking or security all start here for a large number of people. Treat support as an entrance, not a ceiling.',
+      },
+    ],
     majorIds: ['information-systems'],
   },
   {
@@ -812,6 +2262,43 @@ const careerList = [
       'Coordinating with contractors and planners',
     ],
     skills: ['Structural analysis', 'Codes & standards', 'Site judgement', 'Project coordination'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Maths branch',
+        detail:
+          'The Maths branch (علمي رياضة). Civil is one of the largest engineering departments in Egypt and demand from the new-city programmes is real.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Faculty of Engineering, civil department',
+        detail:
+          'Five years, chosen after the preparatory year. Structural analysis, concrete design and soil mechanics are the spine.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–5',
+        title: 'Get on site, and learn the codes',
+        detail:
+          'Summer training on an active site is where you learn what drawings leave out. The Egyptian Code of Practice is the document your career is built on.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Engineers Syndicate registration',
+        detail:
+          'Mandatory. Your registration date starts the clock on the consultancy grades that come later.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–10',
+        title: 'Site engineer, then design or consultancy grades',
+        detail:
+          'Most begin as site engineers with a contractor. Design offices are the alternative; Syndicate consultancy grades, which need years of logged practice, are what let you sign senior design work — and what open Gulf recruitment.',
+      },
+    ],
     majorIds: ['civil-engineering', 'architecture'],
   },
   {
@@ -832,6 +2319,43 @@ const careerList = [
       'Scaling lab processes to production',
     ],
     skills: ['Process simulation', 'Thermodynamics', 'Hazard analysis', 'Optimisation'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Maths branch',
+        detail:
+          'The Maths branch (علمي رياضة). High demand from petrochemicals and fertilisers keeps this department competitive.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Engineering, chemical or petrochemical department',
+        detail:
+          'Five years. Thermodynamics, reaction engineering and process control are the courses that follow you into work.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–5',
+        title: 'Plant training and a simulation package',
+        detail:
+          'Summer training in a real plant, and working knowledge of Aspen HYSYS. Take the process safety material seriously — at industrial scale, failure is not academic.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Engineers Syndicate registration',
+        detail:
+          'Required to practise, as with every engineering branch.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–5',
+        title: 'Process engineer in industry',
+        detail:
+          'Petrochemicals, fertilisers, pharmaceuticals, food and cement are the main Egyptian employers. Suez and Damietta hold much of the heavy industry, so expect to relocate or rotate.',
+      },
+    ],
     majorIds: ['chemical-engineering', 'chemistry'],
   },
   {
@@ -852,6 +2376,43 @@ const careerList = [
       'Visiting sites during construction',
     ],
     skills: ['Spatial design', 'CAD & BIM', 'Building regulations', 'Client communication'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Maths branch',
+        detail:
+          'The Maths branch (علمي رياضة), for Faculty of Engineering. Some architecture programmes also set a drawing aptitude test.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Engineering, architecture department',
+        detail:
+          'Five years, chosen after the preparatory year. Design studio dominates the timetable and the all-nighters are real.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–5',
+        title: 'Master AutoCAD, Revit and a rendering tool',
+        detail:
+          'BIM has become the expectation rather than a bonus. Summer training in a design office is where you see how a drawing becomes a permit.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Engineers Syndicate registration',
+        detail:
+          'Required to practise. Your registration date starts the count towards the consultancy grades that let you sign work independently.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–10',
+        title: 'Design office, then licence grades',
+        detail:
+          'Start in a firm producing drawings under a senior architect. Egypt’s new cities and coastal developments drive most of the work; independent practice comes after years of logged experience.',
+      },
+    ],
     majorIds: ['architecture'],
   },
   {
@@ -872,6 +2433,43 @@ const careerList = [
       'Handling emergencies on call',
     ],
     skills: ['Clinical diagnosis', 'Surgical technique', 'Animal handling', 'Emotional resilience'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم). Veterinary Medicine is a five-year faculty entered directly from school.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Faculty of Veterinary Medicine',
+        detail:
+          'Five years covering anatomy, pathology, surgery and animal production. Academically it is close to human medicine in load.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–5',
+        title: 'Clinic and farm training',
+        detail:
+          'Split your training between companion animals and livestock — they are almost different professions, and Egypt has substantial demand in both.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Veterinary Syndicate registration',
+        detail:
+          'Registration with the Veterinary Syndicate (النقابة العامة للأطباء البيطريين) is required before you can practise.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–5',
+        title: 'Clinic, farm, or food safety',
+        detail:
+          'Small-animal clinics in cities, poultry and livestock production in the governorates, or public health and food inspection roles. Poultry is one of the largest employers in the country.',
+      },
+    ],
     majorIds: ['biology', 'veterinary-medicine'],
   },
   {
@@ -892,6 +2490,43 @@ const careerList = [
       'Running or managing a practice',
     ],
     skills: ['Manual dexterity', 'Clinical diagnosis', 'Patient reassurance', 'Business sense'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم), with a score close to Medicine. Dentistry is entered directly from Thanaweya Amma.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Faculty of Dentistry',
+        detail:
+          'Five years plus an internship year. Clinical work on patients starts earlier here than in most medical training.',
+      },
+      {
+        kind: 'gate',
+        when: 'Internship',
+        title: 'The امتياز year',
+        detail:
+          'A supervised year rotating through the clinical departments before independent practice.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Syndicate registration, then assist first',
+        detail:
+          'Register with the dental syndicate, then work as an assistant in an established clinic. The manual craft develops through repetition and cannot be rushed.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or open a practice',
+        detail:
+          'Orthodontics, implants, endodontics — specialisation needs a Master’s or fellowship. Many dentists eventually open a clinic, which means learning to run a small business as well.',
+      },
+    ],
     majorIds: ['biology', 'chemistry', 'dentistry'],
   },
   {
@@ -912,6 +2547,43 @@ const careerList = [
       'Working with medical teams',
     ],
     skills: ['Nutritional assessment', 'Counselling', 'Evidence appraisal', 'Clear explanation'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم), for Home Economics (nutrition division), Science, or Agriculture.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Nutrition degree',
+        detail:
+          'Four years. Biochemistry, physiology and therapeutic nutrition are the courses that separate a clinical dietitian from a general nutrition graduate.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Hospital training',
+        detail:
+          'Clinical placements in hospital nutrition departments. Diabetes and kidney disease are where the demand in Egypt is concentrated.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Clinical nutrition diploma',
+        detail:
+          'A postgraduate clinical nutrition diploma is what qualifies you for hospital work. Without it you are limited to general wellness advice — and the distinction matters to employers.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2+',
+        title: 'Clinic, hospital, or your own practice',
+        detail:
+          'Hospital departments, private clinics, sports nutrition, or independent practice. This field has a large unqualified fringe, so credentials are worth stating clearly.',
+      },
+    ],
     majorIds: ['nutrition-dietetics', 'biology', 'medicine'],
   },
   {
@@ -932,6 +2604,43 @@ const careerList = [
       'Attending own clinical supervision',
     ],
     skills: ['Active listening', 'Therapeutic technique', 'Boundary setting', 'Self-awareness'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Science or Literature branch',
+        detail:
+          'Both reach Psychology or Social Work depending on the faculty.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Psychology or Social Work degree',
+        detail:
+          'Four years. This is the shorter route into therapeutic work than clinical psychology — a real difference in years and cost.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Listening practice, supervised',
+        detail:
+          'Volunteer with helplines or NGO support programmes. Supervised listening hours are the foundation of the craft.',
+      },
+      {
+        kind: 'gate',
+        when: 'Years 4–6',
+        title: 'Postgraduate diploma in counselling',
+        detail:
+          'A diploma plus supervised practice hours, rather than the doctorate the clinical route demands. CBT and similar modality training is taken alongside.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 5+',
+        title: 'Practice, with your own supervision',
+        detail:
+          'School counselling, NGOs, private practice, or corporate wellbeing. Keeping your own supervision and clear boundaries is not optional — it is what keeps you able to do the work.',
+      },
+    ],
     majorIds: ['psychology', 'social-work', 'medicine'],
   },
   {
@@ -952,6 +2661,43 @@ const careerList = [
       'Testifying as an expert witness',
     ],
     skills: ['Lab technique', 'Meticulous documentation', 'Impartiality', 'Courtroom communication'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم), for Faculty of Science — chemistry or biology.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Science — chemistry or biology',
+        detail:
+          'Four years. Analytical chemistry and molecular biology are the directly relevant strands.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 3–4',
+        title: 'Analytical lab technique, done meticulously',
+        detail:
+          'This job is procedure. Chromatography, spectroscopy and DNA methods, with documentation habits good enough to survive cross-examination.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Apply to the Forensic Medicine Authority',
+        detail:
+          'The Forensic Medicine Authority (مصلحة الطب الشرعي), under the Ministry of Justice, holds most forensic posts in Egypt. Entry is through government appointment, so the process is slow and formal — apply early and expect to wait.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 2+',
+        title: 'Specialise — DNA, toxicology, or trace',
+        detail:
+          'Each strand becomes its own expertise, and senior analysts testify as expert witnesses. A postgraduate degree strengthens both the appointment and the courtroom standing.',
+      },
+    ],
     majorIds: ['criminology', 'chemistry', 'biology'],
   },
   {
@@ -972,6 +2718,43 @@ const careerList = [
       'Writing technical site reports',
     ],
     skills: ['Field mapping', 'Data interpretation', 'GIS', 'Technical writing'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Thanaweya Amma — Science branch',
+        detail:
+          'The Science branch (علمي علوم), for Faculty of Science — geology department.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Science — geology',
+        detail:
+          'Four years. Field camps are the part everyone remembers, and the part employers ask about.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Field mapping and subsurface data',
+        detail:
+          'Learn to read seismic and borehole logs, and get comfortable with GIS. Petroleum geology courses are what oil and gas employers screen for.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'Oil and gas, mining, or groundwater',
+        detail:
+          'Petroleum companies in the Western Desert and Gulf of Suez pay several times what other geology work does, on rotational schedules away from home. Mining, groundwater and construction ground investigation are the alternatives.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or postgraduate study',
+        detail:
+          'Reservoir, exploration, hydrogeology or engineering geology. This field tracks commodity cycles closely — hiring swings with oil prices, so build savings when it is good.',
+      },
+    ],
     majorIds: ['geology', 'environmental-science'],
   },
   {
@@ -992,6 +2775,43 @@ const careerList = [
       'Consulting stakeholders and experts',
     ],
     skills: ['Policy analysis', 'Concise writing', 'Data literacy', 'Stakeholder consultation'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Literature branch is the usual route',
+        detail:
+          'The Literature branch (أدبي) for Economics and Political Science; the Maths branch also works for the economics side.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Economics & Political Science, or Economics',
+        detail:
+          'Four years. Cairo University’s Faculty of Economics and Political Science is the traditional route, and its network matters in this field.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Learn to write two pages, and read data',
+        detail:
+          'The core skill is compressing a month of research into a brief someone will actually read. Statistics and Excel do the other half.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'Think tank, ministry, or international organisation',
+        detail:
+          'ECES, ministry research units, and the Cairo offices of the UN agencies and World Bank are the main employers. Internships are the usual way in.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Postgraduate study, then specialise',
+        detail:
+          'A public policy Master’s — often abroad through Chevening or Fulbright — is close to standard. Specialisations follow the money: economic, health, education, or environmental policy.',
+      },
+    ],
     majorIds: ['political-science', 'economics', 'public-health', 'sociology', 'urban-planning', 'philosophy'],
   },
   {
@@ -1012,6 +2832,43 @@ const careerList = [
       'Liaising with clients and courts',
     ],
     skills: ['Legal research', 'Document drafting', 'Organisation', 'Discretion'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Literature branch is the usual route',
+        detail:
+          'The Literature branch (أدبي), for Faculty of Law or a legal studies diploma.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Faculty of Law, or a legal studies diploma',
+        detail:
+          'The same degree as lawyers take, or a shorter diploma route. Either supports this work.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Learn drafting and legal research',
+        detail:
+          'Contract drafting, document management, and finding precedent quickly. Strong English opens the corporate and international firms, where the work is better paid.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Legal assistant at a firm or company',
+        detail:
+          'Law firms, corporate legal departments and the compliance teams at banks all hire at this level. It is real legal work, not merely administrative.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise — or qualify fully',
+        detail:
+          'Corporate compliance, contract management, or intellectual property. Plenty of paralegals register with the Bar and move into practice, having tested the field first.',
+      },
+    ],
     majorIds: ['law', 'criminology', 'political-science'],
   },
   {
@@ -1032,6 +2889,43 @@ const careerList = [
       'Pitching stories to editors',
     ],
     skills: ['Interviewing', 'Fact-checking', 'Fast clear writing', 'Persistence'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Literature branch is the usual route',
+        detail:
+          'The Literature branch (أدبي), for Faculty of Mass Communication. Read widely in both Arabic and English from now — it is the whole preparation.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Faculty of Mass Communication',
+        detail:
+          'Four years across journalism, broadcast and public relations. Cairo University’s faculty is the traditional route; AUC and private universities are the alternative.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Get published, anywhere',
+        detail:
+          'Student papers, online outlets, your own reporting on a story nobody else is covering. Clippings are the currency of this field and nobody asks for your transcript.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'Junior reporter, or freelance',
+        detail:
+          'Newsrooms, online outlets, and the Cairo bureaux of international agencies. Freelancing is common because staff posts are scarce — expect to build income from several places at once.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, and join the syndicate',
+        detail:
+          'A beat — economics, health, sport, investigations — makes you harder to replace. Journalists Syndicate membership requires qualifying staff employment and brings real professional protections.',
+      },
+    ],
     majorIds: ['communications', 'english-literature', 'history', 'political-science'],
   },
   {
@@ -1052,6 +2946,43 @@ const careerList = [
       'Briefing and coaching writers',
     ],
     skills: ['Editing', 'Style and voice', 'Audience judgement', 'Deadline discipline'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Literature branch is the usual route',
+        detail:
+          'The Literature branch (أدبي), for Al-Alsun, Arts or Mass Communication. Al-Alsun has its own language aptitude requirements — check them early.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Al-Alsun, Arts (English), or Mass Communication',
+        detail:
+          'Four years. Language depth is the qualification; translation training from Al-Alsun transfers unusually well into editing work.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Build a portfolio, and pick a style guide',
+        detail:
+          'Edit for student publications, write copy for small businesses, take freelance jobs. Learn one style guide properly so your decisions are consistent rather than instinctive.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Publisher, agency, or freelance',
+        detail:
+          'Publishing houses, content agencies and marketing teams all hire. Bilingual editors are in short supply in Egypt and can charge accordingly.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise — copywriting pays more',
+        detail:
+          'Editorial work at a publisher, or brand copywriting in marketing, which pays noticeably better. Both lead to content strategy and to steady remote work for foreign clients.',
+      },
+    ],
     majorIds: ['english-literature', 'communications'],
   },
   {
@@ -1072,6 +3003,43 @@ const careerList = [
       'Writing interpretation and labels',
     ],
     skills: ['Research', 'Cataloguing', 'Conservation awareness', 'Public interpretation'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Literature branch',
+        detail:
+          'The Literature branch (أدبي), for Faculty of Archaeology or Arts (history). Archaeology is one of Egypt’s genuinely distinctive academic fields.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Archaeology, or Arts (history)',
+        detail:
+          'Four years. Egyptology, Islamic and Coptic archaeology are separate specialisations — choose knowing the job market differs for each.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Excavation seasons and museum volunteering',
+        detail:
+          'Field seasons and museum internships are close to mandatory before hiring. Languages matter: French and German open academic literature that Arabic and English do not.',
+      },
+      {
+        kind: 'gate',
+        when: 'Graduation',
+        title: 'Ministry of Tourism and Antiquities appointment',
+        detail:
+          'Most posts sit under the Ministry, and appointment is a slow formal process. The Grand Egyptian Museum and the national museums are the flagship employers.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Postgraduate study, then specialise',
+        detail:
+          'An MA is expected for curatorial work; a PhD for research posts. Conservation, collections management and exhibition curation diverge from here.',
+      },
+    ],
     majorIds: ['history', 'anthropology'],
   },
   {
@@ -1092,6 +3060,43 @@ const careerList = [
       'Solving problems as they arise on set',
     ],
     skills: ['Budgeting', 'Negotiation', 'Logistics', 'Staying calm under pressure'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'The Higher Institute of Cinema sets its own entrance exam and interview, separate from Tansik.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Higher Institute of Cinema, or Mass Communication',
+        detail:
+          'Four years. The institute is the prestige route and its network is a real part of what you are buying.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Work on sets — any sets',
+        detail:
+          'Production assistant on student films, adverts, anything. This industry hires on credits and trust, and both are built from the bottom.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'Production assistant, then coordinator',
+        detail:
+          'Cairo remains the centre of Arabic-language production. The work is project-based rather than salaried, so income arrives in bursts — budget accordingly.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Line producer, then your own projects',
+        detail:
+          'Move from executing schedules to controlling budgets. Streaming platforms commissioning Arabic content have expanded the market substantially.',
+      },
+    ],
     majorIds: ['film-media-production', 'communications'],
   },
   {
@@ -1112,6 +3117,43 @@ const careerList = [
       'Working through client revisions',
     ],
     skills: ['Editing software', 'Pacing & rhythm', 'Colour and sound basics', 'Taking direction'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'No requirement. Start cutting footage on whatever you have.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Mass Communication, Applied Arts — or a reel instead',
+        detail:
+          'The degree is genuinely optional here. What gets you hired is a reel and a reputation for hitting deadlines.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Learn Premiere or DaVinci, then edit constantly',
+        detail:
+          'Cut weddings, student films, YouTube content — anything with real footage and a real deadline. Add colour grading and basic sound; both are billable on their own.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Production house, agency, or freelance',
+        detail:
+          'Cairo’s advertising and content industry runs on freelance editors. Rates rise fast once people trust you to deliver on time.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Specialise, or move up the chain',
+        detail:
+          'Long-form film, commercials, or social content at volume. Many editors move into directing or producing, since editing teaches story structure better than any other role.',
+      },
+    ],
     majorIds: ['film-media-production', 'graphic-design'],
   },
   {
@@ -1132,6 +3174,43 @@ const careerList = [
       'Presenting findings to executives',
     ],
     skills: ['Structured problem solving', 'Financial analysis', 'Presenting', 'Working at pace'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'Commerce, Economics and Engineering all feed this field; Engineering needs the Maths branch.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–5',
+        title: 'Commerce, Economics, or Engineering',
+        detail:
+          'The firms recruit heavily from a short list of faculties and universities. AUC, GUC and the top public faculties are where they run their campus rounds.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Case practice and a visible record',
+        detail:
+          'Case interviews are the entire screening process and can be trained for. Case competitions and consulting clubs are the standard preparation.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–3',
+        title: 'Analyst at a firm',
+        detail:
+          'Cairo offices of the global firms, regional firms, and the Big Four advisory arms. The hours are genuinely long; the exposure to senior decisions is genuinely unusual for someone that junior.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'MBA, or exit into industry',
+        detail:
+          'Consulting is often a springboard: an MBA then a return at a higher grade, or a move into a strategy or operations role at a client. Both are normal and expected.',
+      },
+    ],
     majorIds: ['business', 'economics', 'mathematics', 'accounting-finance'],
   },
   {
@@ -1152,6 +3231,43 @@ const careerList = [
       'Maintaining the pipeline in a CRM',
     ],
     skills: ['Listening', 'Negotiation', 'Resilience to rejection', 'Pipeline management'],
+    roadmap: [
+      {
+        kind: 'school',
+        when: 'School',
+        title: 'Any branch',
+        detail:
+          'No requirement at all. This is one of the most open graduate paths in business.',
+      },
+      {
+        kind: 'study',
+        when: 'Years 1–4',
+        title: 'Any degree',
+        detail:
+          'The certificate matters less here than almost anywhere else. What is screened for is how you talk to a stranger who does not want to talk to you.',
+      },
+      {
+        kind: 'build',
+        when: 'Years 2–4',
+        title: 'Get rejection practice',
+        detail:
+          'Fundraising for a student organisation, or any job dealing with the public. Handling refusal without taking it personally is the actual skill.',
+      },
+      {
+        kind: 'work',
+        when: 'Years 0–2',
+        title: 'Sales development or account executive',
+        detail:
+          'Real estate, pharmaceuticals, technology and financial services all hire in volume. Commission means earnings vary widely — understand the split before signing.',
+      },
+      {
+        kind: 'grow',
+        when: 'Years 3+',
+        title: 'Move upmarket',
+        detail:
+          'Enterprise and B2B sales pay far more than volume selling. From there: key accounts, sales management, or the move into business development and partnerships.',
+      },
+    ],
     majorIds: ['business', 'marketing', 'communications'],
   },
 ]
@@ -1183,6 +3299,21 @@ const fieldRank = (field) => {
 export const careers = [...careerList].sort((a, b) => fieldRank(a.field) - fieldRank(b.field))
 
 export const careerFields = [...new Set(careers.map((c) => c.field))].sort()
+
+// The six kinds a roadmap step can be. Each one carries an icon and a label
+// together, on purpose: the timeline distinguishes steps by shape and colour,
+// and neither of those survives a colour-blind reader or a screen reader on
+// its own. `gate` is the one that matters most — a registration, licence or
+// exam series you cannot legally practise without, as opposed to a
+// certification that merely helps — so the page also prints it in words.
+export const roadmapStages = {
+  school: { icon: '📚', label: 'School' },
+  study: { icon: '🎓', label: 'Study' },
+  build: { icon: '🛠️', label: 'Practice' },
+  gate: { icon: '🔑', label: 'Required' },
+  work: { icon: '💼', label: 'Work' },
+  grow: { icon: '📈', label: 'Grow' },
+}
 
 export const getCareer = (id) => careers.find((c) => c.id === id)
 

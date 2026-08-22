@@ -50,16 +50,20 @@ Other commands:
 ```
 src/
   app/                Next.js App Router — one folder per route
-    layout.jsx        Shell: fonts, metadata, nav and footer
+    [lang]/           Every route lives under /en or /ar
+      layout.jsx      Shell: fonts, metadata, nav and footer, html lang/dir
+      settings/       Language and appearance preferences
     globals.css       Design tokens and every style in the app
     page.jsx          Home
     majors/           List page, plus [id]/ for each major
     careers/          List page, plus [id]/ for each career
+    masters/          List page, plus [id]/ for each postgraduate route
     activities/ mentorship/ scholarships/ resources/ about/
     not-found.jsx     404
   data/
-    majors.js         The 41 majors (Egyptian faculties)
-    careers.js        The 57 career paths (Egyptian routes and pay)
+    majors.js         The 41 majors (Egyptian faculties and curricula)
+    careers.js        The 57 career paths (Egyptian routes, roadmaps, and pay)
+    masters.js        The 43 postgraduate routes (Egypt and funded abroad)
     activities.js     The 29 Egyptian activities and volunteering options
     workshops.js      The 13 Elevate mentorship workshops
     wellbeing.js      The 3 Your Space wellbeing topics
@@ -68,6 +72,13 @@ src/
   components/
     NavBar.jsx        Top navigation
     Footer.jsx        Site footer
+    SettingsControls.jsx  Language and theme switches
+  lib/
+    i18n/config.js    Locales, direction, path helpers
+    i18n/ui.js        Every interface string, en and ar
+    i18n/content.js   Merges English data with its Arabic translation
+    theme.js          Read/apply the light-dark-system preference
+  data/ar/            Arabic translation of every dataset, plus vocab.js
 ```
 
 ### Adding content
@@ -88,8 +99,12 @@ once. **`careers.js` owns it**, through each career's `majorIds` array. Major pa
 list by asking which careers point at them (`getCareersForMajor`), so majors don't carry a matching
 list of their own and the two can't drift out of sync.
 
-So to connect a career to a major, add the major's id to that career's `majorIds`. That's the whole
-step. Every id must exist in `majors.js` — if one doesn't match, that link is silently skipped
+`masters.js` works the same way and owns its own link: each postgraduate route lists the majors it
+follows from, and major pages derive **Where this leads after graduation** from that. So majors
+carry no list of their own for either relationship.
+
+So to connect a career or a postgraduate route to a major, add the major's id to that entry's
+`majorIds`. That's the whole step. Every id must exist in `majors.js` — if one doesn't match, that link is silently skipped
 rather than crashing the page, so check the spelling first if an expected link isn't showing up.
 
 ### Brand
@@ -182,6 +197,162 @@ generally, so it matches the About page and the rest of the site. If Elevate is 
 women-focused programme, this is the file to change — along with the About page and the meta
 description, so the site says so consistently rather than in one section only.
 
+## Arabic and appearance
+
+The site is fully bilingual. **Language is part of the URL** — `/en/majors/medicine`,
+`/ar/majors/medicine` — rather than a cookie, and that is a deliberate trade. Reading a cookie in a
+Server Component opts the whole route out of static rendering, and 300+ prerendered pages is the
+reason this hosts free. A `[lang]` segment keeps every page static; there are simply two of each.
+Middleware sends a bare path to the reader's preferred language, from the cookie the toggle writes,
+then `Accept-Language`, then English.
+
+Arabic lays the site out right to left. The stylesheet uses **logical properties**
+(`padding-inline-start`, `inset-inline-start`, `border-inline-start`) rather than physical ones, so
+`dir="rtl"` on `<html>` flips the layout without a second stylesheet — including the career roadmap
+spine and the curriculum timeline. Arabic also switches to **Cairo**, because Nunito and Playfair
+have no Arabic glyphs and would silently fall back to whatever the device has.
+
+### Where the translation lives
+
+Interface strings are in `src/lib/i18n/ui.js`. Content is translated beside its own data in
+`src/data/ar/`, keyed by the same ids, and merged in `src/lib/i18n/content.js`. The merge is
+**field-level and falls back to English**, so a half-translated entry renders rather than throwing —
+which is what lets Arabic be extended without touching any component.
+
+`src/data/ar/vocab.js` holds the terms that repeat: 656 course names, year and stage labels,
+prerequisites, 271 skill tags, degree durations, roadmap timings and salary bands. Those are
+translated once and merged in, so "Graduation Project" reads identically in all 30 majors that
+teach it, and a reviewer fixing a term fixes it everywhere. Per-entry files then carry only the
+prose that is genuinely unique.
+
+Numbers in Arabic use Arabic-Indic digits (٥ سنوات, ٧–١٤ ألف جنيه) and "EGP" becomes جنيه. Proper
+nouns keep the form a student would actually search for: Coursera, Fulbright, Figma and Excel stay
+in Latin, while Egyptian institutions get their real names — التنسيق, نقابة المهندسين, بنك المعرفة
+المصري, الزمالة المصرية.
+
+One wrinkle worth knowing if you touch the account pages: a **Server Action is not a route**, so it
+cannot read the locale from the URL the way a page can. The auth and profile forms therefore carry
+the locale in a hidden `lang` field, which the actions in `account/actions.js` use both to pick the
+language of a validation message and to redirect back to the right page. The value is checked with
+`isLocale` before it reaches the dictionary, so a tampered field falls back to English rather than
+indexing into nothing.
+
+### Appearance
+
+Three states, not two: **light, dark, and match system**, defaulting to system. Two states cannot
+express "keep following the OS", which is why the toggle is not a boolean. The choice is stored in
+`localStorage` and applied by a tiny inline script in `<head>` before first paint, so a reader who
+chose dark never sees a white flash.
+
+The palette is written out twice in `globals.css` — once under `prefers-color-scheme` guarded as
+`:root:not([data-theme='light'])`, once under `:root[data-theme='dark']`. That duplication is
+deliberate: an explicit choice has to beat the media query **in both directions**, and plain CSS
+cannot share a declaration block between a media query and an attribute selector. Change one block,
+change the other.
+
+One consequence worth knowing: the logo used to be a `<picture>` with a `prefers-color-scheme`
+source, which only ever asked the operating system. Now that a reader can force dark on a light-set
+device, that markup would have left the wordmark invisible — so both files render and CSS picks,
+because CSS can see `data-theme` and a media query cannot.
+
+### Major curricula
+
+Every major carries a `curriculum`: its subjects grouped by year rather than listed flat, so a
+student can see *when* each one arrives. Each stage is `{ years, stage, subjects }` — `years` is
+the timing label, `stage` names the phase in the terms the faculty itself uses. 41 majors, 164
+stages, 803 subjects, rendered as **What you study, year by year** on the major page.
+
+The phases follow the real shape of each route rather than a fixed template: Engineering opens with
+the preparatory year before the department is chosen, Medicine runs preclinical → paraclinical →
+clinical → internship, Education ends in a school practicum, and most four-year degrees close on a
+graduation project.
+
+**Course names are the Egyptian ones, and this is the part most worth protecting.** An imported
+syllabus reads as plausible while quietly misinforming. Law is the clearest case: it previously
+listed contract, tort and property — a common-law curriculum — where Egyptian faculties teach the
+civil-code tradition, with Roman Law and Islamic Sharia in the first year, the Civil Code strands
+across years two and three, and Personal Status Law later. Tort is not a separate Egyptian course
+at all. Criminology and Sociology had the same problem and were rewritten too. If you add a major,
+check its list against a real Egyptian faculty catalogue rather than against what the subject looks
+like elsewhere.
+
+Names are English throughout, matching the rest of the dataset. The page prints a caveat under the
+timeline saying this is a representative curriculum rather than one faculty's timetable.
+
+### Master's and postgraduate
+
+`masters.js` covers what comes after the bachelor: 43 routes across the Egyptian diploma → master's
+→ doctorate ladder, the professional and clinical qualifications beside it, and funded study
+abroad. Entries carry `{ route, length, entry, whatItUnlocks, funding, majorIds }`, and the list
+page filters by field and by `route` — *In Egypt*, *Abroad*, or *Egypt or abroad*.
+
+Four entries are the generic Egyptian ladder rather than a subject: the **postgraduate diploma**,
+which many students don't know is usually required before a master's; the **معيد track**, where the
+faculty appoints its top graduates and funds them through to a doctorate while they teach; the
+**doctorate**; and **funded master's abroad**, which explains the application timeline rather than
+repeating award details. The rest are subject-specific, and **every one of the 41 majors resolves
+to at least one of them** — worth re-checking with a coverage script if you add a major.
+
+Funding is deliberately thin here. Awards change yearly and `scholarships.js` already carries them
+with links to official pages, so entries describe how the route is typically paid for and send the
+reader there rather than duplicating a table that will go stale.
+
+Two things to keep true when editing. The tone stays honest about when a postgraduate degree is
+*not* worth it — software, security practice, design and journalism all hire on demonstrated work,
+and the entries say so plainly rather than selling every qualification equally. And where a route
+is genuinely gated (the Egyptian Fellowship's entrance exam, Syndicate registration before an
+engineering master's, supervised hours before clinical psychology), the gate belongs in `entry`.
+
+### Career roadmaps
+
+Every career carries a `roadmap`: five ordered steps from school to established practice, each one
+`{ when, title, detail }`. They render as a numbered timeline under **How to get there** on the
+career page, which is what the About page has always promised.
+
+`when` is a short timing label — `School`, `Years 1–5`, `Graduation`, `Years 3+` — not a promise.
+Faculties differ, people arrive sideways, and Tansik requirements move every year, so the page
+prints a caveat under the timeline saying exactly that and links to the official portal.
+
+`kind` is what type of step it is, one of the six in `roadmapStages` at the bottom of the file:
+`school`, `study`, `build`, `gate`, `work`, `grow`. Each kind owns an icon and a label, and the two
+travel together deliberately — the timeline tells steps apart by icon and by colour, and colour
+alone does not survive a colour-blind reader.
+
+**`gate` is the one to get right.** It means a registration, licence or exam series you cannot
+legally practise without — Engineers Syndicate, the Bar Association, the امتياز year, the actuarial
+exams. It does not mean a certification that merely helps: CCNA, the CFA and CompTIA are all
+`build` or `grow`, because you can work without them. Gate steps get a heavier ring and the words
+*Required to practise* beside them, so this distinction is visible rather than implied. 24 of the
+285 steps are gates, across 21 careers; the other 36 careers have no gate at all, which is itself
+worth seeing at a glance.
+
+### How the roadmap renders
+
+Two views of the same five steps, following established roadmap conventions rather than anything
+invented here — the subway-map pattern (a stop per milestone, icons at each stop) and the customer
+journey pattern (a horizontal path with directional connectors):
+
+- **Route at a glance** — a horizontal track of five stops with icons and timing labels, connected
+  by a rule in the brand gradient. It repeats the timeline underneath verbatim, so it carries
+  `aria-hidden="true"` rather than being read out twice.
+- **The timeline** — the same five steps vertically with the detail, each marked by its stage icon.
+
+Both are pure CSS over the existing tokens; the stage icons are emoji, matching how `icon` already
+works on majors and careers. There is no artwork to maintain and nothing to re-export if the
+palette changes. The track scrolls sideways rather than crushing its labels, though at the longest
+label in the dataset (`Postgraduate`) it still fits a 375px screen without scrolling.
+
+Two things to keep true when editing one. The roadmap has to agree with that career's `education`
+field, because the two are read side by side on the page. And where a route is genuinely gated —
+Engineers Syndicate registration, the Bar Association, the امتياز year, the actuarial exams — the
+gate belongs in the roadmap as its own step rather than being folded into a sentence, since that is
+the part a student cannot plan around without knowing.
+
+Arabic terms are written the way the rest of the dataset writes them: English first, Arabic in
+parentheses after it — `The Maths branch (علمي رياضة)`. Starting a sentence with the Arabic run
+puts the following full stop in a bidirectional sandwich, and where it lands then depends on the
+renderer. Keeping the Arabic mid-sentence avoids the question entirely.
+
 ### What the numbers mean, and what they don't
 
 `tansik` is the public-university minimum from the **2024/25** round. It moves every year; the
@@ -209,8 +380,9 @@ cite the date you looked.
 - [ITIDA](https://itida.gov.eg/) and [NTI](https://www.nti.sci.eg/) — ICT sector growth, free training
 - [Egyptian Knowledge Bank](https://www.ekb.eg/) — national digital library
 
-Course lists remain generic to each subject — check them against the specific faculty's catalogue
-before presenting them as that faculty's curriculum.
+Curricula are representative of the Egyptian route for each subject, not a transcription of one
+faculty's catalogue. Course names and the year a subject falls in vary between faculties and
+universities, so check the catalogue of the specific faculty before presenting a list as theirs.
 
 ## Deploying
 

@@ -39,9 +39,19 @@
 
 /* Dark theme, derived from the same two hues — the blue end becomes the
    surface family, lilac carries text, orchid becomes the accent because the
-   brand blue drops to 2.34:1 on a dark ground and would disappear. */
+   brand blue drops to 2.34:1 on a dark ground and would disappear.
+--
+   The palette is written out twice below, which is deliberate rather than
+   careless. The theme has three states: "match system", which is the default
+   and has no data-theme attribute, plus an explicit light or dark that has to
+   beat the media query in both directions. Plain CSS has no way to share one
+   declaration block between a media query and an attribute selector, and the
+   alternatives — a second stylesheet, or moving the palette into JS — both
+   cost more than fourteen duplicated lines. Change one block, change the
+   other. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* Everything except a reader who explicitly asked for light. */
+  :root:not([data-theme='light']) {
     --bg: #17103a;
     --surface: #221750;
     --surface-alt: #2e1f66;
@@ -55,6 +65,36 @@
     --success-soft: #43206b;
     --shadow: 0 1px 2px rgb(0 0 0 / 35%), 0 6px 20px rgb(0 0 0 / 35%);
   }
+}
+
+/* Explicitly chosen dark, which must win on a light-set device too. */
+:root[data-theme='dark'] {
+  --bg: #17103a;
+  --surface: #221750;
+  --surface-alt: #2e1f66;
+  --border: #3b2a7a;
+  --text: var(--brand-lilac);
+  --text-muted: #c9b6e8;
+  --accent: var(--brand-orchid);
+  --accent-soft: #2e1f66;
+  --accent-strong: #dda5ec;
+  --success: #f0bffa;
+  --success-soft: #43206b;
+  --shadow: 0 1px 2px rgb(0 0 0 / 35%), 0 6px 20px rgb(0 0 0 / 35%);
+}
+
+/* Arabic needs a face that actually has the glyphs; Nunito and Playfair do
+   not, so Arabic text in them falls back to whatever the device happens to
+   have and the page loses its typography. Cairo carries Latin too, which
+   keeps a mixed string in one typeface. */
+:root:lang(ar) {
+  --font-body: var(--font-cairo), system-ui, sans-serif;
+  --font-display: var(--font-cairo), Georgia, serif;
+}
+
+/* The nav's scroll fade points the way you read. */
+:root:lang(ar) {
+  --fade-end: left;
 }
 
 *,
@@ -219,7 +259,7 @@ a:hover {
   color: var(--accent-strong);
 }
 
-/* With eight sections, wrapping the links cost three rows and 17% of a phone
+/* With nine sections, wrapping the links cost three rows and 17% of a phone
    screen — permanently, because the bar is sticky. Below 620px they become a
    single swipeable row instead: everything stays reachable, and the header
    drops back to roughly one row. The mask hints that there is more to the
@@ -240,7 +280,13 @@ a:hover {
     -webkit-overflow-scrolling: touch;
     /* Fade both edges: the right hints there is more to swipe to, the left
        stops a half-scrolled label butting up against the logo. */
-    mask-image: linear-gradient(to right, transparent 0, #000 3%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(
+      to var(--fade-end, right),
+      transparent 0,
+      #000 3%,
+      #000 92%,
+      transparent 100%
+    );
     padding-inline: 0.25rem;
   }
 
@@ -479,7 +525,7 @@ a.card:hover {
 
 .list-clean {
   margin: 0;
-  padding-left: 1.15rem;
+  padding-inline-start: 1.15rem;
   color: var(--text-muted);
 }
 
@@ -507,16 +553,275 @@ a.card:hover {
 .stat-row dd {
   margin: 0;
   font-weight: 600;
-  text-align: right;
+  text-align: end;
+}
+
+/* Career roadmap. Two views of the same five steps: a horizontal track that
+   shows the whole route at a glance, and the timeline underneath carrying the
+   detail. Steps are told apart by an icon as well as by colour, because colour
+   on its own does not survive a colour-blind reader — and the one step type
+   that must not be missed, a licence you cannot practise without, is spelled
+   out in words too. */
+
+/* Route at a glance — scrolls sideways on narrow screens rather than
+   squeezing the stops until the labels wrap to nothing. */
+.roadmap-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0 0 0.35rem;
+  overflow-x: auto;
+}
+
+.roadmap-stop {
+  flex: 1 0 auto;
+  min-width: 5.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+  position: relative;
+}
+
+/* The connector sits on the stop and points at the previous one, so the run
+   of rules stops at the first stop instead of hanging off the left edge. */
+.roadmap-stop + .roadmap-stop::before {
+  content: '';
+  position: absolute;
+  top: 1.1rem;
+  inset-inline-end: 50%;
+  inset-inline-start: -50%;
+  height: 2px;
+  background: var(--brand-gradient);
+  opacity: 0.45;
+}
+
+.roadmap-stop-icon {
+  position: relative;
+  z-index: 1;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1rem;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+}
+
+.roadmap-stop[data-kind='gate'] .roadmap-stop-icon {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.roadmap-stop-when {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+}
+
+/* The timeline. The connecting rule is drawn on each step rather than as one
+   line behind the list, so it stops cleanly at the last marker instead of
+   trailing past it. */
+.roadmap {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.roadmap-step {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: 0 0.9rem;
+  padding-bottom: 1.25rem;
+}
+
+.roadmap-step:last-child {
+  padding-bottom: 0;
+}
+
+.roadmap-marker {
+  grid-row: 1 / -1;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  position: relative;
+}
+
+/* A gate is a licence, registration or exam series you cannot practise
+   without, so it gets the heavier ring — paired with the wording beside it. */
+.roadmap-step[data-kind='gate'] .roadmap-marker {
+  background: var(--accent-soft);
+  border: 2px solid var(--accent);
+}
+
+.roadmap-step:not(:last-child) .roadmap-marker::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  inset-inline-start: 50%;
+  width: 2px;
+  margin-inline-start: -1px;
+  height: calc(100% + 0.35rem);
+  background: var(--brand-gradient);
+  opacity: 0.45;
+}
+
+.roadmap-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+  margin: 0.35rem 0 0.15rem;
+}
+
+.roadmap-when {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.roadmap-gate {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.roadmap-body h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+}
+
+.roadmap-body > p:last-child {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* Year-by-year curriculum. Same spine idea as the career roadmap, so the two
+   halves of the site read as one system: a route through the degree here, a
+   route into the career there. Subjects sit in a wrapping row rather than a
+   bullet list — the point is to see a year's worth at a glance, not to read
+   down a column. */
+.curriculum {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.curriculum-stage {
+  position: relative;
+  padding: 0 0 1.15rem 1.1rem;
+  border-inline-start: 2px solid var(--border);
+}
+
+.curriculum-stage:last-child {
+  padding-bottom: 0;
+  border-inline-start-color: transparent;
+}
+
+.curriculum-stage::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: -0.36rem;
+  top: 0.3rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.curriculum-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 0.6rem;
+  margin: 0 0 0.5rem;
+}
+
+.curriculum-years {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.curriculum-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.curriculum-subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.curriculum-subjects li {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+}
+
+.curriculum-caveat {
+  margin: 1.15rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.roadmap-caveat {
+  margin: 1.15rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 .note {
   font-size: 0.85rem;
   color: var(--text-muted);
   background: var(--surface-alt);
-  border-left: 3px solid var(--accent);
+  border-inline-start: 3px solid var(--accent);
   padding: 0.75rem 1rem;
-  border-radius: 0 8px 8px 0;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  border-start-end-radius: 8px;
+  border-end-end-radius: 8px;
   margin-bottom: 1.5rem;
 }
 
@@ -576,19 +881,19 @@ a.card:hover {
   padding: 0.6rem 0.85rem;
   border-radius: 8px;
   font-size: 0.9rem;
-  border-left: 3px solid;
+  border-inline-start: 3px solid;
 }
 
 .form-error {
   background: var(--success-soft);
   color: var(--success);
-  border-left-color: var(--success);
+  border-inline-start-color: var(--success);
 }
 
 .form-notice {
   background: var(--accent-soft);
   color: var(--accent-strong);
-  border-left-color: var(--accent);
+  border-inline-start-color: var(--accent);
 }
 
 .link-button {
@@ -609,6 +914,131 @@ a.card:hover {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+/* Logo swap. Both files are in the markup and CSS chooses, because the theme
+   can now be set explicitly as well as by the OS and a media query cannot see
+   the data-theme attribute. */
+.logo-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .logo-light {
+    display: none;
+  }
+
+  :root:not([data-theme='light']) .logo-dark {
+    display: block;
+  }
+}
+
+:root[data-theme='dark'] .logo-light {
+  display: none;
+}
+
+:root[data-theme='dark'] .logo-dark {
+  display: block;
+}
+
+/* Quick language and theme buttons in the header. */
+.quick-settings {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.quick-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.9rem;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quick-btn:hover {
+  background: var(--surface-alt);
+  color: var(--text);
+}
+
+.quick-btn-icon {
+  min-width: 1.9rem;
+  padding-inline: 0.35rem;
+  font-size: 0.95rem;
+}
+
+/* Settings page */
+.settings-layout {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 40rem;
+}
+
+/* .panel adds a top margin when panels are adjacent; the grid already spaces
+   these, so cancel it rather than getting a double gap. */
+.settings-layout .panel + .panel {
+  margin-top: 0;
+}
+
+.setting-help {
+  margin: 0 0 0.9rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.setting-note {
+  margin: 0.9rem 0 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+
+.choice:hover {
+  background: var(--surface-alt);
+}
+
+/* aria-pressed is the single source of truth for which option is on, so the
+   styling hangs off it rather than off a parallel class that could disagree
+   with what a screen reader is told. */
+.choice[aria-pressed='true'] {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.choice-label {
+  line-height: 1;
 }
 
 /* Footer */
